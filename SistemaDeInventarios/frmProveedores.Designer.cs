@@ -1,0 +1,449 @@
+﻿namespace SistemaDeInventarios
+{
+    partial class frmProveedores
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDireccionProveedor = new System.Windows.Forms.Label();
+            this.lblCorreoProveedor = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDireccionProveedor = new System.Windows.Forms.TextBox();
+            this.txtCorreoProveedor = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtIdProveedor = new System.Windows.Forms.TextBox();
+            this.lbl_IdProveedor = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtTelefonoProveedor = new System.Windows.Forms.TextBox();
+            this.lblTelefonoProveedor = new System.Windows.Forms.Label();
+            this.txtNombreProveedor = new System.Windows.Forms.TextBox();
+            this.lblNombreProveedor = new System.Windows.Forms.Label();
+            this.gbTituloC = new System.Windows.Forms.GroupBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.gbTituloC.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Location = new System.Drawing.Point(15, 392);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1104, 305);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Categorias";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Telefono,
+            this.Correo,
+            this.Direccion});
+            this.dataGridView1.Location = new System.Drawing.Point(20, 47);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1078, 233);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id Proveedor";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.MinimumWidth = 6;
+            this.Direccion.Name = "Direccion";
+            // 
+            // lblDireccionProveedor
+            // 
+            this.lblDireccionProveedor.AutoSize = true;
+            this.lblDireccionProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccionProveedor.Location = new System.Drawing.Point(256, 88);
+            this.lblDireccionProveedor.Name = "lblDireccionProveedor";
+            this.lblDireccionProveedor.Size = new System.Drawing.Size(86, 20);
+            this.lblDireccionProveedor.TabIndex = 8;
+            this.lblDireccionProveedor.Text = "Direccion ";
+            // 
+            // lblCorreoProveedor
+            // 
+            this.lblCorreoProveedor.AutoSize = true;
+            this.lblCorreoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoProveedor.Location = new System.Drawing.Point(256, 37);
+            this.lblCorreoProveedor.Name = "lblCorreoProveedor";
+            this.lblCorreoProveedor.Size = new System.Drawing.Size(60, 20);
+            this.lblCorreoProveedor.TabIndex = 7;
+            this.lblCorreoProveedor.Text = "Correo";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.txtDireccionProveedor);
+            this.groupBox1.Controls.Add(this.txtCorreoProveedor);
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.lblDireccionProveedor);
+            this.groupBox1.Controls.Add(this.lblCorreoProveedor);
+            this.groupBox1.Controls.Add(this.txtIdProveedor);
+            this.groupBox1.Controls.Add(this.lbl_IdProveedor);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.txtTelefonoProveedor);
+            this.groupBox1.Controls.Add(this.lblTelefonoProveedor);
+            this.groupBox1.Controls.Add(this.txtNombreProveedor);
+            this.groupBox1.Controls.Add(this.lblNombreProveedor);
+            this.groupBox1.Location = new System.Drawing.Point(15, 125);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1104, 253);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // txtDireccionProveedor
+            // 
+            this.txtDireccionProveedor.Location = new System.Drawing.Point(260, 111);
+            this.txtDireccionProveedor.Name = "txtDireccionProveedor";
+            this.txtDireccionProveedor.Size = new System.Drawing.Size(201, 22);
+            this.txtDireccionProveedor.TabIndex = 15;
+            // 
+            // txtCorreoProveedor
+            // 
+            this.txtCorreoProveedor.Location = new System.Drawing.Point(260, 60);
+            this.txtCorreoProveedor.Name = "txtCorreoProveedor";
+            this.txtCorreoProveedor.Size = new System.Drawing.Size(201, 22);
+            this.txtCorreoProveedor.TabIndex = 14;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.Controls.Add(this.btnBuscar);
+            this.groupBox4.Controls.Add(this.lblBuscar);
+            this.groupBox4.Controls.Add(this.txtBuscar);
+            this.groupBox4.Location = new System.Drawing.Point(674, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(430, 234);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.Location = new System.Drawing.Point(325, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(83, 50);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(0, 30);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(49, 16);
+            this.lblBuscar.TabIndex = 5;
+            this.lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.Location = new System.Drawing.Point(55, 27);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(264, 22);
+            this.txtBuscar.TabIndex = 5;
+            // 
+            // txtIdProveedor
+            // 
+            this.txtIdProveedor.Location = new System.Drawing.Point(19, 60);
+            this.txtIdProveedor.Name = "txtIdProveedor";
+            this.txtIdProveedor.Size = new System.Drawing.Size(201, 22);
+            this.txtIdProveedor.TabIndex = 6;
+            // 
+            // lbl_IdProveedor
+            // 
+            this.lbl_IdProveedor.AutoSize = true;
+            this.lbl_IdProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IdProveedor.Location = new System.Drawing.Point(16, 37);
+            this.lbl_IdProveedor.Name = "lbl_IdProveedor";
+            this.lbl_IdProveedor.Size = new System.Drawing.Size(113, 20);
+            this.lbl_IdProveedor.TabIndex = 5;
+            this.lbl_IdProveedor.Text = "Id Proveedor: ";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.btnLimpiar);
+            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Controls.Add(this.btnEditar);
+            this.groupBox3.Controls.Add(this.btnAgregar);
+            this.groupBox3.Location = new System.Drawing.Point(472, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(196, 234);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(24, 75);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(150, 45);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // txtTelefonoProveedor
+            // 
+            this.txtTelefonoProveedor.Location = new System.Drawing.Point(20, 171);
+            this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
+            this.txtTelefonoProveedor.Size = new System.Drawing.Size(200, 22);
+            this.txtTelefonoProveedor.TabIndex = 3;
+            // 
+            // lblTelefonoProveedor
+            // 
+            this.lblTelefonoProveedor.AutoSize = true;
+            this.lblTelefonoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefonoProveedor.Location = new System.Drawing.Point(16, 148);
+            this.lblTelefonoProveedor.Name = "lblTelefonoProveedor";
+            this.lblTelefonoProveedor.Size = new System.Drawing.Size(73, 20);
+            this.lblTelefonoProveedor.TabIndex = 2;
+            this.lblTelefonoProveedor.Text = "Telefono";
+            // 
+            // txtNombreProveedor
+            // 
+            this.txtNombreProveedor.Location = new System.Drawing.Point(19, 111);
+            this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.Size = new System.Drawing.Size(201, 22);
+            this.txtNombreProveedor.TabIndex = 1;
+            // 
+            // lblNombreProveedor
+            // 
+            this.lblNombreProveedor.AutoSize = true;
+            this.lblNombreProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreProveedor.Location = new System.Drawing.Point(16, 88);
+            this.lblNombreProveedor.Name = "lblNombreProveedor";
+            this.lblNombreProveedor.Size = new System.Drawing.Size(73, 20);
+            this.lblNombreProveedor.TabIndex = 0;
+            this.lblNombreProveedor.Text = "Nombre:";
+            // 
+            // gbTituloC
+            // 
+            this.gbTituloC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbTituloC.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbTituloC.Controls.Add(this.btnRegresar);
+            this.gbTituloC.Controls.Add(this.label3);
+            this.gbTituloC.Location = new System.Drawing.Point(6, 19);
+            this.gbTituloC.Name = "gbTituloC";
+            this.gbTituloC.Size = new System.Drawing.Size(1113, 100);
+            this.gbTituloC.TabIndex = 6;
+            this.gbTituloC.TabStop = false;
+            this.gbTituloC.Text = "groupBox1";
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.Location = new System.Drawing.Point(1020, 30);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(83, 50);
+            this.btnRegresar.TabIndex = 6;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(78, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(186, 32);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Proveedores";
+            // 
+            // frmProveedores
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1125, 716);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbTituloC);
+            this.Name = "frmProveedores";
+            this.Text = "Form4";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.gbTituloC.ResumeLayout(false);
+            this.gbTituloC.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblDireccionProveedor;
+        private System.Windows.Forms.Label lblCorreoProveedor;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.TextBox txtIdProveedor;
+        private System.Windows.Forms.Label lbl_IdProveedor;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtTelefonoProveedor;
+        private System.Windows.Forms.Label lblTelefonoProveedor;
+        private System.Windows.Forms.TextBox txtNombreProveedor;
+        private System.Windows.Forms.Label lblNombreProveedor;
+        private System.Windows.Forms.GroupBox gbTituloC;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDireccionProveedor;
+        private System.Windows.Forms.TextBox txtCorreoProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+    }
+}

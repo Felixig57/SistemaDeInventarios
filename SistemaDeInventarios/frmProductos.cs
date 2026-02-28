@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaDeInventarios
 {
-    public partial class frmMenu : Form
+    public partial class frmProductos : Form
     {
-        public frmMenu()
+        public frmProductos()
         {
             InitializeComponent();
         }
