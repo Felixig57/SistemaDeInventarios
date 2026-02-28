@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SistemaDeInventarios
 {
-    public partial class Form3 : Form
+    public partial class frmAlmacenes : Form
     {
-        public Form3()
+        public frmAlmacenes()
         {
             InitializeComponent();
+        }
+
+        private void txtUbicacionAlmacen_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
