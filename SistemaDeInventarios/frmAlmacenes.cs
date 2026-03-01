@@ -12,14 +12,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmAlmacenes : Form
     {
-<<<<<<< Updated upstream
 
-=======
-
-        VAlmacenes Verificacion;
-
-
->>>>>>> Stashed changes
         public frmAlmacenes()
         {
             InitializeComponent();
