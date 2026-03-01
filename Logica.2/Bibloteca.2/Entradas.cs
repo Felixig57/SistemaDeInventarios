@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Logica.Bibloteca.Validar_entrada_de_datos
 {
     public class Entradas

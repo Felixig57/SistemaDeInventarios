@@ -119,9 +119,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{bc8c3e90-6000-42ba-bc1a-94d87efdaf28}</Project>
       <Name>Datos</Name>
+=======
+    <ProjectReference Include="..\Logica.2\Logica.2.csproj">
+      <Project>{aa847b69-0a9f-4ee6-b756-539532db82af}</Project>
+      <Name>Logica.2</Name>
+>>>>>>> Stashed changes
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
