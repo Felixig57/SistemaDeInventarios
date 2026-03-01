@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SistemaDeInventarios
 {
     public partial class frmAlmacenes : Form
