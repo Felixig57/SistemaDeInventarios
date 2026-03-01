@@ -45,6 +45,9 @@
     <Compile Include="Bibloteca\Entradas.cs" />
     <Compile Include="VF Almacen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VF Categorias.cs" />
+    <Compile Include="VF Productos.cs" />
+    <Compile Include="VF Proveedores.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
