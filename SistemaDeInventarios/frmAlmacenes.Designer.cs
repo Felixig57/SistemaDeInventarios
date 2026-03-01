@@ -77,6 +77,7 @@
             this.txtUbicacionAlmacen.Size = new System.Drawing.Size(225, 22);
             this.txtUbicacionAlmacen.TabIndex = 15;
             this.txtUbicacionAlmacen.TextChanged += new System.EventHandler(this.txtUbicacionAlmacen_TextChanged);
+            this.txtUbicacionAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbicacionAlmacen_KeyPress);
             // 
             // txtTelefonoAlmacen
             // 
@@ -84,6 +85,8 @@
             this.txtTelefonoAlmacen.Name = "txtTelefonoAlmacen";
             this.txtTelefonoAlmacen.Size = new System.Drawing.Size(220, 22);
             this.txtTelefonoAlmacen.TabIndex = 14;
+            this.txtTelefonoAlmacen.TextChanged += new System.EventHandler(this.txtTelefonoAlmacen_TextChanged);
+            this.txtTelefonoAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlmacen_KeyPress);
             // 
             // lblTituloAlmacenes
             // 
@@ -140,6 +143,8 @@
             this.txtResponsableAlmacen.Name = "txtResponsableAlmacen";
             this.txtResponsableAlmacen.Size = new System.Drawing.Size(441, 22);
             this.txtResponsableAlmacen.TabIndex = 3;
+            this.txtResponsableAlmacen.TextChanged += new System.EventHandler(this.txtResponsableAlmacen_TextChanged);
+            this.txtResponsableAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResponsableAlmacen_KeyPress);
             // 
             // lblResponsableAlmacen
             // 
@@ -157,6 +162,8 @@
             this.txtNombreAlmacen.Name = "txtNombreAlmacen";
             this.txtNombreAlmacen.Size = new System.Drawing.Size(201, 22);
             this.txtNombreAlmacen.TabIndex = 1;
+            this.txtNombreAlmacen.TextChanged += new System.EventHandler(this.txtNombreAlmacen_TextChanged);
+            this.txtNombreAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreAlmacen_KeyPress);
             // 
             // lblNombreAlmacen
             // 
@@ -174,6 +181,8 @@
             this.txtIdAlmacen.Name = "txtIdAlmacen";
             this.txtIdAlmacen.Size = new System.Drawing.Size(201, 22);
             this.txtIdAlmacen.TabIndex = 6;
+            this.txtIdAlmacen.TextChanged += new System.EventHandler(this.txtIdAlmacen_TextChanged);
+            this.txtIdAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdAlmacen_KeyPress);
             // 
             // lbl_IdAlmacen
             // 

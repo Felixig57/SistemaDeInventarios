@@ -125,6 +125,10 @@
       <Project>{bc8c3e90-6000-42ba-bc1a-94d87efdaf28}</Project>
       <Name>Datos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{6e4b88c2-9c8f-45aa-8096-63f39435fb5e}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\regresa.png" />

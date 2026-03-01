@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="Datos/Datos.csproj" Id="bc8c3e90-6000-42ba-bc1a-94d87efdaf28" />
-  <Project Path="Logica/Logica.csproj" Id="6e4b88c2-9c8f-45aa-8096-63f39435fb5e" />
+  <Project Path="Logica/Logica.csproj" Id="7cd37045-6846-4cd7-bf91-8e347ad1a67c" />
   <Project Path="SistemaDeInventarios/SistemaDeInventarios.csproj" Id="a21c89af-8502-4487-935a-40cac34433bb" />
 </Solution>
