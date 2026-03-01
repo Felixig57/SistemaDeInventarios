@@ -90,6 +90,7 @@
             this.btnRegresar.Size = new System.Drawing.Size(107, 78);
             this.btnRegresar.TabIndex = 9;
             this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
             // 
             // pictureBox1
             // 
@@ -130,46 +131,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox4.Controls.Add(this.btnBuscar);
-            this.groupBox4.Controls.Add(this.lblBuscar);
-            this.groupBox4.Controls.Add(this.txtBuscar);
-            this.groupBox4.Location = new System.Drawing.Point(557, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(415, 234);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(325, 13);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(83, 50);
-            this.btnBuscar.TabIndex = 4;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(0, 30);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(49, 16);
-            this.lblBuscar.TabIndex = 5;
-            this.lblBuscar.Text = "Buscar";
-            this.lblBuscar.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(55, 27);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(264, 22);
-            this.txtBuscar.TabIndex = 5;
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
@@ -189,8 +150,10 @@
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Image = global::SistemaDeInventarios.Properties.Resources.escoba;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar";
@@ -202,8 +165,10 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::SistemaDeInventarios.Properties.Resources.eliminar;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(24, 124);
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEliminar.Size = new System.Drawing.Size(150, 45);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
@@ -215,8 +180,10 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = global::SistemaDeInventarios.Properties.Resources.editar_texto;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(24, 75);
             this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEditar.Size = new System.Drawing.Size(150, 45);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
@@ -236,11 +203,8 @@
             this.btnAgregar.Size = new System.Drawing.Size(150, 45);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox4
             // 
@@ -290,7 +254,7 @@
             this.txtDescripcionCategoria.Location = new System.Drawing.Point(42, 147);
             this.txtDescripcionCategoria.Name = "txtDescripcionCategoria";
             this.txtDescripcionCategoria.Size = new System.Drawing.Size(292, 22);
-            this.txtDescripcionCategoria.TabIndex = 3;
+            this.txtDescripcionCategoria.TabIndex = 2;
             this.txtDescripcionCategoria.TextChanged += new System.EventHandler(this.lblDescripcion_TextChanged);
             // 
             // lblDescripcionCategoria
@@ -300,7 +264,7 @@
             this.lblDescripcionCategoria.Location = new System.Drawing.Point(38, 124);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
             this.lblDescripcionCategoria.Size = new System.Drawing.Size(104, 20);
-            this.lblDescripcionCategoria.TabIndex = 2;
+            this.lblDescripcionCategoria.TabIndex = 1;
             this.lblDescripcionCategoria.Text = "Descripcion:";
             this.lblDescripcionCategoria.Click += new System.EventHandler(this.lblDescripcion_Click);
             // 

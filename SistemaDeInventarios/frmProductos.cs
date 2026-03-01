@@ -19,11 +19,32 @@ namespace SistemaDeInventarios
           
 
             InitializeComponent();
-            //No se como se agrege a la lista los combobox y el numeric up down, asi que no se Xd
-            List<TextBox> Lista = new List<TextBox>();
-            Lista.Add(txtIdProducto);
-            Lista.Add(txtNombreProducto);
-            validar = new VF_Productos(Lista);
+            // Lista de TextBox
+            List<TextBox> listaText = new List<TextBox>();
+            listaText.Add(txtIdProducto);   // Índice 0
+            listaText.Add(txtNombreProducto); // Índice 1
+            listaText.Add(txtDescripcionProducto);  // Índice 2
+
+            // Lista de ComboBox
+            List<ComboBox> listaCombo = new List<ComboBox>();
+            listaCombo.Add(cmbCategoria);    // Índice 0
+            listaCombo.Add(cmbProveedor);    // Índice 1
+
+            // Lista de NumericUpDown
+            List<NumericUpDown> listaNum = new List<NumericUpDown>();
+            listaNum.Add(nudCantidad);      // Índice 0
+
+            //Lista de Labels
+            List<Label> listaLabel = new List<Label>();
+            listaLabel.Add(lbl_IdProducto);  // Índice 0
+            listaLabel.Add(lblNombreProducto);      // Índice 1
+            listaLabel.Add(lblDescripcionProducto); // Índice 2 
+            listaLabel.Add(lblCategoriaProducto);   // Índice 3
+            listaLabel.Add(lblProveedorProducto);   // Índice 4
+            listaLabel.Add(lblCantidadProducto);    // Índice 5
+
+            // Le mandamos todo a la clase
+            validar = new VF_Productos(listaText, listaCombo, listaNum, listaLabel);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +55,14 @@ namespace SistemaDeInventarios
         #region Eventos lbl
         private void lblNombre_TextChanged(object sender, EventArgs e)
         {
-
+            if(txtNombreProducto.Text == string.Empty)
+            {
+                lblNombreProducto.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblNombreProducto.ForeColor = Color.Green;
+            }
         }
         private void lblIdProducto_TextChanged(object sender, EventArgs e)
         {
@@ -79,7 +107,49 @@ namespace SistemaDeInventarios
             this.Close();
 
         }
-    
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            validar.Validacion();
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCategoria.SelectedIndex == -1)
+            {
+                lblCategoriaProducto.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblCategoriaProducto.ForeColor = Color.Green;
+            }
+        }
+
+        private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProveedor.SelectedIndex == -1)
+            {
+
+                lblProveedorProducto.ForeColor= Color.Red;
+            }
+            else
+            {
+                lblProveedorProducto.ForeColor=Color.Green;
+            }
+        
+        }
+
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            if(nudCantidad.Value <= 0)
+            {
+                lblCantidadProducto.ForeColor= Color.Red;
+            }
+            else
+            {
+                lblCantidadProducto.ForeColor = Color.Green;
+            }
+        }
     }
     
 }

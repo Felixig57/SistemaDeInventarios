@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bibloteca\Entradas.cs" />
+    <Compile Include="Seguridad\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\UsuarioNegocio.cs" />
     <Compile Include="VF Almacen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VF Categorias.cs" />

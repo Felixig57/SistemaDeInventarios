@@ -21,11 +21,19 @@ namespace SistemaDeInventarios
             InitializeComponent();
             List<TextBox> list = new List<TextBox>();
             list.Add(txtIdProveedor);
-            list.Add(txtCorreoProveedor);
             list.Add(txtNombreProveedor);
-            list.Add(txtDireccionProveedor);
             list.Add(txtTelefonoProveedor);
-            validar = new VF_Proveedores(list);
+            list.Add(txtCorreoProveedor);
+            
+            list.Add(txtDireccionProveedor);
+            
+            List<Label> listaLabel = new List<Label>();
+            listaLabel.Add(lbl_IdProveedor);
+            listaLabel.Add(lblNombreProveedor);
+            listaLabel.Add(lblTelefonoProveedor);
+            listaLabel.Add(lblCorreoProveedor);
+            listaLabel.Add(lblDireccionProveedor);
+            validar = new VF_Proveedores(list, listaLabel);
         }
         //Retroaliemntacion al usario para no dejar campos vacios
         #region Eventos lbl
@@ -118,10 +126,10 @@ namespace SistemaDeInventarios
         {
             this.Close();
         }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            validar.ValidarCampos();
+        }
     }
-<<<<<<< HEAD
-    
 }
-=======
-}
->>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")

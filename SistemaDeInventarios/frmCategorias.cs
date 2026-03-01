@@ -21,7 +21,11 @@ namespace SistemaDeInventarios
             List<TextBox> Lista = new List<TextBox>();
             Lista.Add(txtNombreCategoria);
             Lista.Add(txtDescripcionCategoria);
-            Validar = new VF_Categorias(Lista);
+
+            List<Label> listaLabel = new List<Label>();
+            listaLabel.Add(lblNombreCategoria);
+            listaLabel.Add(lblDescripcionCategoria);
+            Validar = new VF_Categorias(Lista, listaLabel);
         }
 
         private void lblNombre_TextChanged(object sender, EventArgs e)
@@ -155,15 +159,18 @@ namespace SistemaDeInventarios
 
         }
 
-<<<<<<< HEAD
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-=======
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Validar.ValidarCampos();
->>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
+        }
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

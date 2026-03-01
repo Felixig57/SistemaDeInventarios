@@ -47,25 +47,19 @@ namespace SistemaDeInventarios
             
         }
 
-<<<<<<< HEAD
-        #region funciones privada
-        private void NavegacionProductos()
+        private void btnProveedores_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmProductos frmProductos = new frmProductos(); 
-            frmProductos.ShowDialog();
-            
-            
+            GestorNavegacion.AbrirYOCultarMenu<frmProveedores>(this);
         }
-        #endregion
 
-
-=======
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            frmProveedores frmProveedores = new frmProveedores();
-            frmProveedores.ShowDialog();
+            GestorNavegacion.AbrirYOCultarMenu<frmAcercaDe>(this);
         }
->>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
