@@ -34,13 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnAlmacenes = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCategorias = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnProductos = new System.Windows.Forms.Button();
             this.gbTitulos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -60,7 +60,6 @@
             this.gbTitulos.Size = new System.Drawing.Size(804, 170);
             this.gbTitulos.TabIndex = 0;
             this.gbTitulos.TabStop = false;
-            this.gbTitulos.Text = "groupBox1";
             // 
             // label3
             // 
@@ -103,89 +102,86 @@
             this.groupBox1.Size = new System.Drawing.Size(804, 503);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.btnAlmacenes);
             this.groupBox4.Location = new System.Drawing.Point(424, 254);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(313, 95);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            // 
+            // btnAlmacenes
+            // 
+            this.btnAlmacenes.Location = new System.Drawing.Point(85, 21);
+            this.btnAlmacenes.Name = "btnAlmacenes";
+            this.btnAlmacenes.Size = new System.Drawing.Size(164, 56);
+            this.btnAlmacenes.TabIndex = 2;
+            this.btnAlmacenes.Text = "Almacenes";
+            this.btnAlmacenes.UseVisualStyleBackColor = true;
+            this.btnAlmacenes.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox5.Controls.Add(this.button4);
+            this.groupBox5.Controls.Add(this.btnProveedores);
             this.groupBox5.Location = new System.Drawing.Point(42, 254);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(313, 95);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Location = new System.Drawing.Point(64, 21);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(164, 56);
+            this.btnProveedores.TabIndex = 3;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btnCategorias);
             this.groupBox3.Location = new System.Drawing.Point(424, 75);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(313, 95);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.Location = new System.Drawing.Point(85, 21);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(164, 56);
+            this.btnCategorias.TabIndex = 1;
+            this.btnCategorias.Text = "Categorias";
+            this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnProductos);
             this.groupBox2.Location = new System.Drawing.Point(42, 75);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(313, 95);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
-            // button1
+            // btnProductos
             // 
-            this.button1.Location = new System.Drawing.Point(64, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 56);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Productos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(85, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 56);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Categorias";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(85, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 56);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Almacenes";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(64, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 56);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Proveedores";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnProductos.Location = new System.Drawing.Point(64, 21);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(164, 56);
+            this.btnProductos.TabIndex = 0;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMenu
             // 
@@ -218,10 +214,10 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAlmacenes;
+        private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Button btnProductos;
     }
 }
 
