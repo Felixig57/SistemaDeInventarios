@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtUbicacionAlmacen = new System.Windows.Forms.TextBox();
             this.txtTelefonoAlmacen = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.txtUbicacionAlmacen.Size = new System.Drawing.Size(225, 22);
             this.txtUbicacionAlmacen.TabIndex = 15;
             this.txtUbicacionAlmacen.TextChanged += new System.EventHandler(this.txtUbicacionAlmacen_TextChanged);
+            this.txtUbicacionAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbicacionAlmacen_KeyPress);
             // 
             // txtTelefonoAlmacen
             // 
@@ -82,6 +83,8 @@
             this.txtTelefonoAlmacen.Name = "txtTelefonoAlmacen";
             this.txtTelefonoAlmacen.Size = new System.Drawing.Size(220, 22);
             this.txtTelefonoAlmacen.TabIndex = 14;
+            this.txtTelefonoAlmacen.TextChanged += new System.EventHandler(this.txtTelefonoAlmacen_TextChanged);
+            this.txtTelefonoAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlmacen_KeyPress);
             // 
             // btnRegresar
             // 
@@ -122,6 +125,8 @@
             this.txtResponsableAlmacen.Name = "txtResponsableAlmacen";
             this.txtResponsableAlmacen.Size = new System.Drawing.Size(441, 22);
             this.txtResponsableAlmacen.TabIndex = 3;
+            this.txtResponsableAlmacen.TextChanged += new System.EventHandler(this.txtResponsableAlmacen_TextChanged);
+            this.txtResponsableAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResponsableAlmacen_KeyPress);
             // 
             // lblResponsableAlmacen
             // 
@@ -139,6 +144,8 @@
             this.txtNombreAlmacen.Name = "txtNombreAlmacen";
             this.txtNombreAlmacen.Size = new System.Drawing.Size(201, 22);
             this.txtNombreAlmacen.TabIndex = 1;
+            this.txtNombreAlmacen.TextChanged += new System.EventHandler(this.txtNombreAlmacen_TextChanged);
+            this.txtNombreAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreAlmacen_KeyPress);
             // 
             // lblNombreAlmacen
             // 
@@ -192,6 +199,8 @@
             this.txtIdAlmacen.Name = "txtIdAlmacen";
             this.txtIdAlmacen.Size = new System.Drawing.Size(201, 22);
             this.txtIdAlmacen.TabIndex = 6;
+            this.txtIdAlmacen.TextChanged += new System.EventHandler(this.txtIdAlmacen_TextChanged);
+            this.txtIdAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdAlmacen_KeyPress);
             // 
             // lbl_IdAlmacen
             // 
@@ -321,14 +330,14 @@
             this.dgvAlmacenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAlmacenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAlmacenes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlmacenes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlmacenes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAlmacenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlmacenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdAlmacen,

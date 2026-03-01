@@ -4,11 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{6E4B88C2-9C8F-45AA-8096-63F39435FB5E}</ProjectGuid>
-=======
-    <ProjectGuid>6e4b88c2-9c8f-45aa-8096-63f39435fb5e</ProjectGuid>
->>>>>>> parent of 82e5aa9 (deja checo w)
+    <ProjectGuid>{7CD37045-6846-4CD7-BF91-8E347AD1A67C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Logica</RootNamespace>
@@ -35,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -47,11 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bibloteca\Validar entrada de datos\Entradas.cs" />
-    <Compile Include="Bibloteca\Validar Forms\VF Almacen.cs" />
-    <Compile Include="Bibloteca\Validar Forms\VF Proveedores.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Bibloteca\Entradas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VF Almacen.cs" />
+    <Compile Include="VF Proveedores.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
