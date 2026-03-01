@@ -1,5 +1,4 @@
-﻿using Logica;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,43 +12,11 @@ namespace SistemaDeInventarios
 {
     public partial class frmCategorias : Form
     {
-        VF_Categorias Validar;
         public frmCategorias()
         {
-     
             InitializeComponent();
-            List<TextBox> Lista = new List<TextBox>();
-            Lista.Add(txtNombreCategoria);
-            Lista.Add(txtDescripcionCategoria);
-            Validar = new VF_Categorias(Lista);
         }
 
-        private void lblNombre_TextChanged(object sender, EventArgs e)
-        {
-            if(txtNombreCategoria.Text == string.Empty)
-            {
-                lblNombreCategoria.ForeColor = Color.Red;
-            }
-            else
-            {
-               lblNombreCategoria.ForeColor = Color.Green;
-            }
-        }
-        private void lblDescripcion_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDescripcionCategoria.Text == string.Empty)
-            {
-                lblDescripcionCategoria.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblDescripcionCategoria.ForeColor = Color.Green;
-            }
-        }
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validar.SoloLetras(e);
-        }
         private void frmCategorias_Load(object sender, EventArgs e)
         {
 
@@ -153,11 +120,6 @@ namespace SistemaDeInventarios
         private void button6_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Validar.ValidarCampos();
         }
     }
 }
