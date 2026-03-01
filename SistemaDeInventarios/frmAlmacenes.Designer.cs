@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtUbicacionAlmacen = new System.Windows.Forms.TextBox();
             this.txtTelefonoAlmacen = new System.Windows.Forms.TextBox();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.lblTituloAlmacenes = new System.Windows.Forms.Label();
             this.gbTituloC = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.txtResponsableAlmacen = new System.Windows.Forms.TextBox();
             this.lblResponsableAlmacen = new System.Windows.Forms.Label();
             this.txtNombreAlmacen = new System.Windows.Forms.TextBox();
             this.lblNombreAlmacen = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtIdAlmacen = new System.Windows.Forms.TextBox();
             this.lbl_IdAlmacen = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblUbicacionAlmacen = new System.Windows.Forms.Label();
             this.lblTelefonoAlmacen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,9 +62,10 @@
             this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbTituloC.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlmacenes)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -83,21 +85,11 @@
             this.txtTelefonoAlmacen.Size = new System.Drawing.Size(220, 22);
             this.txtTelefonoAlmacen.TabIndex = 14;
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegresar.Location = new System.Drawing.Point(1020, 30);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(83, 50);
-            this.btnRegresar.TabIndex = 6;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            // 
             // lblTituloAlmacenes
             // 
             this.lblTituloAlmacenes.AutoSize = true;
             this.lblTituloAlmacenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAlmacenes.Location = new System.Drawing.Point(78, 34);
+            this.lblTituloAlmacenes.Location = new System.Drawing.Point(114, 34);
             this.lblTituloAlmacenes.Name = "lblTituloAlmacenes";
             this.lblTituloAlmacenes.Size = new System.Drawing.Size(164, 32);
             this.lblTituloAlmacenes.TabIndex = 5;
@@ -107,7 +99,8 @@
             // 
             this.gbTituloC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbTituloC.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbTituloC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.gbTituloC.Controls.Add(this.pictureBox1);
             this.gbTituloC.Controls.Add(this.btnRegresar);
             this.gbTituloC.Controls.Add(this.lblTituloAlmacenes);
             this.gbTituloC.Location = new System.Drawing.Point(6, 12);
@@ -115,6 +108,31 @@
             this.gbTituloC.Size = new System.Drawing.Size(1113, 107);
             this.gbTituloC.TabIndex = 9;
             this.gbTituloC.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaDeInventarios.Properties.Resources.warehouse_3604092;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRegresar.Image = global::SistemaDeInventarios.Properties.Resources.flecha;
+            this.btnRegresar.Location = new System.Drawing.Point(1001, 16);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(106, 78);
+            this.btnRegresar.TabIndex = 8;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // txtResponsableAlmacen
             // 
@@ -150,42 +168,6 @@
             this.lblNombreAlmacen.TabIndex = 0;
             this.lblNombreAlmacen.Text = "Nombre Almacen:";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(24, 75);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(150, 45);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
             // txtIdAlmacen
             // 
             this.txtIdAlmacen.Location = new System.Drawing.Point(19, 60);
@@ -202,20 +184,6 @@
             this.lbl_IdAlmacen.Size = new System.Drawing.Size(102, 20);
             this.lbl_IdAlmacen.TabIndex = 5;
             this.lbl_IdAlmacen.Text = "Id Almacen: ";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox3.Controls.Add(this.btnLimpiar);
-            this.groupBox3.Controls.Add(this.btnEliminar);
-            this.groupBox3.Controls.Add(this.btnEditar);
-            this.groupBox3.Controls.Add(this.btnAgregar);
-            this.groupBox3.Location = new System.Drawing.Point(472, 13);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(196, 234);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
             // 
             // btnBuscar
             // 
@@ -249,7 +217,7 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.btnBuscar);
             this.groupBox4.Controls.Add(this.lblBuscar);
             this.groupBox4.Controls.Add(this.txtBuscar);
@@ -258,14 +226,13 @@
             this.groupBox4.Size = new System.Drawing.Size(430, 234);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.txtUbicacionAlmacen);
             this.groupBox1.Controls.Add(this.txtTelefonoAlmacen);
             this.groupBox1.Controls.Add(this.groupBox4);
@@ -273,7 +240,6 @@
             this.groupBox1.Controls.Add(this.lblTelefonoAlmacen);
             this.groupBox1.Controls.Add(this.txtIdAlmacen);
             this.groupBox1.Controls.Add(this.lbl_IdAlmacen);
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.txtResponsableAlmacen);
             this.groupBox1.Controls.Add(this.lblResponsableAlmacen);
             this.groupBox1.Controls.Add(this.txtNombreAlmacen);
@@ -283,6 +249,82 @@
             this.groupBox1.Size = new System.Drawing.Size(1104, 253);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.btnLimpiar);
+            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Controls.Add(this.btnEditar);
+            this.groupBox3.Controls.Add(this.btnAgregar);
+            this.groupBox3.Location = new System.Drawing.Point(472, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(196, 234);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Image = global::SistemaDeInventarios.Properties.Resources.escoba;
+            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::SistemaDeInventarios.Properties.Resources.eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = global::SistemaDeInventarios.Properties.Resources.editar_texto;
+            this.btnEditar.Location = new System.Drawing.Point(24, 75);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(150, 45);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Image = global::SistemaDeInventarios.Properties.Resources.agregar;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // lblUbicacionAlmacen
             // 
@@ -309,9 +351,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Categorias";
+            this.label1.Text = "Almacenes";
             // 
             // dgvAlmacenes
             // 
@@ -321,14 +363,15 @@
             this.dgvAlmacenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAlmacenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAlmacenes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlmacenes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAlmacenes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlmacenes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAlmacenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlmacenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdAlmacen,
@@ -336,6 +379,7 @@
             this.Responsable,
             this.Telefono,
             this.Ubicacion});
+            this.dgvAlmacenes.EnableHeadersVisualStyles = false;
             this.dgvAlmacenes.Location = new System.Drawing.Point(20, 47);
             this.dgvAlmacenes.Name = "dgvAlmacenes";
             this.dgvAlmacenes.RowHeadersWidth = 51;
@@ -378,7 +422,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dgvAlmacenes);
             this.groupBox2.Location = new System.Drawing.Point(15, 392);
@@ -396,14 +440,16 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmAlmacenes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Almacenes";
             this.gbTituloC.ResumeLayout(false);
             this.gbTituloC.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlmacenes)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -414,20 +460,14 @@
         #endregion
         private System.Windows.Forms.TextBox txtUbicacionAlmacen;
         private System.Windows.Forms.TextBox txtTelefonoAlmacen;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label lblTituloAlmacenes;
         private System.Windows.Forms.GroupBox gbTituloC;
         private System.Windows.Forms.TextBox txtResponsableAlmacen;
         private System.Windows.Forms.Label lblResponsableAlmacen;
         private System.Windows.Forms.TextBox txtNombreAlmacen;
         private System.Windows.Forms.Label lblNombreAlmacen;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtIdAlmacen;
         private System.Windows.Forms.Label lbl_IdAlmacen;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
@@ -443,5 +483,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ubicacion;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

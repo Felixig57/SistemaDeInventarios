@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
+using SistemaDeInventarios.Navegacion;
 
 namespace SistemaDeInventarios
 {
@@ -22,28 +23,41 @@ namespace SistemaDeInventarios
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmCategorias frmCategorias = new frmCategorias();
-            frmCategorias.ShowDialog();
+            //btn categorias
+            GestorNavegacion.AbrirYOCultarMenu<frmCategorias>(this);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmProductos frmProductos = new frmProductos();
-            frmProductos.ShowDialog();
+            //btn productos
+            GestorNavegacion.AbrirYOCultarMenu<frmProductos>(this);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            frmProveedores frmProveedores = new frmProveedores();
-            frmProveedores.ShowDialog();
-
+            //btn proveedores
+            GestorNavegacion.AbrirYOCultarMenu<frmProveedores>(this);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmAlmacenes frmAlmacenes   = new frmAlmacenes();
-            frmAlmacenes.ShowDialog();
+            //btn Almacenes
+            GestorNavegacion.AbrirYOCultarMenu<frmAlmacenes>(this);
+            
         }
+
+        #region funciones privada
+        private void NavegacionProductos()
+        {
+            this.Hide();
+            frmProductos frmProductos = new frmProductos(); 
+            frmProductos.ShowDialog();
+            
+            
+        }
+        #endregion
+
+
     }
 }

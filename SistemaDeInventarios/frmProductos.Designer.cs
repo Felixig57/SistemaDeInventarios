@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button6 = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,12 +37,12 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
             this.lblDescripcionProducto = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
@@ -63,6 +62,8 @@
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.lbl_IdProducto = new System.Windows.Forms.Label();
             this.gbTituloC = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,26 +71,17 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.gbTituloC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(1020, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 50);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Regresar";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Categorias";
+            this.label1.Text = "Productos";
             // 
             // dataGridView1
             // 
@@ -99,14 +91,15 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -115,6 +108,7 @@
             this.Categoria,
             this.Proveedor,
             this.Cantidad});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(20, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -158,68 +152,91 @@
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            this.button4.Location = new System.Drawing.Point(24, 175);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 45);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Limpiar";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(78, 34);
+            this.label3.Location = new System.Drawing.Point(112, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 32);
             this.label3.TabIndex = 5;
             this.label3.Text = "Productos";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            this.button3.Location = new System.Drawing.Point(24, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 45);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            this.button1.Location = new System.Drawing.Point(24, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.btnLimpiar);
+            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Controls.Add(this.btnEditar);
+            this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.Location = new System.Drawing.Point(472, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(196, 234);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            this.button2.Location = new System.Drawing.Point(24, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 45);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Image = global::SistemaDeInventarios.Properties.Resources.escoba;
+            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::SistemaDeInventarios.Properties.Resources.eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = global::SistemaDeInventarios.Properties.Resources.editar_texto;
+            this.btnEditar.Location = new System.Drawing.Point(24, 75);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(150, 45);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Image = global::SistemaDeInventarios.Properties.Resources.agregar;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // txtDescripcionProducto
             // 
@@ -274,7 +291,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.cmbCategoria);
             this.groupBox1.Controls.Add(this.cmbProveedor);
@@ -289,7 +306,7 @@
             this.groupBox1.Controls.Add(this.lblDescripcionProducto);
             this.groupBox1.Controls.Add(this.txtNombreProducto);
             this.groupBox1.Controls.Add(this.lblNombreProducto);
-            this.groupBox1.Location = new System.Drawing.Point(21, 118);
+            this.groupBox1.Location = new System.Drawing.Point(21, 126);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1104, 253);
             this.groupBox1.TabIndex = 4;
@@ -299,7 +316,7 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.textBox3);
@@ -340,6 +357,10 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "Electronica",
+            "Oficina",
+            "Limpieza"});
             this.cmbCategoria.Location = new System.Drawing.Point(259, 60);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(159, 24);
@@ -348,6 +369,13 @@
             // cmbProveedor
             // 
             this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Items.AddRange(new object[] {
+            "Office",
+            "DDTech",
+            "MexicoTec",
+            "InovaTec",
+            "Rog",
+            "Asus"});
             this.cmbProveedor.Location = new System.Drawing.Point(260, 111);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(158, 24);
@@ -412,13 +440,39 @@
             this.gbTituloC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbTituloC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            this.gbTituloC.Controls.Add(this.button6);
+            this.gbTituloC.Controls.Add(this.pictureBox1);
+            this.gbTituloC.Controls.Add(this.btnRegresar);
             this.gbTituloC.Controls.Add(this.label3);
             this.gbTituloC.Location = new System.Drawing.Point(12, 12);
             this.gbTituloC.Name = "gbTituloC";
             this.gbTituloC.Size = new System.Drawing.Size(1113, 100);
             this.gbTituloC.TabIndex = 3;
             this.gbTituloC.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaDeInventarios.Properties.Resources.bienes;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRegresar.Image = global::SistemaDeInventarios.Properties.Resources.flecha;
+            this.btnRegresar.Location = new System.Drawing.Point(994, 16);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(113, 78);
+            this.btnRegresar.TabIndex = 6;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frmProductos
             // 
@@ -430,6 +484,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbTituloC);
             this.Name = "frmProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -442,21 +497,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.gbTituloC.ResumeLayout(false);
             this.gbTituloC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtDescripcionProducto;
         private System.Windows.Forms.Label lblDescripcionProducto;
         private System.Windows.Forms.TextBox txtNombreProducto;
@@ -482,5 +538,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

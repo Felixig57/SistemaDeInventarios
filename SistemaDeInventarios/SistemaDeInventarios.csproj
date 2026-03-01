@@ -79,6 +79,7 @@
     <Compile Include="frmAlmacenes.Designer.cs">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navegacion\GestorNavegacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMenu.resx">
@@ -104,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,6 +125,39 @@
       <Project>{bc8c3e90-6000-42ba-bc1a-94d87efdaf28}</Project>
       <Name>Datos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar-texto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escoba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosquejo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bienes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse_3604092.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
