@@ -33,6 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnAcercaDe = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAlmacenes = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -43,6 +47,8 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.gbTitulos.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,7 +65,7 @@
             this.gbTitulos.Controls.Add(this.label1);
             this.gbTitulos.Location = new System.Drawing.Point(1, 1);
             this.gbTitulos.Name = "gbTitulos";
-            this.gbTitulos.Size = new System.Drawing.Size(804, 150);
+            this.gbTitulos.Size = new System.Drawing.Size(1100, 150);
             this.gbTitulos.TabIndex = 0;
             this.gbTitulos.TabStop = false;
             // 
@@ -95,21 +101,69 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.groupBox1.Controls.Add(this.groupBox7);
+            this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(1, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 503);
+            this.groupBox1.Size = new System.Drawing.Size(1085, 503);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.Color.White;
+            this.groupBox7.Controls.Add(this.btnCerrarSesion);
+            this.groupBox7.Location = new System.Drawing.Point(772, 275);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(313, 162);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Image = global::SistemaDeInventarios.Properties.Resources.cerrar_con_llave;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(64, 21);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(195, 124);
+            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.Text = "Cerrar sesion";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.btnAcercaDe);
+            this.groupBox6.Location = new System.Drawing.Point(772, 75);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(313, 162);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            // 
+            // btnAcercaDe
+            // 
+            this.btnAcercaDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.Image = global::SistemaDeInventarios.Properties.Resources.grupo;
+            this.btnAcercaDe.Location = new System.Drawing.Point(64, 21);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Size = new System.Drawing.Size(195, 124);
+            this.btnAcercaDe.TabIndex = 0;
+            this.btnAcercaDe.Text = "Acerca de";
+            this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.btnAlmacenes);
-            this.groupBox4.Location = new System.Drawing.Point(424, 275);
+            this.groupBox4.Location = new System.Drawing.Point(405, 275);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(313, 162);
             this.groupBox4.TabIndex = 5;
@@ -142,20 +196,20 @@
             // 
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.Image = global::SistemaDeInventarios.Properties.Resources.proveedor;
-            this.btnProveedores.Location = new System.Drawing.Point(64, 21);
+            this.btnProveedores.Location = new System.Drawing.Point(74, 20);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(195, 123);
+            this.btnProveedores.Size = new System.Drawing.Size(164, 123);
             this.btnProveedores.TabIndex = 3;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProveedores.UseVisualStyleBackColor = true;
-            this.btnProveedores.Click += new System.EventHandler(this.button4_Click);
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.btnCategorias);
-            this.groupBox3.Location = new System.Drawing.Point(424, 75);
+            this.groupBox3.Location = new System.Drawing.Point(405, 75);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(313, 162);
             this.groupBox3.TabIndex = 3;
@@ -202,7 +256,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(802, 683);
+            this.ClientSize = new System.Drawing.Size(1098, 683);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbTitulos);
             this.Name = "frmMenu";
@@ -211,6 +265,8 @@
             this.gbTitulos.ResumeLayout(false);
             this.gbTitulos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -231,9 +287,13 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAlmacenes;
-        private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnCategorias;
         private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnAcercaDe;
     }
 }
 

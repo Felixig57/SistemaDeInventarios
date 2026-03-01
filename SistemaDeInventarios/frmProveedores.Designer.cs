@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -102,14 +102,14 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -274,20 +274,25 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // txtDireccionProveedor
             // 
             this.txtDireccionProveedor.Location = new System.Drawing.Point(260, 111);
             this.txtDireccionProveedor.Name = "txtDireccionProveedor";
             this.txtDireccionProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtDireccionProveedor.TabIndex = 15;
+            this.txtDireccionProveedor.TabIndex = 4;
+            this.txtDireccionProveedor.TextChanged += new System.EventHandler(this.lblDireccionProveedor_TextChanged);
+            this.txtDireccionProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccionProveedor_KeyPress);
             // 
             // txtCorreoProveedor
             // 
             this.txtCorreoProveedor.Location = new System.Drawing.Point(260, 60);
             this.txtCorreoProveedor.Name = "txtCorreoProveedor";
             this.txtCorreoProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtCorreoProveedor.TabIndex = 14;
+            this.txtCorreoProveedor.TabIndex = 3;
+            this.txtCorreoProveedor.TextChanged += new System.EventHandler(this.lblCorreoProveedor_TextChanged);
+            this.txtCorreoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreoProveedor_KeyPress);
             // 
             // groupBox4
             // 
@@ -336,7 +341,9 @@
             this.txtIdProveedor.Location = new System.Drawing.Point(19, 60);
             this.txtIdProveedor.Name = "txtIdProveedor";
             this.txtIdProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtIdProveedor.TabIndex = 6;
+            this.txtIdProveedor.TabIndex = 0;
+            this.txtIdProveedor.TextChanged += new System.EventHandler(this.lblIDProveedor_TextChanged);
+            this.txtIdProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdProveedor_KeyPress);
             // 
             // lbl_IdProveedor
             // 
@@ -353,7 +360,9 @@
             this.txtTelefonoProveedor.Location = new System.Drawing.Point(20, 171);
             this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
             this.txtTelefonoProveedor.Size = new System.Drawing.Size(200, 22);
-            this.txtTelefonoProveedor.TabIndex = 3;
+            this.txtTelefonoProveedor.TabIndex = 2;
+            this.txtTelefonoProveedor.TextChanged += new System.EventHandler(this.lblTelefonoProveedor_TextChanged);
+            this.txtTelefonoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoProveedor_KeyPress);
             // 
             // lblTelefonoProveedor
             // 
@@ -371,6 +380,8 @@
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(201, 22);
             this.txtNombreProveedor.TabIndex = 1;
+            this.txtNombreProveedor.TextChanged += new System.EventHandler(this.lblNombreProveedor_TextChanged);
+            this.txtNombreProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreProveedor_KeyPress);
             // 
             // lblNombreProveedor
             // 
