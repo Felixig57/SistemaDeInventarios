@@ -37,12 +37,21 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+=======
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
             this.lblDescripcionProducto = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
@@ -115,6 +124,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1078, 233);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
             // 
@@ -152,6 +162,18 @@
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             // 
+<<<<<<< HEAD
+=======
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             // label3
             // 
             this.label3.AutoSize = true;
@@ -162,9 +184,34 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Productos";
             // 
+<<<<<<< HEAD
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+=======
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             this.groupBox3.Controls.Add(this.btnLimpiar);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnEditar);
@@ -175,6 +222,7 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
+<<<<<<< HEAD
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
@@ -211,11 +259,16 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = global::SistemaDeInventarios.Properties.Resources.editar_texto;
+=======
+            // btnEditar
+            // 
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             this.btnEditar.Location = new System.Drawing.Point(24, 75);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 45);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
+<<<<<<< HEAD
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -237,6 +290,9 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
+=======
+            this.btnEditar.UseVisualStyleBackColor = true;
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             // 
             // txtDescripcionProducto
             // 
@@ -244,6 +300,7 @@
             this.txtDescripcionProducto.Name = "txtDescripcionProducto";
             this.txtDescripcionProducto.Size = new System.Drawing.Size(200, 22);
             this.txtDescripcionProducto.TabIndex = 3;
+            this.txtDescripcionProducto.TextChanged += new System.EventHandler(this.lblDescripcion_TextChanged);
             // 
             // lblDescripcionProducto
             // 
@@ -261,6 +318,8 @@
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(201, 22);
             this.txtNombreProducto.TabIndex = 1;
+            this.txtNombreProducto.TextChanged += new System.EventHandler(this.lblNombre_TextChanged);
+            this.txtNombreProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblNombreProducto
             // 
@@ -423,7 +482,9 @@
             this.txtIdProducto.Location = new System.Drawing.Point(19, 60);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.Size = new System.Drawing.Size(201, 22);
-            this.txtIdProducto.TabIndex = 6;
+            this.txtIdProducto.TabIndex = 0;
+            this.txtIdProducto.TextChanged += new System.EventHandler(this.lblIdProducto_TextChanged);
+            this.txtIdProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KetPress);
             // 
             // lbl_IdProducto
             // 

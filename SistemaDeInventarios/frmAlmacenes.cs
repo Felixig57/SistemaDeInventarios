@@ -16,13 +16,15 @@ namespace SistemaDeInventarios
         VF_Almacen Validacion;
         public frmAlmacenes()
         {
+           
+           
+            InitializeComponent();
             List<TextBox> list = new List<TextBox>();
             list.Add(txtIdAlmacen);
             list.Add(txtTelefonoAlmacen);
             list.Add(txtNombreAlmacen);
             list.Add(txtUbicacionAlmacen);
             list.Add(txtResponsableAlmacen);
-            InitializeComponent();
             Validacion = new VF_Almacen(list);
         }
         //Retroalimentar al usuario, para que sepa que dejo algun campo vacio
@@ -111,10 +113,12 @@ namespace SistemaDeInventarios
             Validacion.SoloLetras(e);
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        #endregion
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Validacion.ValidarCampos();
         }
     }
-    
 }
+

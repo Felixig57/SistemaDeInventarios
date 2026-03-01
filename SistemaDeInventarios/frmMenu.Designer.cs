@@ -140,6 +140,7 @@
             // 
             // btnProveedores
             // 
+<<<<<<< HEAD
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.Image = global::SistemaDeInventarios.Properties.Resources.proveedor;
             this.btnProveedores.Location = new System.Drawing.Point(64, 21);
@@ -150,6 +151,15 @@
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.button4_Click);
+=======
+            this.button4.Location = new System.Drawing.Point(64, 21);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 56);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Proveedores";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             // 
             // groupBox3
             // 

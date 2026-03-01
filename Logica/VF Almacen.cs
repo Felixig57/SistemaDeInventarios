@@ -10,7 +10,7 @@ namespace Logica.Bibloteca.Validar_Forms
 {
     public class VF_Almacen : Entradas
     {
-        public List<TextBox> Lista = new List<TextBox>();
+        private List<TextBox> Lista = new List<TextBox>();
         public VF_Almacen(List<TextBox> Lista)
         {
             this.Lista = Lista;
@@ -42,6 +42,10 @@ namespace Logica.Bibloteca.Validar_Forms
             {
                 MessageBox.Show("El campo Responsable no puede estar vacio");
                 Lista[4].Focus();
+            }
+            else
+            {
+                MessageBox.Show("Almacen Agregado Correctamente");
             }
         }
 

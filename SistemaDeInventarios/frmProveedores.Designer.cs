@@ -280,14 +280,18 @@
             this.txtDireccionProveedor.Location = new System.Drawing.Point(260, 111);
             this.txtDireccionProveedor.Name = "txtDireccionProveedor";
             this.txtDireccionProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtDireccionProveedor.TabIndex = 15;
+            this.txtDireccionProveedor.TabIndex = 3;
+            this.txtDireccionProveedor.TextChanged += new System.EventHandler(this.lblDireccionProveedor_TextChanged);
+            this.txtDireccionProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccionProveedor_KeyPress);
             // 
             // txtCorreoProveedor
             // 
             this.txtCorreoProveedor.Location = new System.Drawing.Point(260, 60);
             this.txtCorreoProveedor.Name = "txtCorreoProveedor";
             this.txtCorreoProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtCorreoProveedor.TabIndex = 14;
+            this.txtCorreoProveedor.TabIndex = 1;
+            this.txtCorreoProveedor.TextChanged += new System.EventHandler(this.lblCorreoProveedor_TextChanged);
+            this.txtCorreoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreoProveedor_KeyPress);
             // 
             // groupBox4
             // 
@@ -336,7 +340,9 @@
             this.txtIdProveedor.Location = new System.Drawing.Point(19, 60);
             this.txtIdProveedor.Name = "txtIdProveedor";
             this.txtIdProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtIdProveedor.TabIndex = 6;
+            this.txtIdProveedor.TabIndex = 0;
+            this.txtIdProveedor.TextChanged += new System.EventHandler(this.lblIDProveedor_TextChanged);
+            this.txtIdProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdProveedor_KeyPress);
             // 
             // lbl_IdProveedor
             // 
@@ -348,12 +354,68 @@
             this.lbl_IdProveedor.TabIndex = 5;
             this.lbl_IdProveedor.Text = "Id Proveedor: ";
             // 
+<<<<<<< HEAD
+=======
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.btnLimpiar);
+            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Controls.Add(this.btnEditar);
+            this.groupBox3.Controls.Add(this.btnAgregar);
+            this.groupBox3.Location = new System.Drawing.Point(472, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(196, 234);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
+            this.btnLimpiar.TabIndex = 33;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
+            this.btnEliminar.TabIndex = 22;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(24, 75);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(150, 45);
+            this.btnEditar.TabIndex = 19;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
+            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
             // txtTelefonoProveedor
             // 
             this.txtTelefonoProveedor.Location = new System.Drawing.Point(20, 171);
             this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
             this.txtTelefonoProveedor.Size = new System.Drawing.Size(200, 22);
-            this.txtTelefonoProveedor.TabIndex = 3;
+            this.txtTelefonoProveedor.TabIndex = 4;
+            this.txtTelefonoProveedor.TextChanged += new System.EventHandler(this.lblTelefonoProveedor_TextChanged);
+            this.txtTelefonoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoProveedor_KeyPress);
             // 
             // lblTelefonoProveedor
             // 
@@ -370,7 +432,9 @@
             this.txtNombreProveedor.Location = new System.Drawing.Point(19, 111);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(201, 22);
-            this.txtNombreProveedor.TabIndex = 1;
+            this.txtNombreProveedor.TabIndex = 2;
+            this.txtNombreProveedor.TextChanged += new System.EventHandler(this.lblNombreProveedor_TextChanged);
+            this.txtNombreProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreProveedor_KeyPress);
             // 
             // lblNombreProveedor
             // 

@@ -47,6 +47,7 @@ namespace SistemaDeInventarios
             
         }
 
+<<<<<<< HEAD
         #region funciones privada
         private void NavegacionProductos()
         {
@@ -59,5 +60,12 @@ namespace SistemaDeInventarios
         #endregion
 
 
+=======
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmProveedores frmProveedores = new frmProveedores();
+            frmProveedores.ShowDialog();
+        }
+>>>>>>> f10ff7a (Reapply "Reapply "Hora del vladimir"")
     }
 }
