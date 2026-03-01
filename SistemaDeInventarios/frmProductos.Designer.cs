@@ -38,12 +38,12 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
             this.lblDescripcionProducto = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
@@ -121,7 +121,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1078, 233);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
             // 
@@ -159,14 +158,14 @@
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             // 
-            // btnLimpiar
+            // button4
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(150, 45);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(24, 175);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 45);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Limpiar";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -178,32 +177,31 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Productos";
             // 
-            // btnEliminar
+            // button3
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(150, 45);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(24, 124);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 45);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // btnAgregar
+            // button1
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(24, 24);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(24, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 45);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox3.Controls.Add(this.btnLimpiar);
-            this.groupBox3.Controls.Add(this.btnEliminar);
-            this.groupBox3.Controls.Add(this.btnEditar);
-            this.groupBox3.Controls.Add(this.btnAgregar);
+            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Location = new System.Drawing.Point(472, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(196, 234);
@@ -211,14 +209,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
-            // btnEditar
+            // button2
             // 
-            this.btnEditar.Location = new System.Drawing.Point(24, 75);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(150, 45);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(24, 75);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 45);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Editar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // txtDescripcionProducto
             // 
@@ -226,7 +224,6 @@
             this.txtDescripcionProducto.Name = "txtDescripcionProducto";
             this.txtDescripcionProducto.Size = new System.Drawing.Size(200, 22);
             this.txtDescripcionProducto.TabIndex = 3;
-            this.txtDescripcionProducto.TextChanged += new System.EventHandler(this.lblDescripcion_TextChanged);
             // 
             // lblDescripcionProducto
             // 
@@ -244,8 +241,6 @@
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(201, 22);
             this.txtNombreProducto.TabIndex = 1;
-            this.txtNombreProducto.TextChanged += new System.EventHandler(this.lblNombre_TextChanged);
-            this.txtNombreProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblNombreProducto
             // 
@@ -400,9 +395,7 @@
             this.txtIdProducto.Location = new System.Drawing.Point(19, 60);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.Size = new System.Drawing.Size(201, 22);
-            this.txtIdProducto.TabIndex = 0;
-            this.txtIdProducto.TextChanged += new System.EventHandler(this.lblIdProducto_TextChanged);
-            this.txtIdProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KetPress);
+            this.txtIdProducto.TabIndex = 6;
             // 
             // lbl_IdProducto
             // 
@@ -458,12 +451,12 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtDescripcionProducto;
         private System.Windows.Forms.Label lblDescripcionProducto;
         private System.Windows.Forms.TextBox txtNombreProducto;

@@ -18,15 +18,14 @@ namespace SistemaDeInventarios
         VF_Almacen Validacion;
         public frmAlmacenes()
         {
-           
-           
-            InitializeComponent();
             List<TextBox> list = new List<TextBox>();
             list.Add(txtIdAlmacen);
             list.Add(txtTelefonoAlmacen);
             list.Add(txtNombreAlmacen);
             list.Add(txtUbicacionAlmacen);
             list.Add(txtResponsableAlmacen);
+           
+            InitializeComponent();
             Validacion = new VF_Almacen(list);
         }
 
@@ -116,13 +115,9 @@ namespace SistemaDeInventarios
         {
             Validacion.SoloLetras(e);
         }
-
         #endregion
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Validacion.ValidarCampos();
-        }
+
     }
 }
 
