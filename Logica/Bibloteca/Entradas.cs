@@ -14,12 +14,12 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')
             {
                 MessageBox.Show("Solo se permiten letras");
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
                
-                e.Handled = true;
+                e.Handled = false;
             }
         }
         public void SoloNumeros(KeyPressEventArgs e)
@@ -27,12 +27,12 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')
             {
                 MessageBox.Show("Solo se permiten números");
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
                 
-                e.Handled = true;
+                e.Handled = false;
             }
         }
         public void Celular(KeyPressEventArgs e)
@@ -41,12 +41,12 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                     e.KeyChar != '-' && e.KeyChar != '(' && e.KeyChar != ')')
             {
                 MessageBox.Show("Solo se permiten números, guiones, paréntesis y simbolo de suma");
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
                 
-                e.Handled = true;
+                e.Handled = false;
             }
         }
         public void Direccion(KeyPressEventArgs e)
@@ -55,11 +55,11 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                 && e.KeyChar != '-' && e.KeyChar != '#')
             {
                 MessageBox.Show("Solo se permiten letras, números, espacios, guiones y el símbolo de numeral");
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
-                e.Handled = true;
+                e.Handled = false;
             }
         }
         public void Correo(KeyPressEventArgs e)
@@ -68,11 +68,11 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                     e.KeyChar != '_' && e.KeyChar != '.' && e.KeyChar != '@')
             {
                 MessageBox.Show("Solo se permiten letras, números, guiones, guiones bajos, puntos y el símbolo de arroba");
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
-                e.Handled = true;
+                e.Handled = false;
             }
         }
         public void SoloLetrasNumeros(KeyPressEventArgs e)
@@ -80,11 +80,11 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')
             {
                 MessageBox.Show("Solo se permiten letras y números");
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
-                e.Handled = true;
+                e.Handled = false;
             }
         }
     }

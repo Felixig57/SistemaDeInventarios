@@ -34,13 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.gbTitulos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -116,6 +116,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(85, 21);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(164, 56);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Almacenes";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -127,6 +137,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "groupBox5";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(64, 21);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 56);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Proveedores";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -137,6 +156,16 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(85, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(164, 56);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Categorias";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -158,34 +187,6 @@
             this.button1.Text = "Productos";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(85, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 56);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Categorias";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(85, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 56);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Almacenes";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(64, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 56);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Proveedores";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // frmMenu
             // 

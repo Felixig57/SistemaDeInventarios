@@ -29,5 +29,11 @@ namespace SistemaDeInventarios
             frmProductos frmProductos = new frmProductos();
             frmProductos.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+              frmAlmacenes frmAlmacenes = new frmAlmacenes();
+                frmAlmacenes.ShowDialog();
+        }
     }
 }
