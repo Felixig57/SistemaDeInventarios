@@ -12,6 +12,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmAlmacenes : Form
     {
+
         public frmAlmacenes()
         {
             InitializeComponent();

@@ -16,5 +16,6 @@ namespace SistemaDeInventarios
         {
             InitializeComponent();
         }
+
     }
 }
