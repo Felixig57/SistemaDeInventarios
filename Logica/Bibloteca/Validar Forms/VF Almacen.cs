@@ -8,5 +8,9 @@ namespace Logica.Bibloteca.Validar_Forms
 {
     public class VF_Almacen
     {
+        public VF_Almacen()
+        {
+
+        }
     }
 }
