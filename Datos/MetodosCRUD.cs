@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -9,15 +10,15 @@ namespace Datos
     {
         #region CRUD PARA ALMACEN
 
-        public void InsertarAlmacen(string nombre, string responsable, string telefono, string ubicacion)
+        public void InsertarAlmacen(int id,string nombre, string responsable, string telefono, string ubicacion)
         {  // este es el metodo para insertar un nuevo registro en la tabla Almacenes, recibe como parámetros el nombre del almacén, el responsable, el teléfono y la ubicación.
             try // el try catch se usa para poder manejar cualquier excepcion que pueda ocurrir
             {
                 AbrirConexion(); //abre la conexion
                 SqlCommand cmd = new SqlCommand( // se crea un objeto llamado cmd de tipo SqlCommand y se le asigna la consulta SQL de insercion a la base de datos
-                    "INSERT INTO Almacenes (NombreAlmacen, ResponsableAlmacen, TelefonoAlmacen, UbicacionAlmacen) " +
-                    "VALUES (@nombre, @responsable, @telefono, @ubicacion)", conexion);
-
+                    "INSERT INTO Almacenes (IdAlmacen, NombreAlmacen, ResponsableAlmacen, TelefonoAlmacen, UbicacionAlmacen) " +
+                    "VALUES (@id,@nombre, @responsable, @telefono, @ubicacion)", conexion);
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@nombre", nombre); //Aqui asignamos los valores a los parámetros de la consulta SQL 
                 cmd.Parameters.AddWithValue("@responsable", responsable); //Aqui asignamos los valores a los parámetros de la consulta SQL 
                 cmd.Parameters.AddWithValue("@telefono", telefono); //Aqui asignamos los valores a los parámetros de la consulta SQL 
@@ -84,6 +85,29 @@ namespace Datos
             {
                 CerrarConexion(); //Finalmente, se cierra la conexión a la base de datos.
             }
+        }
+        //metodo para cargar desde la bd, con un select * from, 
+        public DataTable MostrarAlmacenes()
+        {
+            DataTable tabla = new DataTable();// objeto que extrae datos de la tabla
+
+            try
+            {
+                AbrirConexion();//se abre conexion desde nuestro metodo que esta en ConexionBD
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Almacenes", conexion);//la query que se ejecuta desde la bd
+                SqlDataAdapter datos = new SqlDataAdapter(cmd);//variable que obtiene los datos
+                datos.Fill(tabla);//llenar la tabal
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+            return tabla;//retornamos la tabla llena
         }
 
         #endregion

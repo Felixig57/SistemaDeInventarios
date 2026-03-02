@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Logica.Bibloteca.Validar_Forms;
+using SistemaDeInventarios.Botones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -127,27 +128,141 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Validacion.ValidarCampos();
-            metodos.InsertarAlmacen(txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text);
+            //metodos.InsertarAlmacen(txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text);
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        //metodo privado que viene con la carga de los almacenes
+        private void CargarAlmacenes()
+        {
+            dgvAlmacenes.DataSource = metodos.MostrarAlmacenes();//
+        }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            Validacion.ValidarCampos();
+            if (Validacion.ValidarCampos())//llamar al metod validacion de los campos
+            {
+                int id;//variable que nos auxilia para asignar el valor numero en el txt id
+
+                if (!int.TryParse(txtIdAlmacen.Text, out id))// si el es diferente de un numero mandar alerta
+                {
+                    MessageBox.Show("El ID debe ser numérico");
+                    txtIdAlmacen.Focus();
+                    return;
+                }
+
+                metodos.InsertarAlmacen(
+                    id,
+                    txtNombreAlmacen.Text,
+                    txtResponsableAlmacen.Text,
+                    txtTelefonoAlmacen.Text,
+                    txtUbicacionAlmacen.Text
+                );//metodo con la carga de todos los campos de texto
+
+                CargarAlmacenes(); // refresca el dgv despues de anadir un registro en la bd
+                LimpiarCampos(); //limpia campos
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            metodos.ActualizarAlmacen(int.Parse(txtIdAlmacen.Text), txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text);
+            //validacion que proviene desde la clase validacion seleccion para validar la selccion al momento de editar
+            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
+                return;
+
+            if (Validacion.ValidarCampos())
+            {
+                int id;
+
+                if (!int.TryParse(txtIdAlmacen.Text, out id))
+                {
+                    MessageBox.Show("Seleccione un registro válido");
+                    return;
+                }
+
+                metodos.ActualizarAlmacen(
+                    id,
+                    txtNombreAlmacen.Text,
+                    txtResponsableAlmacen.Text,
+                    txtTelefonoAlmacen.Text,
+                    txtUbicacionAlmacen.Text
+                );
+
+                CargarAlmacenes();
+                LimpiarCampos();
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            metodos.EliminarAlmacen(int.Parse(txtIdAlmacen.Text));
+            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
+                return;
+
+            int id;
+
+            if (!int.TryParse(txtIdAlmacen.Text, out id))
+            {
+                MessageBox.Show("Seleccione un registro válido.");
+                return;
+            }
+
+            // Confirmación dinamica con el MessBox
+            DialogResult resultado = MessageBox.Show( "¿Está seguro que desea eliminar este almacen?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)// si se selcciona si se ejcuta
+            {
+                metodos.EliminarAlmacen(id); //el metodo eliminar en la bd que espera el id
+                CargarAlmacenes();// y se actualiza el dgv
+                LimpiarCampos();// y se limpian campos
+            }
+        }
+        private void LimpiarCampos()
+        {
+            txtIdAlmacen.Clear();
+            txtNombreAlmacen.Clear();
+            txtResponsableAlmacen.Clear();
+            txtUbicacionAlmacen.Clear();
+            txtTelefonoAlmacen.Clear();
+            //volver con los labels en negro y no se pinten en rojo
+            RestablecerLabels();
+        }
+        private void frmAlmacenes_Load(object sender, EventArgs e)
+        {
+            CargarAlmacenes();//este metodo Carga los Almacenes al momento de abrir el formulario
+        }
+
+        //evento que carga la fila en los campos de texto 
+        private void dgvAlmacenes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)// si el evento en el indice mayor igual a 0 hacer una seleccion
+            {
+                DataGridViewRow fila = dgvAlmacenes.Rows[e.RowIndex];//objeto del formulario que obitiene los indices en la variable fila
+
+                txtIdAlmacen.Text = fila.Cells["IdAlmacen"].Value.ToString();//los datos que carga en indice [0]
+                txtNombreAlmacen.Text = fila.Cells["NombreAlmacen"].Value.ToString();//los datos que carga en indice [1]
+                txtResponsableAlmacen.Text = fila.Cells["ResponsableAlmacen"].Value.ToString();//los datos que carga en indice [2]
+                txtTelefonoAlmacen.Text = fila.Cells["TelefonoAlmacen"].Value.ToString();//los datos que carga en indice [3]
+                txtUbicacionAlmacen.Text = fila.Cells["UbicacionAlmacen"].Value.ToString();//los datos que carga en indice [4]
+            }
+        }
+        private void RestablecerLabels()
+        {
+            lbl_IdAlmacen.ForeColor = Color.Black;
+            lblNombreAlmacen.ForeColor = Color.Black;
+            lblResponsableAlmacen.ForeColor = Color.Black;
+            lblTelefonoAlmacen.ForeColor = Color.Black;
+            lblUbicacionAlmacen.ForeColor = Color.Black;
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

@@ -21,10 +21,12 @@ namespace SistemaDeInventarios
      
             InitializeComponent();
             List<TextBox> Lista = new List<TextBox>();
+            Lista.Add(txtId_Categoria);
             Lista.Add(txtNombreCategoria);
             Lista.Add(txtDescripcionCategoria);
 
             List<Label> listaLabel = new List<Label>();
+            listaLabel.Add(lblId_Categoria);
             listaLabel.Add(lblNombreCategoria);
             listaLabel.Add(lblDescripcionCategoria);
             Validar = new VF_Categorias(Lista, listaLabel);
@@ -56,6 +58,7 @@ namespace SistemaDeInventarios
         {
             Validar.SoloLetras(e);
         }
+        #region eventos que estorban generados sin codigo adentro
         private void frmCategorias_Load(object sender, EventArgs e)
         {
 
@@ -160,7 +163,7 @@ namespace SistemaDeInventarios
         {
 
         }
-
+        #endregion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Validar.ValidarCampos();
@@ -184,6 +187,24 @@ namespace SistemaDeInventarios
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             //metodos.EliminarCategoria(int.Parse(txtIdCategoria.Text));
+        }
+
+        private void txtId_Categoria_TextChanged(object sender, EventArgs e)
+        {
+            if(txtId_Categoria.Text == string.Empty)
+            {
+                lblId_Categoria.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblId_Categoria.ForeColor= Color.Green;
+            }
+
+        }
+
+        private void txtId_Categoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.SoloNumeros(e);
         }
     }
 }

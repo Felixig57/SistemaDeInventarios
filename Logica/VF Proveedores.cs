@@ -18,14 +18,15 @@ namespace Logica
                 this.Lista = Lista;
             this.listaLabel = listaLabel;
             }
-            public void ValidarCampos()
-            {
+        public bool ValidarCampos()
+        {
             // 0 = ID
             if (Lista[0].Text == string.Empty)
             {
                 MessageBox.Show("El campo ID no puede estar vacio");
                 listaLabel[0].ForeColor = Color.Red;
                 Lista[0].Focus();
+                return false;
             }
             // 1 = Nombre
             else if (Lista[1].Text == string.Empty)
@@ -33,40 +34,38 @@ namespace Logica
                 MessageBox.Show("El campo Nombre no puede estar vacio");
                 listaLabel[1].ForeColor = Color.Red;
                 Lista[1].Focus();
+                return false;
             }
-            // 2 telefono
+            // 2 = Telefono
             else if (Lista[2].Text == string.Empty)
             {
-                
                 MessageBox.Show("El campo Telefono no puede estar vacio");
                 listaLabel[2].ForeColor = Color.Red;
                 Lista[2].Focus();
+                return false;
             }
-
-            // 3 = correo
+            // 3 = Correo
             else if (Lista[3].Text == string.Empty)
             {
                 MessageBox.Show("El campo Correo no puede estar vacio");
                 listaLabel[3].ForeColor = Color.Red;
                 Lista[3].Focus();
+                return false;
             }
-            // 4 = direccion
+            // 4 = Direccion
             else if (Lista[4].Text == string.Empty)
             {
                 MessageBox.Show("El campo Direccion no puede estar vacio");
                 listaLabel[4].ForeColor = Color.Red;
                 Lista[4].Focus();
+                return false;
             }
-            
-            // Si pasa todas las validaciones
             else
             {
-                MessageBox.Show("Proveedor Agregado Correctamente");
-
-                // Aquí irá el código para guardar el proveedor en la base de datos
+                return true;
             }
         }
 
-        }
+    }
     }
 

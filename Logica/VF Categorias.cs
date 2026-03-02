@@ -18,23 +18,33 @@ namespace Logica
             this.Lista = Lista;
             this.listaLabel = listaLabel;
         }
-        public void ValidarCampos()
+        public bool ValidarCampos()
         {
             if (Lista[0].Text == string.Empty)
             {
-                MessageBox.Show("El campo Nombre no puede quedar vacio");
+                MessageBox.Show("El campo ID no puede quedar vacío");
                 listaLabel[0].ForeColor = Color.Red;
                 Lista[0].Focus();
+                return false;
             }
-            else
+
+            if (Lista[1].Text == string.Empty)
             {
-                if (Lista[1].Text == string.Empty)
-                {
-                    MessageBox.Show("Descripcion vacia");
-                    listaLabel[1].ForeColor = Color.Red;
-                    Lista[1].Focus();
-                }
+                MessageBox.Show("Nombre vacío");
+                listaLabel[1].ForeColor = Color.Red;
+                Lista[1].Focus();
+                return false;
             }
+
+            if (Lista[2].Text == string.Empty)
+            {
+                MessageBox.Show("Descripción vacía");
+                listaLabel[2].ForeColor = Color.Red;
+                Lista[2].Focus();
+                return false;
+            }
+
+            return true; // Todo correcto
         }
     } 
 }
