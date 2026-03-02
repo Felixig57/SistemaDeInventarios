@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Datos;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmCategorias : Form
     {
+        MetodosCRUD metodos = new MetodosCRUD();
         VF_Categorias Validar;
         public frmCategorias()
         {
@@ -162,6 +164,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Validar.ValidarCampos();
+            metodos.InsertarCategoria(txtNombreCategoria.Text, txtDescripcionCategoria.Text);
         }
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -171,6 +174,16 @@ namespace SistemaDeInventarios
         private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //metodos.ActualizarCategoria(int.Parse(txtIdCategoria.Text), txtNombreCategoria.Text, txtDescripcionCategoria.Text);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //metodos.EliminarCategoria(int.Parse(txtIdCategoria.Text));
         }
     }
 }

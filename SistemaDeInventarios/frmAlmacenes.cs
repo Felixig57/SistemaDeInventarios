@@ -1,4 +1,5 @@
-﻿using Logica.Bibloteca.Validar_Forms;
+﻿using Datos;
+using Logica.Bibloteca.Validar_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmAlmacenes : Form
     {
+        MetodosCRUD metodos = new MetodosCRUD();
         VF_Almacen Validacion;
         public frmAlmacenes()
         {
@@ -125,6 +127,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Validacion.ValidarCampos();
+            metodos.InsertarAlmacen(txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text);
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -135,6 +138,16 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             Validacion.ValidarCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            metodos.ActualizarAlmacen(int.Parse(txtIdAlmacen.Text), txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            metodos.EliminarAlmacen(int.Parse(txtIdAlmacen.Text));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Datos;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmProveedores : Form
     {
+        MetodosCRUD metodos = new MetodosCRUD();
         VF_Proveedores validar;
 
         public frmProveedores()
@@ -120,6 +122,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             validar.ValidarCampos();
+            metodos.InsertarProveedor(txtNombreProveedor.Text, txtCorreoProveedor.Text, txtTelefonoProveedor.Text, txtDireccionProveedor.Text);
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -130,6 +133,16 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             validar.ValidarCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            metodos.ActualizarProveedor(int.Parse(txtIdProveedor.Text), txtNombreProveedor.Text, txtCorreoProveedor.Text, txtTelefonoProveedor.Text, txtDireccionProveedor.Text);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            metodos.EliminarProveedor(int.Parse(txtIdProveedor.Text));
         }
     }
 }

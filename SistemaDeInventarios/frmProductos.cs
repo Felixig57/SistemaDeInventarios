@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Datos;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmProductos : Form
     {
+        MetodosCRUD metodos = new MetodosCRUD();
         VF_Productos validar;
         public frmProductos()
         {
@@ -111,6 +113,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             validar.Validacion();
+            metodos.InsertarProducto(txtNombreProducto.Text, txtDescripcionProducto.Text, cmbCategoria.Text, cmbProveedor.Text, (int)nudCantidad.Value);
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,6 +152,16 @@ namespace SistemaDeInventarios
             {
                 lblCantidadProducto.ForeColor = Color.Green;
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            metodos.ActualizarProducto(int.Parse(txtIdProducto.Text), txtNombreProducto.Text, txtDescripcionProducto.Text, cmbCategoria.Text, cmbProveedor.Text, (int)nudCantidad.Value);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            metodos.EliminarProducto(int.Parse(txtIdProducto.Text));
         }
     }
     
