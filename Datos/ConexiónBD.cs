@@ -11,7 +11,7 @@ namespace Datos
 
         public ConexiónBD() //este es el constructor que al ejecutarce inicializa la variable conexion con la cadena de conexión a la base de datos, especificando el servidor, la base de datos y las credenciales necesarias.
         {
-            conexion = new SqlConnection("Server=DANIELDEV\\DANIELDEVG1;Database=SistemaInventarios;Integrated Security=True;");
+            conexion = new SqlConnection("Server=DESKTOP-39LJ8QO\\GONZALEZRIGELGP1;Database=SistemaInventarios;Integrated Security=True;");
         }
 
         public void AbrirConexion() //Este método se encarga de abrir la conexión a la base de datos.

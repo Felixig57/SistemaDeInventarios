@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Logica;
+using SistemaDeInventarios.Botones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -122,7 +123,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             validar.ValidarCampos();
-            metodos.InsertarProveedor(txtNombreProveedor.Text, txtCorreoProveedor.Text, txtTelefonoProveedor.Text, txtDireccionProveedor.Text);
+            //metodos.InsertarProveedor(txtNombreProveedor.Text, txtCorreoProveedor.Text, txtTelefonoProveedor.Text, txtDireccionProveedor.Text);
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -132,17 +133,127 @@ namespace SistemaDeInventarios
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            validar.ValidarCampos();
+            if (validar.ValidarCampos()) //Llamada al metodo validacion de campos
+            {
+                int id; //Variable auxiliar para asignar valor numero al txtId
+
+                if (!int.TryParse(txtIdProveedor.Text, out id)) //Si es diferente a un numero mandae alerta
+                {
+                    MessageBox.Show("El ID debe ser numerico");
+                    txtIdProveedor.Focus();
+                    return; 
+                }
+
+                metodos.InsertarProveedor(
+                    id,
+                    txtNombreProveedor.Text,
+                    txtCorreoProveedor.Text,
+                    txtTelefonoProveedor.Text,
+                    txtDireccionProveedor.Text
+                ); //Metodo con la carga de todos los campos de texto
+
+                CargarProveedores();
+                LimpiarCampos();
+            }
         }
 
+        #region Funciones Privadas
+        private void CargarProveedores()
+        {
+            dgvProveedores.DataSource = metodos.MostrarProveedores();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtIdProveedor.Clear();
+            txtNombreProveedor.Clear();
+            txtCorreoProveedor.Clear();
+            txtTelefonoProveedor.Clear();
+            txtDireccionProveedor.Clear();
+            //volver con los labels en negro y no se pinten en rojo
+            RestablecerLabels();
+        }
+
+        //evento que carga la fila en los campos de texto 
+        private void dgvProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)// si el evento en el indice mayor igual a 0 hacer una seleccion
+            {
+                DataGridViewRow fila = dgvProveedores.Rows[e.RowIndex];//objeto del formulario que obtiene los indices en la variable fila
+                txtIdProveedor.Text = fila.Cells["IdProveedor"].Value.ToString();//los datos que carga en indice [0]
+                txtNombreProveedor.Text = fila.Cells["NombreProveedor"].Value.ToString();//los datos que carga en indice [1]
+                txtCorreoProveedor.Text = fila.Cells["CorreoProveedor"].Value.ToString();//los datos que carga en indice [2]
+                txtTelefonoProveedor.Text = fila.Cells["TelefonoProveedor"].Value.ToString();//los datos que carga en indice [3]
+                txtDireccionProveedor.Text = fila.Cells["DireccionProveedor"].Value.ToString();//los datos que carga en indice [4]
+            }
+        }
+        private void RestablecerLabels()
+        {
+            lbl_IdProveedor.ForeColor = Color.Black;
+            lblNombreProveedor.ForeColor = Color.Black;
+            lblCorreoProveedor.ForeColor = Color.Black;
+            lblTelefonoProveedor.ForeColor = Color.Black;
+            lblDireccionProveedor.ForeColor = Color.Black;
+        }
+        #endregion
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            metodos.ActualizarProveedor(int.Parse(txtIdProveedor.Text), txtNombreProveedor.Text, txtCorreoProveedor.Text, txtTelefonoProveedor.Text, txtDireccionProveedor.Text);
+            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdProveedor.Text))
+                return;
+            if (validar.ValidarCampos())
+            {
+                int id;
+                if (!int.TryParse(txtIdProveedor.Text, out id)) //Si el Id no coincide con el ingresado regresara un msj de error
+                {
+                    MessageBox.Show("Seleccione un registro valido");
+                    return;
+                }
+
+                metodos.ActualizarProveedor( //llamamos al metodo y metemos los cambios dentro de las debidas textbox
+                    id,
+                    txtNombreProveedor.Text,
+                    txtCorreoProveedor.Text,
+                    txtTelefonoProveedor.Text,
+                    txtDireccionProveedor.Text
+                    );
+
+                CargarProveedores();
+                LimpiarCampos();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            metodos.EliminarProveedor(int.Parse(txtIdProveedor.Text));
+            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdProveedor.Text))
+                return;
+                int id;
+            if (!int.TryParse(txtIdProveedor.Text, out id))
+            {
+                MessageBox.Show("Seleccione un registro valido");
+                return;
+            }
+
+            //Confirmacion dinamica con el MessBox
+            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar este proveedor?", 
+                "Confirmar eliminacion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes) //Si se selecciona si se ejecuta
+            {
+                metodos.EliminarProveedor(id); //El metodo eliminar en la BD que espera el id
+                CargarProveedores(); //Actualiza el DGV
+                LimpiarCampos(); //Se limpian Campos
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void frmProveedores_Load_1(object sender, EventArgs e)
+        {
+            CargarProveedores();//este metodo Carga los Proveedores al momento de abrir el formulario
         }
     }
 }

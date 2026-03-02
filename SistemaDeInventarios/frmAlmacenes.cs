@@ -264,6 +264,11 @@ namespace SistemaDeInventarios
         {
             LimpiarCampos();
         }
+
+        private void dgvAlmacenes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

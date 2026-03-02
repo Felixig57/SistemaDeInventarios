@@ -113,16 +113,17 @@ namespace Datos
         #endregion
 
         #region CRUD PARA PROVEEDORES
-        public void InsertarProveedor(string nombre, string correo, string telefono, string direccion)
+        public void InsertarProveedor(int id ,string nombre, string correo, string telefono, string direccion)
         {// este es el metodo para insertar un nuevo registro en la tabla Proveedores, recibe como parámetros el nombre del proveedor, el correo electrónico, el teléfono y la dirección.
 
             try
             {
                 AbrirConexion(); //abre la conexion
                 SqlCommand cmd = new SqlCommand( // se crea un objeto llamado cmd de tipo SqlCommand y se le asigna la consulta SQL de insercion a la base de datos
-                    "INSERT INTO Proveedores (NombreProveedor, CorreoProveedor, TelefonoProveedor, DireccionProveedor) " +
-                    "VALUES (@nombre, @correo, @telefono, @direccion)", conexion);
+                    "INSERT INTO Proveedores (IdProveedor, NombreProveedor, CorreoProveedor, TelefonoProveedor, DireccionProveedor) " +
+                    "VALUES (@id, @nombre, @correo, @telefono, @direccion)", conexion);
 
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@nombre", nombre); //Aqui asignamos los valores a los parámetros de la consulta SQL
                 cmd.Parameters.AddWithValue("@correo", correo);
                 cmd.Parameters.AddWithValue("@telefono", telefono);
@@ -191,18 +192,40 @@ namespace Datos
             }
         }
 
+        //METODO PARA CARGAR DESDE LA BD CON UN SELECT * FROM
+        public DataTable MostrarProveedores()
+        {
+            DataTable table = new DataTable(); //Objeto que extrae datos de la tabla
+
+            try
+            {
+                AbrirConexion(); //Se abre Conexion desde nuestro metodo que esta en  ConexionBDs
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Proveedores", conexion);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd); //Variable que obtiene los datos
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+            return table; //Retorno de tabla llena
+        }
         #endregion
 
         #region CRUD PARA PRODUCTOS
-        public void InsertarProducto(string nombre, string descripcion, string categoria, string proveedor, int cantidad)
+        public void InsertarProducto(int id, string nombre, string descripcion, string categoria, string proveedor, int cantidad)
         { // este es el metodo para insertar un nuevo registro en la tabla Productos, recibe como parámetros el nombre del producto, la descripción, la categoría, el proveedor y la cantidad.
             try
             {
                 AbrirConexion(); //abre la conexion
                 SqlCommand cmd = new SqlCommand( // se crea un objeto llamado cmd de tipo SqlCommand y se le asigna la consulta SQL de insercion a la base de datos
-                    "INSERT INTO Productos (NombreProducto, DescripcionProducto, Categoria, Proveedor, Cantidad) " +
-                    "VALUES (@nombre, @descripcion, @categoria, @proveedor, @cantidad)", conexion);
+                    "INSERT INTO Productos (IdProducto, NombreProducto, DescripcionProducto, Categoria, Proveedor, Cantidad)" +
+                    "VALUES (@id, @nombre, @descripcion, @categoria, @proveedor, @cantidad)", conexion);
 
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@nombre", nombre); //Aqui asignamos los valores a los parámetros de la consulta SQL
                 cmd.Parameters.AddWithValue("@descripcion", descripcion);
                 cmd.Parameters.AddWithValue("@categoria", categoria);
@@ -272,18 +295,41 @@ namespace Datos
                 CerrarConexion(); //Finalmente, se cierra la conexión a la base de datos.
             }
         }
+
+        //METODO PARA CARGAR DESDE LA BD CON UN SELECT * FROM
+        public DataTable MostrarProductos()
+        {
+            DataTable table = new DataTable(); //Objeto que extrae datos de la tabla
+
+            try
+            {
+                AbrirConexion(); //Se abre Conexion desde nuestro metodo que esta en  ConexionBDs
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Productos", conexion);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd); //Variable que obtiene los datos
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+            return table; //Retorno de tabla llena
+        }
         #endregion
 
         #region CRUD PARA CATEGORIAS
-        public void InsertarCategoria(string nombre, string descripcion)
+        public void InsertarCategoria(int id, string nombre, string descripcion)
         { // este es el metodo para insertar un nuevo registro en la tabla Categorias, recibe como parámetros el nombre de la categoría y la descripción.
             try
             {
                 AbrirConexion(); //abre la conexion
                 SqlCommand cmd = new SqlCommand( // se crea un objeto llamado cmd de tipo SqlCommand y se le asigna la consulta SQL de insercion a la base de datos
-                    "INSERT INTO Categorias (NombreCategoria, DescripcionCategoria) " +
-                    "VALUES (@nombre, @descripcion)", conexion);
+                    "INSERT INTO Categorias (IdCategoria, NombreCategoria, DescripcionCategoria) " +
+                    "VALUES (@id, @nombre, @descripcion)", conexion);
 
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@nombre", nombre); //Aqui asignamos los valores a los parámetros de la consulta SQL
                 cmd.Parameters.AddWithValue("@descripcion", descripcion);
 
@@ -345,6 +391,28 @@ namespace Datos
             {
                 CerrarConexion(); //Finalmente, se cierra la conexión a la base de datos.
             }
+        }
+
+        //METODO PARA CARGAR DESDE LA BD CON UN SELECT * FROM
+        public DataTable MostrarCategorias()
+        {
+            DataTable table = new DataTable(); //Objeto que extrae datos de la tabla
+
+            try
+            {
+                AbrirConexion(); //Se abre Conexion desde nuestro metodo que esta en  ConexionBDs
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Categorias", conexion);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd); //Variable que obtiene los datos
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+            return table; //Retorno de tabla llena
         }
         #endregion
     }

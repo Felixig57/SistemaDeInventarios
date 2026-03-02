@@ -80,5 +80,10 @@ namespace SistemaDeInventarios
                 txtContrasena.ForeColor = Color.Gray;
             }
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

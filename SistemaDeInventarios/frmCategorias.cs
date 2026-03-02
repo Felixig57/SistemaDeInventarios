@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Logica;
+using SistemaDeInventarios.Botones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +60,7 @@ namespace SistemaDeInventarios
             Validar.SoloLetras(e);
         }
         #region eventos que estorban generados sin codigo adentro
-        private void frmCategorias_Load(object sender, EventArgs e)
+        private void FrmCategorias_Load(object sender, EventArgs e)
         {
 
         }
@@ -166,9 +167,67 @@ namespace SistemaDeInventarios
         #endregion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Validar.ValidarCampos();
-            metodos.InsertarCategoria(txtNombreCategoria.Text, txtDescripcionCategoria.Text);
+            if (Validar.ValidarCampos()) //Llamada al metodo validacion de campos
+            {
+                int id; //Variable auxiliar para asignar valor numero al txtId
+
+                if (!int.TryParse(txtId_Categoria.Text, out id)) //Si es diferente a un numero mandae alerta
+                {
+                    MessageBox.Show("El ID debe ser numerico");
+                    txtId_Categoria.Focus();
+                    return;
+                }
+
+                metodos.InsertarCategoria(
+                    id,
+                    txtNombreCategoria.Text,
+                    txtDescripcionCategoria.Text
+                ); //Metodo con la carga de todos los campos de texto
+
+                CargarCategorias();
+                LimpiarCampos();
+            }
         }
+
+        #region FUNCIONES PRIVADAS
+        private void CargarCategorias()
+        {
+            dgvCategorias.DataSource = metodos.MostrarCategorias();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtId_Categoria.Clear();
+            txtNombreCategoria.Clear();
+            txtDescripcionCategoria.Clear();
+            //volver con los labels en negro y no se pinten en rojo
+            RestablecerLabels();
+        }
+
+        private void frmCategorias_Load(object sender, EventArgs e)
+        {
+            CargarCategorias();//este metodo Carga los Proveedores al momento de abrir el formulario
+        }
+
+        //evento que carga la fila en los campos de texto 
+        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)// si el evento en el indice mayor igual a 0 hacer una seleccion
+            {
+                DataGridViewRow fila = dgvCategorias.Rows[e.RowIndex];//objeto del formulario que obtiene los indices en la variable fila
+                txtId_Categoria.Text = fila.Cells["IdCategoria"].Value.ToString();//los datos que carga en indice [0]
+                txtNombreCategoria.Text = fila.Cells["NombreCategoria"].Value.ToString();//los datos que carga en indice [1]
+                txtDescripcionCategoria.Text = fila.Cells["DescripcionCategoria"].Value.ToString();//los datos que carga en indice [2]
+            }
+        }
+        private void RestablecerLabels()
+        {
+            lblId_Categoria.ForeColor = Color.Black;
+            lblNombreCategoria.ForeColor = Color.Black;
+            lblDescripcionCategoria.ForeColor = Color.Black;
+        }
+
+        #endregion
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -182,11 +241,51 @@ namespace SistemaDeInventarios
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //metodos.ActualizarCategoria(int.Parse(txtIdCategoria.Text), txtNombreCategoria.Text, txtDescripcionCategoria.Text);
+            if (!ValidarSeleccionBotones.ValidarSeleccion(txtId_Categoria.Text))
+                return;
+            if (Validar.ValidarCampos())
+            {
+                int id;
+                if (!int.TryParse(txtId_Categoria.Text, out id)) //Si el Id no coincide con el ingresado regresara un msj de error
+                {
+                    MessageBox.Show("Seleccione un registro valido");
+                    return;
+                }
+
+                metodos.ActualizarCategoria( //llamamos al metodo y metemos los cambios dentro de las debidas textbox
+                    id,
+                    txtNombreCategoria.Text,
+                    txtDescripcionCategoria.Text
+                    );
+
+                CargarCategorias();
+                LimpiarCampos();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             //metodos.EliminarCategoria(int.Parse(txtIdCategoria.Text));
+            if (!ValidarSeleccionBotones.ValidarSeleccion(txtId_Categoria.Text))
+                return;
+            int id;
+            if (!int.TryParse(txtId_Categoria.Text, out id))
+            {
+                MessageBox.Show("Seleccione un registro valido");
+                return;
+            }
+
+            //Confirmacion dinamica con el MessBox
+            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar esta Categoria?",
+                "Confirmar eliminacion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes) //Si se selecciona si se ejecuta
+            {
+                metodos.EliminarCategoria(id); //El metodo eliminar en la BD que espera el id
+                CargarCategorias(); //Actualiza el DGV
+                LimpiarCampos(); //Se limpian Campos
+            }
         }
 
         private void txtId_Categoria_TextChanged(object sender, EventArgs e)
