@@ -55,11 +55,6 @@
             this.lblTelefonoAlmacen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAlmacenes = new System.Windows.Forms.DataGridView();
-            this.IdAlmacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreAlmacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbTituloC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,20 +67,20 @@
             // 
             // txtUbicacionAlmacen
             // 
-            this.txtUbicacionAlmacen.Location = new System.Drawing.Point(181, 90);
-            this.txtUbicacionAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUbicacionAlmacen.Location = new System.Drawing.Point(241, 111);
+            this.txtUbicacionAlmacen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUbicacionAlmacen.Name = "txtUbicacionAlmacen";
-            this.txtUbicacionAlmacen.Size = new System.Drawing.Size(170, 20);
+            this.txtUbicacionAlmacen.Size = new System.Drawing.Size(225, 22);
             this.txtUbicacionAlmacen.TabIndex = 4;
             this.txtUbicacionAlmacen.TextChanged += new System.EventHandler(this.txtUbicacionAlmacen_TextChanged);
             this.txtUbicacionAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbicacionAlmacen_KeyPress);
             // 
             // txtTelefonoAlmacen
             // 
-            this.txtTelefonoAlmacen.Location = new System.Drawing.Point(181, 49);
-            this.txtTelefonoAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefonoAlmacen.Location = new System.Drawing.Point(241, 60);
+            this.txtTelefonoAlmacen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefonoAlmacen.Name = "txtTelefonoAlmacen";
-            this.txtTelefonoAlmacen.Size = new System.Drawing.Size(166, 20);
+            this.txtTelefonoAlmacen.Size = new System.Drawing.Size(220, 22);
             this.txtTelefonoAlmacen.TabIndex = 3;
             this.txtTelefonoAlmacen.TextChanged += new System.EventHandler(this.txtTelefonoAlmacen_TextChanged);
             this.txtTelefonoAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlmacen_KeyPress);
@@ -94,10 +89,9 @@
             // 
             this.lblTituloAlmacenes.AutoSize = true;
             this.lblTituloAlmacenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAlmacenes.Location = new System.Drawing.Point(86, 28);
-            this.lblTituloAlmacenes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTituloAlmacenes.Location = new System.Drawing.Point(115, 34);
             this.lblTituloAlmacenes.Name = "lblTituloAlmacenes";
-            this.lblTituloAlmacenes.Size = new System.Drawing.Size(130, 26);
+            this.lblTituloAlmacenes.Size = new System.Drawing.Size(164, 32);
             this.lblTituloAlmacenes.TabIndex = 5;
             this.lblTituloAlmacenes.Text = "Almacenes";
             // 
@@ -109,21 +103,21 @@
             this.gbTituloC.Controls.Add(this.pictureBox1);
             this.gbTituloC.Controls.Add(this.btnRegresar);
             this.gbTituloC.Controls.Add(this.lblTituloAlmacenes);
-            this.gbTituloC.Location = new System.Drawing.Point(4, 10);
-            this.gbTituloC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTituloC.Location = new System.Drawing.Point(5, 12);
+            this.gbTituloC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbTituloC.Name = "gbTituloC";
-            this.gbTituloC.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbTituloC.Size = new System.Drawing.Size(835, 87);
+            this.gbTituloC.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTituloC.Size = new System.Drawing.Size(1113, 107);
             this.gbTituloC.TabIndex = 9;
             this.gbTituloC.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SistemaDeInventarios.Properties.Resources.warehouse_3604092;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(99, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -136,20 +130,20 @@
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnRegresar.Image = global::SistemaDeInventarios.Properties.Resources.flecha;
-            this.btnRegresar.Location = new System.Drawing.Point(751, 13);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegresar.Location = new System.Drawing.Point(1001, 16);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(80, 63);
+            this.btnRegresar.Size = new System.Drawing.Size(107, 78);
             this.btnRegresar.TabIndex = 8;
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // txtResponsableAlmacen
             // 
-            this.txtResponsableAlmacen.Location = new System.Drawing.Point(15, 139);
-            this.txtResponsableAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtResponsableAlmacen.Location = new System.Drawing.Point(20, 171);
+            this.txtResponsableAlmacen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtResponsableAlmacen.Name = "txtResponsableAlmacen";
-            this.txtResponsableAlmacen.Size = new System.Drawing.Size(332, 20);
+            this.txtResponsableAlmacen.Size = new System.Drawing.Size(441, 22);
             this.txtResponsableAlmacen.TabIndex = 2;
             this.txtResponsableAlmacen.TextChanged += new System.EventHandler(this.txtResponsableAlmacen_TextChanged);
             this.txtResponsableAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResponsableAlmacen_KeyPress);
@@ -158,19 +152,18 @@
             // 
             this.lblResponsableAlmacen.AutoSize = true;
             this.lblResponsableAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResponsableAlmacen.Location = new System.Drawing.Point(12, 120);
-            this.lblResponsableAlmacen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblResponsableAlmacen.Location = new System.Drawing.Point(16, 148);
             this.lblResponsableAlmacen.Name = "lblResponsableAlmacen";
-            this.lblResponsableAlmacen.Size = new System.Drawing.Size(95, 17);
+            this.lblResponsableAlmacen.Size = new System.Drawing.Size(111, 20);
             this.lblResponsableAlmacen.TabIndex = 2;
             this.lblResponsableAlmacen.Text = "Responsable:";
             // 
             // txtNombreAlmacen
             // 
-            this.txtNombreAlmacen.Location = new System.Drawing.Point(14, 90);
-            this.txtNombreAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreAlmacen.Location = new System.Drawing.Point(19, 111);
+            this.txtNombreAlmacen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreAlmacen.Name = "txtNombreAlmacen";
-            this.txtNombreAlmacen.Size = new System.Drawing.Size(152, 20);
+            this.txtNombreAlmacen.Size = new System.Drawing.Size(201, 22);
             this.txtNombreAlmacen.TabIndex = 1;
             this.txtNombreAlmacen.TextChanged += new System.EventHandler(this.txtNombreAlmacen_TextChanged);
             this.txtNombreAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreAlmacen_KeyPress);
@@ -179,19 +172,18 @@
             // 
             this.lblNombreAlmacen.AutoSize = true;
             this.lblNombreAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAlmacen.Location = new System.Drawing.Point(12, 72);
-            this.lblNombreAlmacen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreAlmacen.Location = new System.Drawing.Point(16, 89);
             this.lblNombreAlmacen.Name = "lblNombreAlmacen";
-            this.lblNombreAlmacen.Size = new System.Drawing.Size(120, 17);
+            this.lblNombreAlmacen.Size = new System.Drawing.Size(143, 20);
             this.lblNombreAlmacen.TabIndex = 0;
             this.lblNombreAlmacen.Text = "Nombre Almacen:";
             // 
             // txtIdAlmacen
             // 
-            this.txtIdAlmacen.Location = new System.Drawing.Point(14, 49);
-            this.txtIdAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdAlmacen.Location = new System.Drawing.Point(19, 60);
+            this.txtIdAlmacen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdAlmacen.Name = "txtIdAlmacen";
-            this.txtIdAlmacen.Size = new System.Drawing.Size(152, 20);
+            this.txtIdAlmacen.Size = new System.Drawing.Size(201, 22);
             this.txtIdAlmacen.TabIndex = 0;
             this.txtIdAlmacen.TextChanged += new System.EventHandler(this.txtIdAlmacen_TextChanged);
             this.txtIdAlmacen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdAlmacen_KeyPress);
@@ -200,20 +192,18 @@
             // 
             this.lbl_IdAlmacen.AutoSize = true;
             this.lbl_IdAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IdAlmacen.Location = new System.Drawing.Point(12, 30);
-            this.lbl_IdAlmacen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_IdAlmacen.Location = new System.Drawing.Point(16, 37);
             this.lbl_IdAlmacen.Name = "lbl_IdAlmacen";
-            this.lbl_IdAlmacen.Size = new System.Drawing.Size(85, 17);
+            this.lbl_IdAlmacen.Size = new System.Drawing.Size(102, 20);
             this.lbl_IdAlmacen.TabIndex = 5;
             this.lbl_IdAlmacen.Text = "Id Almacen: ";
             // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(0, 24);
-            this.lblBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBuscar.Location = new System.Drawing.Point(0, 30);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(49, 16);
             this.lblBuscar.TabIndex = 5;
             this.lblBuscar.Text = "Buscar";
             // 
@@ -221,10 +211,10 @@
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.Location = new System.Drawing.Point(41, 22);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Location = new System.Drawing.Point(55, 27);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(199, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(264, 22);
             this.txtBuscar.TabIndex = 5;
             // 
             // groupBox4
@@ -235,11 +225,11 @@
             this.groupBox4.Controls.Add(this.btnBuscar);
             this.groupBox4.Controls.Add(this.lblBuscar);
             this.groupBox4.Controls.Add(this.txtBuscar);
-            this.groupBox4.Location = new System.Drawing.Point(506, 11);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Location = new System.Drawing.Point(675, 14);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Size = new System.Drawing.Size(322, 190);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(429, 234);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             // 
@@ -249,10 +239,10 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Image = global::SistemaDeInventarios.Properties.Resources.lupa;
-            this.btnBuscar.Location = new System.Drawing.Point(244, 11);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(325, 14);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(62, 41);
+            this.btnBuscar.Size = new System.Drawing.Size(83, 50);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -273,11 +263,11 @@
             this.groupBox1.Controls.Add(this.lblResponsableAlmacen);
             this.groupBox1.Controls.Add(this.txtNombreAlmacen);
             this.groupBox1.Controls.Add(this.lblNombreAlmacen);
-            this.groupBox1.Location = new System.Drawing.Point(11, 102);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(15, 126);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(828, 206);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1104, 254);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -288,11 +278,11 @@
             this.groupBox3.Controls.Add(this.btnLimpiar);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnEditar);
-            this.groupBox3.Location = new System.Drawing.Point(354, 11);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(472, 14);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(147, 190);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(196, 234);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             // 
@@ -304,11 +294,11 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Image = global::SistemaDeInventarios.Properties.Resources.agregar;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(18, 20);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(24, 25);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnAgregar.Size = new System.Drawing.Size(112, 37);
+            this.btnAgregar.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnAgregar.Size = new System.Drawing.Size(149, 46);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -320,15 +310,16 @@
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Image = global::SistemaDeInventarios.Properties.Resources.escoba;
-            this.btnLimpiar.Location = new System.Drawing.Point(18, 142);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar.Location = new System.Drawing.Point(24, 175);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(112, 37);
+            this.btnLimpiar.Size = new System.Drawing.Size(149, 46);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -336,10 +327,10 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::SistemaDeInventarios.Properties.Resources.eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(18, 101);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(24, 124);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(112, 37);
+            this.btnEliminar.Size = new System.Drawing.Size(149, 46);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -353,10 +344,10 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = global::SistemaDeInventarios.Properties.Resources.editar_texto;
-            this.btnEditar.Location = new System.Drawing.Point(18, 61);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Location = new System.Drawing.Point(24, 75);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(112, 37);
+            this.btnEditar.Size = new System.Drawing.Size(149, 46);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -368,10 +359,9 @@
             // 
             this.lblUbicacionAlmacen.AutoSize = true;
             this.lblUbicacionAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUbicacionAlmacen.Location = new System.Drawing.Point(178, 72);
-            this.lblUbicacionAlmacen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUbicacionAlmacen.Location = new System.Drawing.Point(237, 89);
             this.lblUbicacionAlmacen.Name = "lblUbicacionAlmacen";
-            this.lblUbicacionAlmacen.Size = new System.Drawing.Size(74, 17);
+            this.lblUbicacionAlmacen.Size = new System.Drawing.Size(88, 20);
             this.lblUbicacionAlmacen.TabIndex = 8;
             this.lblUbicacionAlmacen.Text = "Ubicacion:";
             // 
@@ -379,20 +369,18 @@
             // 
             this.lblTelefonoAlmacen.AutoSize = true;
             this.lblTelefonoAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefonoAlmacen.Location = new System.Drawing.Point(178, 30);
-            this.lblTelefonoAlmacen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTelefonoAlmacen.Location = new System.Drawing.Point(237, 37);
             this.lblTelefonoAlmacen.Name = "lblTelefonoAlmacen";
-            this.lblTelefonoAlmacen.Size = new System.Drawing.Size(68, 17);
+            this.lblTelefonoAlmacen.Size = new System.Drawing.Size(78, 20);
             this.lblTelefonoAlmacen.TabIndex = 7;
             this.lblTelefonoAlmacen.Text = "Telefono:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(17, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Almacenes";
             // 
@@ -413,50 +401,15 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAlmacenes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAlmacenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlmacenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdAlmacen,
-            this.NombreAlmacen,
-            this.Responsable,
-            this.Telefono,
-            this.Ubicacion});
             this.dgvAlmacenes.EnableHeadersVisualStyles = false;
-            this.dgvAlmacenes.Location = new System.Drawing.Point(15, 38);
-            this.dgvAlmacenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAlmacenes.Location = new System.Drawing.Point(20, 47);
+            this.dgvAlmacenes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAlmacenes.Name = "dgvAlmacenes";
             this.dgvAlmacenes.RowHeadersWidth = 51;
             this.dgvAlmacenes.RowTemplate.Height = 24;
-            this.dgvAlmacenes.Size = new System.Drawing.Size(808, 189);
+            this.dgvAlmacenes.Size = new System.Drawing.Size(1077, 233);
             this.dgvAlmacenes.TabIndex = 0;
-            // 
-            // IdAlmacen
-            // 
-            this.IdAlmacen.HeaderText = "Id Almacen";
-            this.IdAlmacen.MinimumWidth = 6;
-            this.IdAlmacen.Name = "IdAlmacen";
-            // 
-            // NombreAlmacen
-            // 
-            this.NombreAlmacen.HeaderText = "Nombre almacen";
-            this.NombreAlmacen.MinimumWidth = 6;
-            this.NombreAlmacen.Name = "NombreAlmacen";
-            // 
-            // Responsable
-            // 
-            this.Responsable.HeaderText = "Responsable";
-            this.Responsable.MinimumWidth = 6;
-            this.Responsable.Name = "Responsable";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            // 
-            // Ubicacion
-            // 
-            this.Ubicacion.HeaderText = "Ubicacion";
-            this.Ubicacion.MinimumWidth = 6;
-            this.Ubicacion.Name = "Ubicacion";
+            this.dgvAlmacenes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlmacenes_CellClick);
             // 
             // groupBox2
             // 
@@ -466,26 +419,27 @@
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dgvAlmacenes);
-            this.groupBox2.Location = new System.Drawing.Point(11, 318);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(15, 391);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(828, 248);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(1104, 305);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             // 
             // frmAlmacenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 582);
+            this.ClientSize = new System.Drawing.Size(1125, 716);
             this.Controls.Add(this.gbTituloC);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAlmacenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Almacenes";
+            this.Load += new System.EventHandler(this.frmAlmacenes_Load);
             this.gbTituloC.ResumeLayout(false);
             this.gbTituloC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -522,11 +476,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvAlmacenes;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdAlmacen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAlmacen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ubicacion;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminar;
