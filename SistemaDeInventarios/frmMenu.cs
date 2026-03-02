@@ -47,17 +47,19 @@ namespace SistemaDeInventarios
             
         }
 
-        #region funciones privada
-        private void NavegacionProductos()
+        private void btnProveedores_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmProductos frmProductos = new frmProductos(); 
-            frmProductos.ShowDialog();
-            
-            
+            GestorNavegacion.AbrirYOCultarMenu<frmProveedores>(this);
         }
-        #endregion
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            GestorNavegacion.AbrirYOCultarMenu<frmAcercaDe>(this);
+        }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

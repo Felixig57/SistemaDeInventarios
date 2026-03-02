@@ -16,14 +16,23 @@ namespace SistemaDeInventarios
         VF_Almacen Validacion;
         public frmAlmacenes()
         {
+           
+           
+            InitializeComponent();
             List<TextBox> list = new List<TextBox>();
             list.Add(txtIdAlmacen);
-            list.Add(txtTelefonoAlmacen);
             list.Add(txtNombreAlmacen);
-            list.Add(txtUbicacionAlmacen);
             list.Add(txtResponsableAlmacen);
-            InitializeComponent();
-            Validacion = new VF_Almacen(list);
+            list.Add(txtTelefonoAlmacen);
+            list.Add(txtUbicacionAlmacen);
+            List<Label> listaLabel = new List<Label>();
+            listaLabel.Add(lbl_IdAlmacen);
+            listaLabel.Add(lblNombreAlmacen);
+            listaLabel.Add(lblResponsableAlmacen);
+            listaLabel.Add(lblTelefonoAlmacen);
+            listaLabel.Add(lblUbicacionAlmacen);
+
+            Validacion = new VF_Almacen(list, listaLabel);
         }
         //Retroalimentar al usuario, para que sepa que dejo algun campo vacio
         #region Eventos lbl
@@ -111,10 +120,22 @@ namespace SistemaDeInventarios
             Validacion.SoloLetras(e);
         }
 
+        #endregion
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Validacion.ValidarCampos();
+        }
+
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            Validacion.ValidarCampos();
+        }
     }
-    
 }
+
