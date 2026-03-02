@@ -9,7 +9,7 @@ namespace SistemaDeInventarios.Botones
 {
     public static class ValidarSeleccionBotones
     {
-            public static bool ValidarSeleccion(string id)
+            public static bool ValidarSeleccion(string id) //funcion booleana que valida que el lugar de id no esté vacío
             {
                 if (string.IsNullOrWhiteSpace(id))
                 {

@@ -22,20 +22,20 @@ namespace SistemaDeInventarios
            
            
             InitializeComponent();
-            List<TextBox> list = new List<TextBox>();
+            List<TextBox> list = new List<TextBox>(); //acá creamos el objeto list y lo rellenamos de los valores textbox
             list.Add(txtIdAlmacen);
             list.Add(txtNombreAlmacen);
             list.Add(txtResponsableAlmacen);
             list.Add(txtTelefonoAlmacen);
             list.Add(txtUbicacionAlmacen);
-            List<Label> listaLabel = new List<Label>();
+            List<Label> listaLabel = new List<Label>(); //acá creamos el objeto listalabel y lo rellenamos de los labels
             listaLabel.Add(lbl_IdAlmacen);
             listaLabel.Add(lblNombreAlmacen);
             listaLabel.Add(lblResponsableAlmacen);
             listaLabel.Add(lblTelefonoAlmacen);
             listaLabel.Add(lblUbicacionAlmacen);
 
-            Validacion = new VF_Almacen(list, listaLabel);
+            Validacion = new VF_Almacen(list, listaLabel); //acá mandamos 
         }
         //Retroalimentar al usuario, para que sepa que dejo algun campo vacio
         #region Eventos lbl
@@ -252,7 +252,7 @@ namespace SistemaDeInventarios
                 txtUbicacionAlmacen.Text = fila.Cells["UbicacionAlmacen"].Value.ToString();//los datos que carga en indice [4]
             }
         }
-        private void RestablecerLabels()
+        private void RestablecerLabels() //Metodo que restablece las etiquetas a negro
         {
             lbl_IdAlmacen.ForeColor = Color.Black;
             lblNombreAlmacen.ForeColor = Color.Black;

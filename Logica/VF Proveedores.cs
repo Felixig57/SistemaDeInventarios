@@ -9,16 +9,16 @@ using System.Windows.Forms;
 
 namespace Logica
 {
-   public class VF_Proveedores : Entradas
+   public class VF_Proveedores : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
         {
-            private List<TextBox> Lista = new List<TextBox>();
+            private List<TextBox> Lista = new List<TextBox>(); //se crean los objetos que necesitaremos
         private List<Label> listaLabel = new List<Label>();
-            public VF_Proveedores(List<TextBox> Lista, List<Label> listaLabel)
+            public VF_Proveedores(List<TextBox> Lista, List<Label> listaLabel) //en el contructor asignamos los argumentos que pedimos y los asignamos a las variables locales
             {
                 this.Lista = Lista;
             this.listaLabel = listaLabel;
             }
-        public bool ValidarCampos()
+        public bool ValidarCampos() //programamos esta funcion booleana que valida si los campos están vacíos
         {
             // 0 = ID
             if (Lista[0].Text == string.Empty)

@@ -13,27 +13,27 @@ using System.Windows.Forms;
 
 namespace SistemaDeInventarios
 {
-    public partial class frmCategorias : Form
+    public partial class frmCategorias : Form 
     {
-        MetodosCRUD metodos = new MetodosCRUD();
-        VF_Categorias Validar;
+        MetodosCRUD metodos = new MetodosCRUD(); //Hacemos la instancia de los metodos CRUD
+        VF_Categorias Validar; //Creamos un objeto de tipo VF_Categorias que es la clase donde están las funciones de verificación
         public frmCategorias()
         {
      
             InitializeComponent();
-            List<TextBox> Lista = new List<TextBox>();
-            Lista.Add(txtId_Categoria);
-            Lista.Add(txtNombreCategoria);
-            Lista.Add(txtDescripcionCategoria);
+            List<TextBox> Lista = new List<TextBox>(); // acá creamos el objeto lista tipo textbox que contendrá los indices de los textbox
+            Lista.Add(txtId_Categoria); //0
+            Lista.Add(txtNombreCategoria);//1
+            Lista.Add(txtDescripcionCategoria);//2
 
-            List<Label> listaLabel = new List<Label>();
-            listaLabel.Add(lblId_Categoria);
-            listaLabel.Add(lblNombreCategoria);
-            listaLabel.Add(lblDescripcionCategoria);
-            Validar = new VF_Categorias(Lista, listaLabel);
+            List<Label> listaLabel = new List<Label>();// acá creamos el objeto lista tipo textbox que contendrá los indices de los labels
+            listaLabel.Add(lblId_Categoria); //indice 0
+            listaLabel.Add(lblNombreCategoria);//indice 1
+            listaLabel.Add(lblDescripcionCategoria);//indice 2
+            Validar = new VF_Categorias(Lista, listaLabel); //acá le mandamos los argumentos que asignamos al objeto validar
         }
 
-        private void lblNombre_TextChanged(object sender, EventArgs e)
+        private void lblNombre_TextChanged(object sender, EventArgs e) //acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacia
         {
             if(txtNombreCategoria.Text == string.Empty)
             {
@@ -44,7 +44,7 @@ namespace SistemaDeInventarios
                lblNombreCategoria.ForeColor = Color.Green;
             }
         }
-        private void lblDescripcion_TextChanged(object sender, EventArgs e)
+        private void lblDescripcion_TextChanged(object sender, EventArgs e) //acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacía
         {
             if (txtDescripcionCategoria.Text == string.Empty)
             {
@@ -55,7 +55,7 @@ namespace SistemaDeInventarios
                 lblDescripcionCategoria.ForeColor = Color.Green;
             }
         }
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)//acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacía
         {
             Validar.SoloLetras(e);
         }
@@ -165,6 +165,8 @@ namespace SistemaDeInventarios
 
         }
         #endregion
+
+      //metoddo que valida, carga, y manda datos a ala BD
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (Validar.ValidarCampos()) //Llamada al metodo validacion de campos
@@ -228,12 +230,12 @@ namespace SistemaDeInventarios
         }
 
         #endregion
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void btnRegresar_Click(object sender, EventArgs e)//botón de regresar
         {
             this.Close();
         }
 
-        private void btnRegresar_Click_1(object sender, EventArgs e)
+        private void btnRegresar_Click_1(object sender, EventArgs e)//evento de el boton que ayuda a regresar *no necesario*
         {
             this.Close();
         }
@@ -288,7 +290,7 @@ namespace SistemaDeInventarios
             }
         }
 
-        private void txtId_Categoria_TextChanged(object sender, EventArgs e)
+        private void txtId_Categoria_TextChanged(object sender, EventArgs e) 
         {
             if(txtId_Categoria.Text == string.Empty)
             {
@@ -301,9 +303,10 @@ namespace SistemaDeInventarios
 
         }
 
-        private void txtId_Categoria_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtId_Categoria_KeyPress(object sender, KeyPressEventArgs e) //evento que valida que solo haya numeros
         {
             Validar.SoloNumeros(e);
         }
+        
     }
 }

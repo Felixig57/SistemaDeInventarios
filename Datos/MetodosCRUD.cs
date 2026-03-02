@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Datos
 {
@@ -96,7 +97,7 @@ namespace Datos
                 AbrirConexion();//se abre conexion desde nuestro metodo que esta en ConexionBD
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Almacenes", conexion);//la query que se ejecuta desde la bd
                 SqlDataAdapter datos = new SqlDataAdapter(cmd);//variable que obtiene los datos
-                datos.Fill(tabla);//llenar la tabal
+                datos.Fill(tabla);//usamos el objeto dataAdapter con el metodo .fill para mandarle la tabla
             }
             catch (Exception ex)
             {
@@ -202,6 +203,7 @@ namespace Datos
                 AbrirConexion(); //Se abre Conexion desde nuestro metodo que esta en  ConexionBDs
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Proveedores", conexion);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd); //Variable que obtiene los datos
+                dataAdapter.Fill(table);// usamos el objeto dataAdapter con el metodo .fill para mandarle la tabla
             }
             catch (Exception ex)
             {
@@ -213,6 +215,7 @@ namespace Datos
             }
             return table; //Retorno de tabla llena
         }
+
         #endregion
 
         #region CRUD PARA PRODUCTOS
@@ -306,6 +309,7 @@ namespace Datos
                 AbrirConexion(); //Se abre Conexion desde nuestro metodo que esta en  ConexionBDs
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Productos", conexion);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd); //Variable que obtiene los datos
+                dataAdapter.Fill(table);// usamos el objeto dataAdapter con el metodo .fill para mandarle la tabla
             }
             catch (Exception ex)
             {
@@ -403,6 +407,7 @@ namespace Datos
                 AbrirConexion(); //Se abre Conexion desde nuestro metodo que esta en  ConexionBDs
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Categorias", conexion);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd); //Variable que obtiene los datos
+                dataAdapter.Fill(table); //usamos el objeto dataAdapter con el metodo .fill para mandarle la tabla
             }
             catch (Exception ex)
             {
