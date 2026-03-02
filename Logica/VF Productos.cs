@@ -9,18 +9,18 @@ using System.Windows.Forms;
 
 namespace Logica
 {
-   public class VF_Productos : Entradas
+   public class VF_Productos : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
     {
-        private List<TextBox> ListaBotonesText;
+        private List<TextBox> ListaBotonesText; //Creamos los objetos que necesitaremos usar 
         private List<ComboBox> ListaCombos;
         private List<NumericUpDown> ListaNumeros;
         private List<Label> ListaLabels;
         public VF_Productos(List<TextBox> listaText, List<ComboBox> listaCombo, List<NumericUpDown> listaNum, List<Label> listaLabel)
-        {
+        { //aquí asignamos los argumentos que llegaron del contructor a las variables locales que creamos arriba
             this.ListaBotonesText = listaText;
             this.ListaCombos = listaCombo;
             this.ListaNumeros = listaNum;
-            this.ListaLabels = listaLabel;
+            this.ListaLabels = listaLabel; 
         }
         //Agregar las otras validacion a expecion de la descripcion del producto
         public bool Validacion()

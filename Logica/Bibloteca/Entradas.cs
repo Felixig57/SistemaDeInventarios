@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Logica.Bibloteca.Validar_entrada_de_datos
 {
-    public class Entradas
+    public class Entradas //acá programamos todos las validaciónes
     {
-        public void SoloLetras(KeyPressEventArgs e)
+        public void SoloLetras(KeyPressEventArgs e)// validacion que solo permite letras, retroceso y espacio en blanco
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')
             {
@@ -23,7 +23,7 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                 e.Handled = false;
             }
         }
-        public void SoloNumeros(KeyPressEventArgs e)
+        public void SoloNumeros(KeyPressEventArgs e) //evento que valida que solo se usen numeros, retrocesos y espacios
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')
             {
@@ -36,7 +36,7 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                 e.Handled = false;
             }
         }
-        public void Celular(KeyPressEventArgs e)
+        public void Celular(KeyPressEventArgs e) //evento que calida el formato que especificamos para los numeros celulares
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ' && e.KeyChar != '+' &&
                     e.KeyChar != '-' && e.KeyChar != '(' && e.KeyChar != ')')
@@ -50,7 +50,7 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                 e.Handled = false;
             }
         }
-        public void Direccion(KeyPressEventArgs e)
+        public void Direccion(KeyPressEventArgs e) //evento que valida el formato que especificamos para la dirección
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' '
                 && e.KeyChar != '-' && e.KeyChar != '#')
@@ -64,7 +64,7 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                 e.Handled = false;
             }
         }
-        public void Correo(KeyPressEventArgs e)
+        public void Correo(KeyPressEventArgs e) //evento que valida el formato que especificamos para el correo
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ' && e.KeyChar != '-' &&
                     e.KeyChar != '_' && e.KeyChar != '.' && e.KeyChar != '@')
@@ -78,7 +78,7 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
                 e.Handled = false;
             }
         }
-        public void SoloLetrasNumeros(KeyPressEventArgs e)
+        public void SoloLetrasNumeros(KeyPressEventArgs e) //evento que valida el formato de solo letras y numeros
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')
             {

@@ -11,14 +11,14 @@ namespace Logica
 {
     public class VF_Categorias : Entradas
     {
-        private List<TextBox> Lista = new List<TextBox>();
-        private List<Label> listaLabel = new List<Label>();
-        public VF_Categorias(List<TextBox> Lista, List<Label> listaLabel)
+        private List<TextBox> Lista = new List<TextBox>(); //Creamos el objeto Lista de tipo List para contener elementos tipo textbox
+        private List<Label> listaLabel = new List<Label>();//Creamos el objeto listaLabel de tipo  List para contener elementos tipo Label
+        public VF_Categorias(List<TextBox> Lista, List<Label> listaLabel) //En el contructor asignamos los parametros a las variables
         {
             this.Lista = Lista;
             this.listaLabel = listaLabel;
         }
-        public bool ValidarCampos()
+        public bool ValidarCampos() //este es un metodo booleano que validará que el texto de los textboxs no estén vacíos
         {
             if (Lista[0].Text == string.Empty)
             {
