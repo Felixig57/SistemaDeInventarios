@@ -259,6 +259,7 @@
             this.ClientSize = new System.Drawing.Size(1098, 683);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbTitulos);
+            this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenu";
