@@ -13,7 +13,7 @@ namespace Logica.Seguridad
         private List<Usuario> listaUsuarios = new List<Usuario>()
         {
             new Usuario { nombreUsuario = "admin", contrasenaUsuario = "1234", rolUsuario = "Administrador" },
-            new Usuario { nombreUsuario = "empleado", contrasenaUsuario = "abcd", rolUsuario = "Empleado" }
+            new Usuario { nombreUsuario = "empleado", contrasenaUsuario = "1234", rolUsuario = "Empleado" }
             
         };
         public Usuario ValidarLogin(string nombreUsuario, string contrasenaUsuario)
