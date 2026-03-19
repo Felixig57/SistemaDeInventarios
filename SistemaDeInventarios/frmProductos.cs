@@ -114,29 +114,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //metodos.InsertarProducto(txtNombreProducto.Text, txtDescripcionProducto.Text, cmbCategoria.Text, cmbProveedor.Text, (int)nudCantidad.Value);
-            if (validar.Validacion()) //Llamada al metodo validacion de campos
-            {
-                int id; //Variable auxiliar para asignar valor numero al txtId
-                
-                if (!int.TryParse(txtIdProducto.Text, out id)) //Si es diferente a un numero mandar alerta
-                {
-                    MessageBox.Show("El ID debe ser numerico");
-                    txtIdProducto.Focus();
-                    return;
-                }
-                
-                metodos.InsertarProducto(
-                    id,
-                    txtNombreProducto.Text,
-                    txtDescripcionProducto.Text,
-                    cmbCategoria.Text,
-                    cmbProveedor.Text,
-                    (int)nudCantidad.Value
-                ); //Metodo con la carga de todos los campos de texto
-
-                CargarProductos();
-                LimpiarCampos();
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,53 +158,12 @@ namespace SistemaDeInventarios
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //metodos.ActualizarProducto(int.Parse(txtIdProducto.Text), txtNombreProducto.Text, txtDescripcionProducto.Text, cmbCategoria.Text, cmbProveedor.Text, (int)nudCantidad.Value);
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdProducto.Text))
-                return;
-            if (validar.Validacion())
-            {
-                int id;
-                if (!int.TryParse(txtIdProducto.Text, out id)) //Si el Id no coincide con el ingresado regresara un msj de error
-                {
-                    MessageBox.Show("Seleccione un registro valido");
-                    return;
-                }
-
-                metodos.ActualizarProducto( //llamamos al metodo y metemos los cambios dentro de las debidas textbox
-                    id,
-                    txtNombreProducto.Text,
-                    txtDescripcionProducto.Text,
-                    cmbCategoria.Text,
-                    cmbProveedor.Text,
-                    (int)nudCantidad.Value
-                    );
-
-                CargarProductos();
-                LimpiarCampos();
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdProducto.Text))
-                return;
-            int id;
-            if (!int.TryParse(txtIdProducto.Text, out id))
-            {
-                MessageBox.Show("Seleccione un registro valido");
-                return;
-            }
-
-            //Confirmacion dinamica con el MessBox
-            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar este Producto?",
-                "Confirmar eliminacion",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes) //Si se selecciona si se ejecuta
-            {
-                metodos.EliminarProducto(id); //El metodo eliminar en la BD que espera el id
-                CargarProductos(); //Actualiza el DGV
-                LimpiarCampos(); //Se limpian Campos
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -246,7 +183,7 @@ namespace SistemaDeInventarios
         #region Funciones Privadas
         private void CargarProductos()
         {
-            dgvProductos.DataSource = metodos.MostrarProductos();
+          //  dgvProductos.DataSource = metodos.MostrarProductos();
         }
 
         private void LimpiarCampos()

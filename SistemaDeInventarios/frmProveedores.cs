@@ -133,34 +133,13 @@ namespace SistemaDeInventarios
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            if (validar.ValidarCampos()) //Llamada al metodo validacion de campos
-            {
-                int id; //Variable auxiliar para asignar valor numero al txtId
-
-                if (!int.TryParse(txtIdProveedor.Text, out id)) //Si es diferente a un numero mandae alerta
-                {
-                    MessageBox.Show("El ID debe ser numerico");
-                    txtIdProveedor.Focus();
-                    return; 
-                }
-
-                metodos.InsertarProveedor(
-                    id,
-                    txtNombreProveedor.Text,
-                    txtCorreoProveedor.Text,
-                    txtTelefonoProveedor.Text,
-                    txtDireccionProveedor.Text
-                ); //Metodo con la carga de todos los campos de texto
-
-                CargarProveedores();
-                LimpiarCampos();
-            }
+        //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         #region Funciones Privadas
         private void CargarProveedores()
         {
-            dgvProveedores.DataSource = metodos.MostrarProveedores();
+           // dgvProveedores.DataSource = metodos.MostrarProveedores();
         }
 
         private void LimpiarCampos()
@@ -198,52 +177,13 @@ namespace SistemaDeInventarios
         #endregion
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdProveedor.Text))
-                return;
-            if (validar.ValidarCampos())
-            {
-                int id;
-                if (!int.TryParse(txtIdProveedor.Text, out id)) //Si el Id no coincide con el ingresado regresara un msj de error
-                {
-                    MessageBox.Show("Seleccione un registro valido");
-                    return;
-                }
-
-                metodos.ActualizarProveedor( //llamamos al metodo y metemos los cambios dentro de las debidas textbox
-                    id,
-                    txtNombreProveedor.Text,
-                    txtCorreoProveedor.Text,
-                    txtTelefonoProveedor.Text,
-                    txtDireccionProveedor.Text
-                    );
-
-                CargarProveedores();
-                LimpiarCampos();
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+        
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdProveedor.Text))
-                return;
-                int id;
-            if (!int.TryParse(txtIdProveedor.Text, out id))
-            {
-                MessageBox.Show("Seleccione un registro valido");
-                return;
-            }
-
-            //Confirmacion dinamica con el MessBox
-            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar este proveedor?", 
-                "Confirmar eliminacion",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes) //Si se selecciona si se ejecuta
-            {
-                metodos.EliminarProveedor(id); //El metodo eliminar en la BD que espera el id
-                CargarProveedores(); //Actualiza el DGV
-                LimpiarCampos(); //Se limpian Campos
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -253,7 +193,7 @@ namespace SistemaDeInventarios
 
         private void frmProveedores_Load_1(object sender, EventArgs e)
         {
-            CargarProveedores();//este metodo Carga los Proveedores al momento de abrir el formulario
+            //CargarProveedores();//este metodo Carga los Proveedores al momento de abrir el formulario
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmCategorias : Form 
     {
-        MetodosCRUD metodos = new MetodosCRUD(); //Hacemos la instancia de los metodos CRUD
+     //   MetodosCRUD metodos = new MetodosCRUD(); //Hacemos la instancia de los metodos CRUD
         VF_Categorias Validar; //Creamos un objeto de tipo VF_Categorias que es la clase donde están las funciones de verificación
         public frmCategorias()
         {
@@ -169,32 +169,13 @@ namespace SistemaDeInventarios
       //metoddo que valida, carga, y manda datos a ala BD
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (Validar.ValidarCampos()) //Llamada al metodo validacion de campos
-            {
-                int id; //Variable auxiliar para asignar valor numero al txtId
-
-                if (!int.TryParse(txtId_Categoria.Text, out id)) //Si es diferente a un numero mandae alerta
-                {
-                    MessageBox.Show("El ID debe ser numerico");
-                    txtId_Categoria.Focus();
-                    return;
-                }
-
-                metodos.InsertarCategoria(
-                    id,
-                    txtNombreCategoria.Text,
-                    txtDescripcionCategoria.Text
-                ); //Metodo con la carga de todos los campos de texto
-
-                CargarCategorias();
-                LimpiarCampos();
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         #region FUNCIONES PRIVADAS
         private void CargarCategorias()
         {
-            dgvCategorias.DataSource = metodos.MostrarCategorias();
+           // dgvCategorias.DataSource = metodos.MostrarCategorias();
         }
 
         private void LimpiarCampos()
@@ -243,51 +224,13 @@ namespace SistemaDeInventarios
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //metodos.ActualizarCategoria(int.Parse(txtIdCategoria.Text), txtNombreCategoria.Text, txtDescripcionCategoria.Text);
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtId_Categoria.Text))
-                return;
-            if (Validar.ValidarCampos())
-            {
-                int id;
-                if (!int.TryParse(txtId_Categoria.Text, out id)) //Si el Id no coincide con el ingresado regresara un msj de error
-                {
-                    MessageBox.Show("Seleccione un registro valido");
-                    return;
-                }
-
-                metodos.ActualizarCategoria( //llamamos al metodo y metemos los cambios dentro de las debidas textbox
-                    id,
-                    txtNombreCategoria.Text,
-                    txtDescripcionCategoria.Text
-                    );
-
-                CargarCategorias();
-                LimpiarCampos();
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             //metodos.EliminarCategoria(int.Parse(txtIdCategoria.Text));
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtId_Categoria.Text))
-                return;
-            int id;
-            if (!int.TryParse(txtId_Categoria.Text, out id))
-            {
-                MessageBox.Show("Seleccione un registro valido");
-                return;
-            }
-
-            //Confirmacion dinamica con el MessBox
-            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar esta Categoria?",
-                "Confirmar eliminacion",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes) //Si se selecciona si se ejecuta
-            {
-                metodos.EliminarCategoria(id); //El metodo eliminar en la BD que espera el id
-                CargarCategorias(); //Actualiza el DGV
-                LimpiarCampos(); //Se limpian Campos
-            }
+            //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
         private void txtId_Categoria_TextChanged(object sender, EventArgs e) 
