@@ -15,7 +15,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmAlmacenes : Form
     {
-        MetodosCRUD metodos = new MetodosCRUD();
+       // MetodosCRUD metodos = new MetodosCRUD(); ya no sirve sorry aaron 
         VF_Almacen Validacion;
         public frmAlmacenes()
         {
@@ -127,8 +127,10 @@ namespace SistemaDeInventarios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Validacion.ValidarCampos();
-            //metodos.InsertarAlmacen(txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text);
+            // Validacion.ValidarCampos();
+            //metodos.InsertarAlmacen(txtNombreAlmacen.Text, txtResponsableAlmacen.Text, txtTelefonoAlmacen.Text, txtUbicacionAlmacen.Text
+            MessageBox.Show("Test");
+            Validacion.Guardar();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -138,68 +140,55 @@ namespace SistemaDeInventarios
         //metodo privado que viene con la carga de los almacenes
         private void CargarAlmacenes()
         {
-            dgvAlmacenes.DataSource = metodos.MostrarAlmacenes();//
+            //dgvAlmacenes.DataSource = metodos.MostrarAlmacenes();//
+            // dgvAlmacenes.DataSource = 
+            dgvAlmacenes.DataSource = Validacion.Listar();
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            if (Validacion.ValidarCampos())//llamar al metod validacion de los campos
-            {
-                int id;//variable que nos auxilia para asignar el valor numero en el txt id
-
-                if (!int.TryParse(txtIdAlmacen.Text, out id))// si el es diferente de un numero mandar alerta
-                {
-                    MessageBox.Show("El ID debe ser numérico");
-                    txtIdAlmacen.Focus();
-                    return;
-                }
-
-                metodos.InsertarAlmacen(
-                    id,
-                    txtNombreAlmacen.Text,
-                    txtResponsableAlmacen.Text,
-                    txtTelefonoAlmacen.Text,
-                    txtUbicacionAlmacen.Text
-                );//metodo con la carga de todos los campos de texto
-
-                CargarAlmacenes(); // refresca el dgv despues de anadir un registro en la bd
-                LimpiarCampos(); //limpia campos
-            }
+            
+            // Validacion.ValidarCampos(); este metodo solo llama a la validacion
+            Validacion.Guardar();//este metodo ya llama a todo validacion, inserccion etc..
+            //Cargar los almacenes despues de la inserccion
+            CargarAlmacenes();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //validacion que proviene desde la clase validacion seleccion para validar la selccion al momento de editar
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
-                return;
+            /* if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
+                 return;
 
-            if (Validacion.ValidarCampos())
-            {
-                int id;
+             if (Validacion.ValidarCampos())
+             {
+                 int id;
 
-                if (!int.TryParse(txtIdAlmacen.Text, out id))
-                {
-                    MessageBox.Show("Seleccione un registro válido");
-                    return;
-                }
+                 if (!int.TryParse(txtIdAlmacen.Text, out id))
+                 {
+                     MessageBox.Show("Seleccione un registro válido");
+                     return;
+                 }
 
-                metodos.ActualizarAlmacen(
-                    id,
-                    txtNombreAlmacen.Text,
-                    txtResponsableAlmacen.Text,
-                    txtTelefonoAlmacen.Text,
-                    txtUbicacionAlmacen.Text
-                );
+                 metodos.ActualizarAlmacen(
+                     id,
+                     txtNombreAlmacen.Text,
+                     txtResponsableAlmacen.Text,
+                     txtTelefonoAlmacen.Text,
+                     txtUbicacionAlmacen.Text
+                 );
 
-                CargarAlmacenes();
-                LimpiarCampos();
-            }
+                 CargarAlmacenes();
+                 LimpiarCampos();
+             }*/
 
+            //metodos pendientes
+            //Validacion.Guardar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
+           /* if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
                 return;
 
             int id;
@@ -221,7 +210,8 @@ namespace SistemaDeInventarios
                 metodos.EliminarAlmacen(id); //el metodo eliminar en la bd que espera el id
                 CargarAlmacenes();// y se actualiza el dgv
                 LimpiarCampos();// y se limpian campos
-            }
+            }*/
+
         }
         private void LimpiarCampos()
         {
@@ -235,7 +225,7 @@ namespace SistemaDeInventarios
         }
         private void frmAlmacenes_Load(object sender, EventArgs e)
         {
-            CargarAlmacenes();//este metodo Carga los Almacenes al momento de abrir el formulario
+          CargarAlmacenes();//este metodo Carga los Almacenes al momento de abrir el formulario
         }
 
         //evento que carga la fila en los campos de texto 

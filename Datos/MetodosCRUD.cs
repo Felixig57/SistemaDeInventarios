@@ -7,8 +7,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace Datos
 {
 
-    public class MetodosCRUD : ConexiónBD
+    public class MetodosCRUD : ConexionBD
     {
+        /*
         #region CRUD PARA ALMACEN
 
         public void InsertarAlmacen(int id,string nombre, string responsable, string telefono, string ubicacion)
@@ -419,6 +420,6 @@ namespace Datos
             }
             return table; //Retorno de tabla llena
         }
-        #endregion
+        #endregion*/
     }
 }

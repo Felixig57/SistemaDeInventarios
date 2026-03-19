@@ -15,7 +15,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmMenu : Form
     {
-        ConexiónBD conexionBD = new ConexiónBD();
+       // ConexionBD conexionBD = new ConexionBD();
         public frmMenu()
         {
             InitializeComponent();
