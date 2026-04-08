@@ -82,7 +82,7 @@ namespace Logica
                 CorreoProveedor = Lista[3].Text,
                 DireccionProveedor = Lista[4].Text
             });
-            MessageBox.Show("Se ha guardado el proveedore correctamente en la Base de Datos");
+            MessageBox.Show("Se ha guardado el proveedor correctamente en la Base de Datos");
                 
         }
         public void Guardar()
@@ -91,7 +91,7 @@ namespace Logica
             {
                 GuardarenBD();
                 LimpiarCampos();
-                MessageBox.Show("Se guardo al proveedor");            
+                       
             }
            
         }
