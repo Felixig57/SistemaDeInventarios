@@ -89,6 +89,9 @@ namespace Logica
                     Cantidad = (int)ListaNumeros[0].Value
                 });
                 MessageBox.Show("Inserción exitosa");
+                //daniel
+                //agregue el limpiar campos
+                LimpiarCampos();
             }
         }
 
@@ -114,6 +117,45 @@ namespace Logica
 
             //Asignamos la lista al DataGridView
             this.grindView.DataSource = ListaProductos;
+        }
+        private void LimpiarCampos()
+        {
+
+            //ListaBotonesText[0].Clear();
+            //ListaBotonesText[1].Clear();
+            //ListaBotonesText[2].Clear();
+            //ListaCombos[3].SelectedIndex = -1;
+            //ListaCombos[4].SelectedIndex = -1;
+            //ListaNumeros[5].Value = 0;
+            // Limpia todas las cajas de texto automáticamente
+            foreach (var textBox in ListaBotonesText)
+            {
+                textBox.Clear();
+            }
+
+            // Reinicia todos los combos automáticamente sin importar el índice
+            foreach (var combo in ListaCombos)
+            {
+                combo.SelectedIndex = -1;
+            }
+
+            // Reinicia tus controles numéricos (asumiendo que es un NumericUpDown)
+            foreach (var numControl in ListaNumeros)
+            {
+                numControl.Value = 0;
+            }
+
+            RestablecerLabels();
+
+        }
+        private void RestablecerLabels()
+        {
+            ListaLabels[0].ForeColor = Color.Black;
+            ListaLabels[1].ForeColor = Color.Black;
+            ListaLabels[2].ForeColor = Color.Black;
+            ListaLabels[3].ForeColor = Color.Black;
+            ListaLabels[4].ForeColor = Color.Black;
+            ListaLabels[5].ForeColor = Color.Black;
         }
     }
 }

@@ -120,7 +120,6 @@ namespace SistemaDeInventarios
         {
             //Aquí se mandará a hacer la validacion de los campos
             LogicaProductos.Validacion();
-
             LogicaProductos.ListarProductos();
         }
 
@@ -198,8 +197,8 @@ namespace SistemaDeInventarios
             txtIdProducto.Clear();
             txtNombreProducto.Clear();
             txtDescripcionProducto.Clear();
-            cmbCategoria.Items.Clear();
-            cmbProveedor.Items.Clear();
+            cmbCategoria.SelectedIndex = -1;
+            cmbProveedor.SelectedIndex = -1;
             nudCantidad.Value = 0;
             //volver con los labels en negro y no se pinten en rojo
             RestablecerLabels();
