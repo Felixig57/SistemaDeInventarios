@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace Datos.Entidades.Categorias
 
 {
-    internal class Categorias
+    public class Categorias
     {
+        //Propiedades AutoImplementadas con sus metodos de acceso (get y set)
+        public int IdCategoria { get; set; }
+        public string NombreCategoria { get; set; }
+        public string DescripcionCategoria { get; set; } 
+
     }
 }

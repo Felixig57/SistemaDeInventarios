@@ -33,6 +33,7 @@ namespace SistemaDeInventarios
             Validar = new VF_Categorias(Lista, listaLabel); //acá le mandamos los argumentos que asignamos al objeto validar
         }
 
+        #region Eventos lbl
         private void lblNombre_TextChanged(object sender, EventArgs e) //acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacia
         {
             if(txtNombreCategoria.Text == string.Empty)
@@ -55,10 +56,32 @@ namespace SistemaDeInventarios
                 lblDescripcionCategoria.ForeColor = Color.Green;
             }
         }
+        private void txtId_Categoria_TextChanged(object sender, EventArgs e) 
+        {
+            if(txtId_Categoria.Text == string.Empty)
+            {
+                lblId_Categoria.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblId_Categoria.ForeColor= Color.Green;
+            }
+
+        }
+
+        #endregion
+
+        #region Eventos Keypress
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)//acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacía
         {
             Validar.SoloLetras(e);
         }
+        private void txtId_Categoria_KeyPress(object sender, KeyPressEventArgs e) //evento que valida que solo haya numeros
+        {
+            Validar.SoloNumeros(e);
+        }
+        #endregion
+
         #region eventos que estorban generados sin codigo adentro
         private void FrmCategorias_Load(object sender, EventArgs e)
         {
@@ -170,12 +193,20 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //borramos codigo para anadir y ajustar a los requerimientos necesarios
+
+            //Mandamos a llamar al metodo guardar en Logica Categoria
+            Validar.Guardar();
+            //Llamamos al metodo Cargar categorias
+            CargarCategorias();
         }
 
+
         #region FUNCIONES PRIVADAS
+
+        //Metodo privado con la carga de categorias
         private void CargarCategorias()
         {
-           // dgvCategorias.DataSource = metodos.MostrarCategorias();
+            dgvCategorias.DataSource = Validar.Enlistar();
         }
 
         private void LimpiarCampos()
@@ -187,9 +218,10 @@ namespace SistemaDeInventarios
             RestablecerLabels();
         }
 
+        
         private void frmCategorias_Load(object sender, EventArgs e)
         {
-            CargarCategorias();//este metodo Carga los Proveedores al momento de abrir el formulario
+            CargarCategorias();//este metodo Carga los datos guardados de la categoria al momento de abrir el formulario
         }
 
         //evento que carga la fila en los campos de texto 
@@ -233,23 +265,9 @@ namespace SistemaDeInventarios
             //borramos codigo para anadir y ajustar a los requerimientos necesarios
         }
 
-        private void txtId_Categoria_TextChanged(object sender, EventArgs e) 
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            if(txtId_Categoria.Text == string.Empty)
-            {
-                lblId_Categoria.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblId_Categoria.ForeColor= Color.Green;
-            }
-
+            LimpiarCampos();
         }
-
-        private void txtId_Categoria_KeyPress(object sender, KeyPressEventArgs e) //evento que valida que solo haya numeros
-        {
-            Validar.SoloNumeros(e);
-        }
-        
     }
 }
