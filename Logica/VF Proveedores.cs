@@ -1,4 +1,8 @@
-﻿using Logica.Bibloteca.Validar_entrada_de_datos;
+﻿using Datos;
+using Datos.Entidades.Almacenes;
+using Datos.Entidades.Proveedores;
+using LinqToDB;
+using Logica.Bibloteca.Validar_entrada_de_datos;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,6 +15,7 @@ namespace Logica
 {
    public class VF_Proveedores : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
         {
+        private ProveedoresRepository PR = new ProveedoresRepository();
             private List<TextBox> Lista = new List<TextBox>(); //se crean los objetos que necesitaremos
         private List<Label> listaLabel = new List<Label>();
             public VF_Proveedores(List<TextBox> Lista, List<Label> listaLabel) //en el contructor asignamos los argumentos que pedimos y los asignamos a las variables locales
@@ -66,6 +71,54 @@ namespace Logica
             }
         }
 
+        public void GuardarenBD()
+        {
+            ConexionBD conex = new ConexionBD();
+            conex.Insert(new Proveedores
+            {
+                IdProveedor = int.Parse(Lista[0].Text),
+                NombreProveedor = Lista[1].Text,
+                TelefonoProveedor = Lista[2].Text,
+                CorreoProveedor = Lista[3].Text,
+                DireccionProveedor = Lista[4].Text
+            });
+            MessageBox.Show("Se ha guardado el proveedore correctamente en la Base de Datos");
+                
+        }
+        public void Guardar()
+        {
+            if (ValidarCampos())
+            {
+                GuardarenBD();
+                LimpiarCampos();
+                MessageBox.Show("Se guardo al proveedor");            
+            }
+           
+        }
+        //Metodo para mostrar en DGV
+        public List<Proveedores> Mostrardgv()
+        {
+            return PR.Lista();
+        }
+        private void LimpiarCampos()
+        {
+            Lista[0].Clear();
+            Lista[1].Clear();
+            Lista[2].Clear();
+            Lista[3].Clear();
+            Lista[4].Clear();
+            RestablecerLabels();
+        }
+        private void RestablecerLabels()
+        {
+            listaLabel[0].ForeColor = Color.Black;
+            listaLabel[1].ForeColor = Color.Black;
+            listaLabel[2].ForeColor = Color.Black;
+            listaLabel[3].ForeColor = Color.Black;
+            listaLabel[4].ForeColor = Color.Black;
+        }
+
     }
-    }
+
+}
 

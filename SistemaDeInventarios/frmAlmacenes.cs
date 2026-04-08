@@ -141,7 +141,7 @@ namespace SistemaDeInventarios
         private void CargarAlmacenes()
         {
             //dgvAlmacenes.DataSource = metodos.MostrarAlmacenes();//
-            // dgvAlmacenes.DataSource = 
+        
             dgvAlmacenes.DataSource = Validacion.Listar();
         }
 
