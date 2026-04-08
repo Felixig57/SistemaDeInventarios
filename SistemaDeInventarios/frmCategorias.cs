@@ -1,25 +1,18 @@
-﻿using Datos;
-using Logica;
-using SistemaDeInventarios.Botones;
+﻿using Logica;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaDeInventarios
 {
-    public partial class frmCategorias : Form 
+    public partial class frmCategorias : Form
     {
-     //   MetodosCRUD metodos = new MetodosCRUD(); //Hacemos la instancia de los metodos CRUD
+        //   MetodosCRUD metodos = new MetodosCRUD(); //Hacemos la instancia de los metodos CRUD
         VF_Categorias Validar; //Creamos un objeto de tipo VF_Categorias que es la clase donde están las funciones de verificación
         public frmCategorias()
         {
-     
+
             InitializeComponent();
             List<TextBox> Lista = new List<TextBox>(); // acá creamos el objeto lista tipo textbox que contendrá los indices de los textbox
             Lista.Add(txtId_Categoria); //0
@@ -36,13 +29,13 @@ namespace SistemaDeInventarios
         #region Eventos lbl
         private void lblNombre_TextChanged(object sender, EventArgs e) //acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacia
         {
-            if(txtNombreCategoria.Text == string.Empty)
+            if (txtNombreCategoria.Text == string.Empty)
             {
                 lblNombreCategoria.ForeColor = Color.Red;
             }
             else
             {
-               lblNombreCategoria.ForeColor = Color.Green;
+                lblNombreCategoria.ForeColor = Color.Green;
             }
         }
         private void lblDescripcion_TextChanged(object sender, EventArgs e) //acá estamos creando el evento que cambia el color de la etiqueta dependiendo de si está vacía
@@ -56,15 +49,15 @@ namespace SistemaDeInventarios
                 lblDescripcionCategoria.ForeColor = Color.Green;
             }
         }
-        private void txtId_Categoria_TextChanged(object sender, EventArgs e) 
+        private void txtId_Categoria_TextChanged(object sender, EventArgs e)
         {
-            if(txtId_Categoria.Text == string.Empty)
+            if (txtId_Categoria.Text == string.Empty)
             {
                 lblId_Categoria.ForeColor = Color.Red;
             }
             else
             {
-                lblId_Categoria.ForeColor= Color.Green;
+                lblId_Categoria.ForeColor = Color.Green;
             }
 
         }
@@ -153,11 +146,6 @@ namespace SistemaDeInventarios
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -189,7 +177,7 @@ namespace SistemaDeInventarios
         }
         #endregion
 
-      //metoddo que valida, carga, y manda datos a ala BD
+        //metoddo que valida, carga, y manda datos a ala BD
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //borramos codigo para anadir y ajustar a los requerimientos necesarios
@@ -218,10 +206,11 @@ namespace SistemaDeInventarios
             RestablecerLabels();
         }
 
-        
+
         private void frmCategorias_Load(object sender, EventArgs e)
         {
             CargarCategorias();//este metodo Carga los datos guardados de la categoria al momento de abrir el formulario
+
         }
 
         //evento que carga la fila en los campos de texto 
@@ -268,6 +257,10 @@ namespace SistemaDeInventarios
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }
