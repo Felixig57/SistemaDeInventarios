@@ -1,4 +1,7 @@
-﻿using Logica.Bibloteca.Validar_entrada_de_datos;
+﻿using Datos;
+using Datos.Entidades.Productos;
+using LinqToDB;
+using Logica.Bibloteca.Validar_entrada_de_datos;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,19 +14,27 @@ namespace Logica
 {
    public class VF_Productos : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
     {
+        DataGridView grindView;
+
         private List<TextBox> ListaBotonesText; //Creamos los objetos que necesitaremos usar 
         private List<ComboBox> ListaCombos;
         private List<NumericUpDown> ListaNumeros;
         private List<Label> ListaLabels;
-        public VF_Productos(List<TextBox> listaText, List<ComboBox> listaCombo, List<NumericUpDown> listaNum, List<Label> listaLabel)
+
+
+        public VF_Productos(List<TextBox> listaText, List<ComboBox> listaCombo, List<NumericUpDown> listaNum, List<Label> listaLabel, Object[] objects)
         { //aquí asignamos los argumentos que llegaron del contructor a las variables locales que creamos arriba
             this.ListaBotonesText = listaText;
             this.ListaCombos = listaCombo;
             this.ListaNumeros = listaNum;
             this.ListaLabels = listaLabel; 
+            this.grindView = (DataGridView)objects[0];
         }
+
+
+
         //Agregar las otras validacion a expecion de la descripcion del producto
-        public bool Validacion()
+        public void Validacion()
         {
             // 1. Validar Id Producto (TextBox 0)
             if (ListaBotonesText[0].Text == string.Empty)
@@ -31,7 +42,6 @@ namespace Logica
                 MessageBox.Show("El campo ID del producto no puede quedar vacio");
                 ListaLabels[0].ForeColor = Color.Red;
                 ListaBotonesText[0].Focus();
-                return false;
             }
             // 2. Validar Nombre (TextBox 1)
             else if (ListaBotonesText[1].Text == string.Empty)
@@ -39,7 +49,6 @@ namespace Logica
                 MessageBox.Show("El campo Nombre del producto no puede quedar vacio");
                 ListaLabels[1].ForeColor = Color.Red;
                 ListaBotonesText[1].Focus();
-                return false;
             }
             // -- Nos saltamos ListaBotonesText[2] (Descripción) porque es opcional --
             // 3. Validar Categoria (ComboBox 0)
@@ -48,7 +57,6 @@ namespace Logica
                 MessageBox.Show("Debe seleccionar una Categoría");
                 ListaLabels[3].ForeColor = Color.Red;
                 ListaCombos[0].Focus();
-                return false;
             }
             // 4. Validar Proveedor (ComboBox 1)
             else if (ListaCombos[1].SelectedIndex == -1)
@@ -56,7 +64,6 @@ namespace Logica
                 MessageBox.Show("Debe seleccionar un Proveedor");
                 ListaLabels[4].ForeColor = Color.Red;
                 ListaCombos[1].Focus();
-                return false;
             }
             // 5. Validar Cantidad (NumericUpDown 0)
             else if (ListaNumeros[0].Value <= 0)
@@ -64,13 +71,49 @@ namespace Logica
                 MessageBox.Show("La cantidad debe ser mayor a cero");
                 ListaLabels[5].ForeColor = Color.Red;
                 ListaNumeros[0].Focus();
-                return false;
             }
             // 6. Si todo está correcto
             else
             {
-                return true;
+                //Instanciamos la conexion para hacer la insercion
+                ConexionBD conexion = new ConexionBD();
+
+                //Hacemos la insercion a la base de datos con un metodo de linq2bd
+                conexion.Insert(new Productos
+                {
+                    IdProducto = int.Parse(ListaBotonesText[0].Text),
+                    NombreProducto = ListaBotonesText[1].Text,
+                    DescripcionProducto = ListaBotonesText[2].Text, //Este campo es opcional, no se valido
+                    Categoria = ListaCombos[0].SelectedItem.ToString(),
+                    Proveedor = ListaCombos[1].SelectedItem.ToString(),
+                    Cantidad = (int)ListaNumeros[0].Value
+                });
+                MessageBox.Show("Inserción exitosa");
             }
+        }
+
+        //Metodo para visualizar la lista de estudiantes en el DataGridView
+        public void ListarProductos()
+        {
+            //Instanciar la conexion
+            ConexionBD conexion = new ConexionBD();
+
+            //Declarar una variable tipo padre para almacenar la consulta
+
+            var ListaProductos = conexion.GetTable<Productos>()
+                .Select(e => new
+                {
+                    //Tenemos que seleccionar cada una de las columnas que queremos mostrar en el DataGridView
+                    e.IdProducto,
+                    e.NombreProducto,
+                    e.DescripcionProducto,
+                    e.Categoria,
+                    e.Proveedor,
+                    e.Cantidad
+                }).ToList();
+
+            //Asignamos la lista al DataGridView
+            this.grindView.DataSource = ListaProductos;
         }
     }
 }
