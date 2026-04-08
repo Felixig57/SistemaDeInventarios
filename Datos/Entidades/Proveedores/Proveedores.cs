@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Datos.Entidades.Proveedores
 {
-    internal class Proveedores
+    public class Proveedores
     {
+        public int IdProveedor { get; set; }
+        public string NombreProveedor {  get; set; }
+        public string TelefonoProveedor {  get; set; }
+        public string CorreoProveedor { get; set; }
+        public string DireccionProveedor { get; set; }
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Entidades\Categorias\Categorias.cs" />
     <Compile Include="Entidades\Productos\Productos.cs" />
     <Compile Include="Entidades\Proveedores\Proveedores.cs" />
+    <Compile Include="Entidades\Proveedores\ProveedoresRepository.cs" />
     <Compile Include="MetodosCRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,7 +15,7 @@ namespace SistemaDeInventarios
 {
     public partial class frmProveedores : Form
     {
-        MetodosCRUD metodos = new MetodosCRUD();
+       // MetodosCRUD metodos = new MetodosCRUD(); Reemplazo por version mejorada
         VF_Proveedores validar;
 
         public frmProveedores()
@@ -27,7 +27,6 @@ namespace SistemaDeInventarios
             list.Add(txtNombreProveedor);
             list.Add(txtTelefonoProveedor);
             list.Add(txtCorreoProveedor);
-            
             list.Add(txtDireccionProveedor);
             
             List<Label> listaLabel = new List<Label>();
@@ -122,8 +121,10 @@ namespace SistemaDeInventarios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            validar.ValidarCampos();
-            //metodos.InsertarProveedor(txtNombreProveedor.Text, txtCorreoProveedor.Text, txtTelefonoProveedor.Text, txtDireccionProveedor.Text);
+            
+            validar.Guardar();
+            CargarProveedores();
+            
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -131,15 +132,10 @@ namespace SistemaDeInventarios
             this.Close();
         }
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
-        {
-        //borramos codigo para anadir y ajustar a los requerimientos necesarios
-        }
-
         #region Funciones Privadas
         private void CargarProveedores()
         {
-           // dgvProveedores.DataSource = metodos.MostrarProveedores();
+            dgvProveedores.DataSource = validar.Mostrardgv();
         }
 
         private void LimpiarCampos()
@@ -191,9 +187,18 @@ namespace SistemaDeInventarios
             LimpiarCampos();
         }
 
+    
+
         private void frmProveedores_Load_1(object sender, EventArgs e)
         {
-            //CargarProveedores();//este metodo Carga los Proveedores al momento de abrir el formulario
+            CargarProveedores();//este metodo Carga los Proveedores al momento de abrir el formulario
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            validar.Guardar();
+            CargarProveedores();
+
         }
     }
 }
