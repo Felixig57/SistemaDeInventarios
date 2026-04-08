@@ -16,7 +16,7 @@ namespace SistemaDeInventarios
     public partial class frmProductos : Form
     {
         MetodosCRUD metodos = new MetodosCRUD();
-        VF_Productos validar;
+        VF_Productos LogicaProductos;
         public frmProductos()
         {
           
@@ -46,13 +46,18 @@ namespace SistemaDeInventarios
             listaLabel.Add(lblProveedorProducto);   // Índice 4
             listaLabel.Add(lblCantidadProducto);    // Índice 5
 
+            //Crear un arreglo que contenga los objetos
+            Object[] objects = { dgvProductos };
+
             // Le mandamos todo a la clase
-            validar = new VF_Productos(listaText, listaCombo, listaNum, listaLabel);
+            LogicaProductos = new VF_Productos(listaText, listaCombo, listaNum, listaLabel, objects);
+
+            LogicaProductos.ListarProductos();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            validar.Validacion();
+            LogicaProductos.Validacion();
         }
         //Aqui agregen los otros eventos del combobox y numeric up down
         #region Eventos lbl
@@ -93,11 +98,11 @@ namespace SistemaDeInventarios
 
         private void txtId_KetPress(object sender, KeyPressEventArgs e)
         {
-            validar.SoloNumeros(e);
+            LogicaProductos.SoloNumeros(e);
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validar.SoloLetras(e);
+            LogicaProductos.SoloLetras(e);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,8 +118,10 @@ namespace SistemaDeInventarios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //metodos.InsertarProducto(txtNombreProducto.Text, txtDescripcionProducto.Text, cmbCategoria.Text, cmbProveedor.Text, (int)nudCantidad.Value);
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+            //Aquí se mandará a hacer la validacion de los campos
+            LogicaProductos.Validacion();
+
+            LogicaProductos.ListarProductos();
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
