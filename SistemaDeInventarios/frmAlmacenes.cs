@@ -156,62 +156,12 @@ namespace SistemaDeInventarios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //validacion que proviene desde la clase validacion seleccion para validar la selccion al momento de editar
-            /* if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
-                 return;
 
-             if (Validacion.ValidarCampos())
-             {
-                 int id;
-
-                 if (!int.TryParse(txtIdAlmacen.Text, out id))
-                 {
-                     MessageBox.Show("Seleccione un registro válido");
-                     return;
-                 }
-
-                 metodos.ActualizarAlmacen(
-                     id,
-                     txtNombreAlmacen.Text,
-                     txtResponsableAlmacen.Text,
-                     txtTelefonoAlmacen.Text,
-                     txtUbicacionAlmacen.Text
-                 );
-
-                 CargarAlmacenes();
-                 LimpiarCampos();
-             }*/
-
-            //metodos pendientes
-            //Validacion.Guardar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           /* if (!ValidarSeleccionBotones.ValidarSeleccion(txtIdAlmacen.Text))
-                return;
-
-            int id;
-
-            if (!int.TryParse(txtIdAlmacen.Text, out id))
-            {
-                MessageBox.Show("Seleccione un registro válido.");
-                return;
-            }
-
-            // Confirmación dinamica con el MessBox
-            DialogResult resultado = MessageBox.Show( "¿Está seguro que desea eliminar este almacen?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (resultado == DialogResult.Yes)// si se selcciona si se ejcuta
-            {
-                metodos.EliminarAlmacen(id); //el metodo eliminar en la bd que espera el id
-                CargarAlmacenes();// y se actualiza el dgv
-                LimpiarCampos();// y se limpian campos
-            }*/
-
+          
         }
         private void LimpiarCampos()
         {
