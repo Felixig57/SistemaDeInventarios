@@ -236,6 +236,9 @@
   <ItemGroup>
     <None Include="Resources\cerrar-con-llave %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregarImagen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
