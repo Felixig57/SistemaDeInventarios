@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace Logica.Bibloteca.Validar_entrada_de_datos
 {
     public class Entradas //acá programamos todos las validaciónes
     {
+        //instanciamos el objeto de la clase SubirArchivos para poder usar sus métodos en las clases que hereden de esta clase Entradas
+        public SubirArchivos SubirArchivo = new SubirArchivos();
         public void SoloLetras(KeyPressEventArgs e)// validacion que solo permite letras, retroceso y espacio en blanco
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ')

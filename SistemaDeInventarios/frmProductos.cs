@@ -15,19 +15,16 @@ namespace SistemaDeInventarios
 {
     public partial class frmProductos : Form
     {
-        MetodosCRUD metodos = new MetodosCRUD();
+
         VF_Productos LogicaProductos;
         public frmProductos()
         {
-          
-
             InitializeComponent();
             // Lista de TextBox
             List<TextBox> listaText = new List<TextBox>();
             listaText.Add(txtIdProducto);   // Índice 0
             listaText.Add(txtNombreProducto); // Índice 1
             listaText.Add(txtDescripcionProducto);  // Índice 2
-
             // Lista de ComboBox
             List<ComboBox> listaCombo = new List<ComboBox>();
             listaCombo.Add(cmbCategoria);    // Índice 0
@@ -47,7 +44,7 @@ namespace SistemaDeInventarios
             listaLabel.Add(lblCantidadProducto);    // Índice 5
 
             //Crear un arreglo que contenga los objetos
-            Object[] objects = { dgvProductos };
+            Object[] objects = { dgvProductos, PictureBox };
 
             // Le mandamos todo a la clase
             LogicaProductos = new VF_Productos(listaText, listaCombo, listaNum, listaLabel, objects);
@@ -55,10 +52,6 @@ namespace SistemaDeInventarios
             LogicaProductos.ListarProductos();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LogicaProductos.Validacion();
-        }
         //Aqui agregen los otros eventos del combobox y numeric up down
         #region Eventos lbl
         private void lblNombre_TextChanged(object sender, EventArgs e)
@@ -119,7 +112,7 @@ namespace SistemaDeInventarios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Aquí se mandará a hacer la validacion de los campos
-            LogicaProductos.Validacion();
+            LogicaProductos.Validacion("Insertar");
             LogicaProductos.ListarProductos();
         }
 
@@ -163,27 +156,19 @@ namespace SistemaDeInventarios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //metodos.ActualizarProducto(int.Parse(txtIdProducto.Text), txtNombreProducto.Text, txtDescripcionProducto.Text, cmbCategoria.Text, cmbProveedor.Text, (int)nudCantidad.Value);
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+            LogicaProductos.Validacion("actualizar");
+            LogicaProductos.ListarProductos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+            LogicaProductos.Eliminar();
+            LogicaProductos.ListarProductos();
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)// si el evento en el indice mayor igual a 0 hacer una seleccion
-            {
-                DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];//objeto del formulario que obtiene los indices en la variable fila
-                txtIdProducto.Text = fila.Cells["IdProducto"].Value.ToString();//los datos que carga en indice [0]
-                txtNombreProducto.Text = fila.Cells["NombreProducto"].Value.ToString();//los datos que carga en indice [1]
-                txtDescripcionProducto.Text = fila.Cells["DescripcionProducto"].Value.ToString();//los datos que carga en indice [2]
-                cmbCategoria.Text = fila.Cells["Categoria"].Value.ToString();//los datos que carga en indice [3]
-                cmbProveedor.Text = fila.Cells["Proveedor"].Value.ToString();//los datos que carga en indice [4]
-                nudCantidad.Text = fila.Cells["Cantidad"].Value.ToString();
-            }
+
         }
 
         #region Funciones Privadas
@@ -222,12 +207,55 @@ namespace SistemaDeInventarios
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            LogicaProductos.ListarProductos();
             LimpiarCampos();
+            txtBuscarID.Text = "";
+            txtBuscarNombre.Text = "";
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Click(object sender, EventArgs e)
+        {
+            LogicaProductos.SubirArchivo.cargar_Fotografia(PictureBox);
+        }
+
+        private void Celldoubleclick(object sender, DataGridViewCellEventArgs e)
+        {
+            LogicaProductos.ObtenerSeleccionProductos();
+        }
+
+        private void CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LogicaProductos.ObtenerSeleccionProductos();
+        }
+
+        private void SelectionChanged(object sender, EventArgs e)
+        {
+            LogicaProductos.ObtenerSeleccionProductos();
+        }
+
+        private void btnBuscarID_Click(object sender, EventArgs e)
+        {
+            LogicaProductos.BuscarProductoID(int.Parse(txtBuscarID.Text));
+        }
+
+        private void KeyPress(object sender, KeyPressEventArgs e)
+        {
+            LogicaProductos.SoloLetras(e);
+        }
+
+        private void KeyPressId(object sender, KeyPressEventArgs e)
+        {
+            LogicaProductos.SoloNumeros(e);
+        }
+
+        private void btnBuscarNombre_Click(object sender, EventArgs e)
+        {
+            LogicaProductos.BuscarProductoNombre(txtBuscarNombre.Text);
         }
     }
 
