@@ -183,6 +183,51 @@ namespace Logica
             }
 
         }
+        #region Buscar
+        public void BuscarID(int Proveedor)
+        {
+            ConexionBD conexion = new ConexionBD();
+            //Variable que recibe el int
+            var proveedor = conexion.GetTable<Proveedores>().FirstOrDefault(e => e.IdProveedor == Proveedor);
+            if (proveedor != null)
+            {
+
+                IDProveedor = Proveedor;
+                Lista[0].Text = proveedor.IdProveedor.ToString();
+                Lista[1].Text = proveedor.NombreProveedor;
+                Lista[2].Text = proveedor.TelefonoProveedor;
+                Lista[3].Text = proveedor.CorreoProveedor;
+                Lista[4].Text = proveedor.DireccionProveedor;
+                MessageBox.Show("Aqui esta el proveedor");
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el Proveedor");
+            }
+        }
+        public void BuscarString(string BuscarNombre)
+        {
+            ConexionBD conexion = new ConexionBD();
+            var proveedor = conexion.GetTable<Proveedores>()
+                .Where(e => e.NombreProveedor.Contains(BuscarNombre))
+                .Select(e => new
+                {
+                    e.IdProveedor,
+                    e.NombreProveedor,
+                    e.TelefonoProveedor,
+                    e.CorreoProveedor,
+                    e.DireccionProveedor
+                 
+                }).ToList();
+            //Asignar DGV
+            this.gridView.DataSource = proveedor;
+            //Validacion si no se encuentra
+            if (proveedor.Count == 0)
+            {
+                MessageBox.Show("No hay proveedores con el nombre: " + BuscarNombre);
+            }
+        }
+        #endregion
     }
 }
 

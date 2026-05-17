@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -194,6 +195,27 @@ namespace SistemaDeInventarios
             validar.Guardar();
             CargarProveedores();
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+
+        {
+            string textoBusqueda = txtBuscar.Text;
+            if (int.TryParse(textoBusqueda, out int idBuscar))
+            {
+                validar.BuscarID(idBuscar);
+            }
+            else
+            {
+                validar.BuscarString(textoBusqueda);
+            }
+        }
+
+        private void txtBuscar_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtBuscar.Text = "";
+          
+ 
         }
     }
 }
