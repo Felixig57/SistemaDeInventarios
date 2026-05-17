@@ -13,16 +13,16 @@ using System.Windows.Forms;
 
 namespace Logica
 {
-   public class VF_Proveedores : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
-        {
+    public class VF_Proveedores : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
+    {
         private ProveedoresRepository PR = new ProveedoresRepository();
-            private List<TextBox> Lista = new List<TextBox>(); //se crean los objetos que necesitaremos
+        private List<TextBox> Lista = new List<TextBox>(); //se crean los objetos que necesitaremos
         private List<Label> listaLabel = new List<Label>();
         private int IDProveedor;
         private DataGridView gridView;
         public VF_Proveedores(List<TextBox> Lista, List<Label> listaLabel, Object[] dgv) //en el contructor asignamos los argumentos que pedimos y los asignamos a las variables locales
-            {
-                this.Lista = Lista;
+        {
+            this.Lista = Lista;
             this.listaLabel = listaLabel;
             this.gridView = (DataGridView)dgv[0];
         }
@@ -86,7 +86,7 @@ namespace Logica
                 DireccionProveedor = Lista[4].Text
             });
             MessageBox.Show("Se ha guardado el proveedor correctamente en la Base de Datos");
-                
+
         }
         public void Guardar()
         {
@@ -94,9 +94,9 @@ namespace Logica
             {
                 GuardarenBD();
                 LimpiarCampos();
-                       
+
             }
-           
+
         }
         //Metodo para mostrar en DGV
         public List<Proveedores> Mostrardgv()
@@ -151,7 +151,7 @@ namespace Logica
                         TelefonoProveedor = Lista[2].Text,
                         CorreoProveedor = Lista[3].Text,
                         DireccionProveedor = Lista[4].Text,
-         
+
                     };
                     conexion.Delete(EstudianteEliminado);
                     MessageBox.Show("Proveedor Eliminado");
@@ -159,8 +159,30 @@ namespace Logica
                 }
             }
         }
+        public void Editar()
+        {
+            ConexionBD conexion = new ConexionBD();
+            var registroExistente = conexion.GetTable<Proveedores>()
+                  .FirstOrDefault(e => e.IdProveedor == IDProveedor);
+            if (registroExistente != null)
+            {
+                if (MessageBox.Show("Estas seguro de querer editar este proveedor?",
+                    "Editar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Proveedores ProveedorEditado = new Proveedores
+                    {
+                        IdProveedor = int.Parse(Lista[0].Text),
+                        NombreProveedor = Lista[1].Text,
+                        TelefonoProveedor = Lista[2].Text,
+                        CorreoProveedor = Lista[3].Text,
+                        DireccionProveedor = Lista[4].Text,
+                    };
+                    conexion.Update(ProveedorEditado);
+                    MessageBox.Show("Proveedor Editado");
+                }
+            }
 
+        }
     }
-
 }
 

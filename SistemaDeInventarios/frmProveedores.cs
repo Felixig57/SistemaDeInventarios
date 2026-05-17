@@ -166,7 +166,8 @@ namespace SistemaDeInventarios
         #endregion
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+           validar.Editar();
+            CargarProveedores();
         
         }
 
