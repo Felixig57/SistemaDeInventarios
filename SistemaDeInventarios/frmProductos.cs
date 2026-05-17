@@ -257,6 +257,11 @@ namespace SistemaDeInventarios
         {
             LogicaProductos.BuscarProductoNombre(txtBuscarNombre.Text);
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            LogicaProductos.ListarProductos();
+        }
     }
 
 }
