@@ -35,7 +35,8 @@ namespace SistemaDeInventarios
             listaLabel.Add(lblTelefonoProveedor);
             listaLabel.Add(lblCorreoProveedor);
             listaLabel.Add(lblDireccionProveedor);
-            validar = new VF_Proveedores(list, listaLabel);
+            Object[] dgv = { dgvProveedores };
+            validar = new VF_Proveedores(list, listaLabel, dgv);
         }
         //Retroaliemntacion al usario para no dejar campos vacios
         #region Eventos lbl
@@ -152,15 +153,7 @@ namespace SistemaDeInventarios
         //evento que carga la fila en los campos de texto 
         private void dgvProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)// si el evento en el indice mayor igual a 0 hacer una seleccion
-            {
-                DataGridViewRow fila = dgvProveedores.Rows[e.RowIndex];//objeto del formulario que obtiene los indices en la variable fila
-                txtIdProveedor.Text = fila.Cells["IdProveedor"].Value.ToString();//los datos que carga en indice [0]
-                txtNombreProveedor.Text = fila.Cells["NombreProveedor"].Value.ToString();//los datos que carga en indice [1]
-                txtCorreoProveedor.Text = fila.Cells["CorreoProveedor"].Value.ToString();//los datos que carga en indice [2]
-                txtTelefonoProveedor.Text = fila.Cells["TelefonoProveedor"].Value.ToString();//los datos que carga en indice [3]
-                txtDireccionProveedor.Text = fila.Cells["DireccionProveedor"].Value.ToString();//los datos que carga en indice [4]
-            }
+            validar.Seleccionar();
         }
         private void RestablecerLabels()
         {
@@ -179,7 +172,8 @@ namespace SistemaDeInventarios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+            validar.Eliminar();
+            CargarProveedores();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
