@@ -85,35 +85,6 @@ namespace Logica.Bibloteca.Validar_Forms
             MessageBox.Show("Almacen Registrado...");
 
         }
-
-        //Metodo para editar los campos de texto
-        public void EditarAlmacen()
-        {
-            //instancia de la conexion
-            ConexionBD conexion = new ConexionBD();
-
-            //buscamos el almacen
-            var almacenE = conexion.GetTable<Almacenes>()
-                .FirstOrDefault(a => a.IdAlmacen == int.Parse(Lista[0].Text));
-
-            //evaluar
-            if (almacenE != null)
-            {
-                Almacenes editado = new Almacenes
-                {
-                    IdAlmacen = int.Parse(Lista[0].Text),
-                    NombreAlmacen = Lista[1].Text,
-                    ResponsableAlmacen = Lista[2].Text,
-                    TelefonoAlmacen = Lista[3].Text,
-                    UbicacionAlmacen = Lista[4].Text
-                };
-
-                conexion.Update(editado);
-
-                MessageBox.Show("Se ha actualizado el almacen correctamente");
-            }
-        }
-
         //metodo guardar para la validacion correcta de los campos de texto
         public void Guardar()
         {
@@ -122,89 +93,6 @@ namespace Logica.Bibloteca.Validar_Forms
             LimpiarCampos();//limpar los campos que dentro tiene el restablecimineto de los labels
            
         }
-
-        //Metodo para eliminar un registro
-        public void EliminarAlmacen()
-        {
-            //instancia de la conexion
-            ConexionBD conexion = new ConexionBD();
-
-            //buscar el registro
-            var registroExistente = conexion.GetTable<Almacenes>()
-                .FirstOrDefault(a => a.IdAlmacen == int.Parse(Lista[0].Text));
-
-            //si existe
-            if (registroExistente != null)
-            {
-                //pregunta de confirmacion
-                if (MessageBox.Show("¿Quieres eliminar este almacen?",
-                    "Eliminar",
-                    MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    //objeto eliminado
-                    Almacenes almacenEliminado = new Almacenes
-                    {
-                        IdAlmacen = int.Parse(Lista[0].Text),
-                        NombreAlmacen = Lista[1].Text,
-                        ResponsableAlmacen = Lista[2].Text,
-                        TelefonoAlmacen = Lista[3].Text,
-                        UbicacionAlmacen = Lista[4].Text
-                    };
-
-                    //eliminar
-                    conexion.Delete(almacenEliminado);
-
-                    //mensaje
-                    MessageBox.Show("Almacen eliminado");
-                }
-            }
-        }
-
-        //Metodo para buscar por nombre
-        public void BuscarString(string BuscarNombre)
-        {
-            ConexionBD conexion = new ConexionBD();
-
-            var almacen = conexion.GetTable<Almacenes>()
-                .FirstOrDefault(a => a.NombreAlmacen.Contains(BuscarNombre));
-
-            if (almacen != null)
-            {
-                Lista[0].Text = almacen.IdAlmacen.ToString();
-                Lista[1].Text = almacen.NombreAlmacen;
-                Lista[2].Text = almacen.ResponsableAlmacen;
-                Lista[3].Text = almacen.TelefonoAlmacen;
-                Lista[4].Text = almacen.UbicacionAlmacen;
-            }
-            else
-            {
-                MessageBox.Show("No se encontró ningún almacén con ese nombre");
-            }
-        }
-
-        //Metodo para buscar por ID
-        public void BuscarID(int IdAlmacen)
-        {
-            ConexionBD conexion = new ConexionBD();
-
-            var almacen = conexion.GetTable<Almacenes>()
-                .FirstOrDefault(a => a.IdAlmacen == IdAlmacen);
-
-            if (almacen != null)
-            {
-                Lista[0].Text = almacen.IdAlmacen.ToString();
-                Lista[1].Text = almacen.NombreAlmacen;
-                Lista[2].Text = almacen.ResponsableAlmacen;
-                Lista[3].Text = almacen.TelefonoAlmacen;
-                Lista[4].Text = almacen.UbicacionAlmacen;
-            }
-            else
-            {
-                MessageBox.Show("No se encontró el almacén con ID: " + IdAlmacen);
-            }
-        }
-
-        //Metodo para limpiar los campos
         private void LimpiarCampos()
         {
             Lista[0].Clear();
