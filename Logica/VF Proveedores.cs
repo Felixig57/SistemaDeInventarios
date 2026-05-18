@@ -13,16 +13,19 @@ using System.Windows.Forms;
 
 namespace Logica
 {
-   public class VF_Proveedores : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
-        {
+    public class VF_Proveedores : Entradas //esta clase hereda de la clase Entradas para poder usar sus validaciones
+    {
         private ProveedoresRepository PR = new ProveedoresRepository();
-            private List<TextBox> Lista = new List<TextBox>(); //se crean los objetos que necesitaremos
+        private List<TextBox> Lista = new List<TextBox>(); //se crean los objetos que necesitaremos
         private List<Label> listaLabel = new List<Label>();
-            public VF_Proveedores(List<TextBox> Lista, List<Label> listaLabel) //en el contructor asignamos los argumentos que pedimos y los asignamos a las variables locales
-            {
-                this.Lista = Lista;
+        private int IDProveedor;
+        private DataGridView gridView;
+        public VF_Proveedores(List<TextBox> Lista, List<Label> listaLabel, Object[] dgv) //en el contructor asignamos los argumentos que pedimos y los asignamos a las variables locales
+        {
+            this.Lista = Lista;
             this.listaLabel = listaLabel;
-            }
+            this.gridView = (DataGridView)dgv[0];
+        }
         public bool ValidarCampos() //programamos esta funcion booleana que valida si los campos están vacíos
         {
             // 0 = ID
@@ -83,7 +86,7 @@ namespace Logica
                 DireccionProveedor = Lista[4].Text
             });
             MessageBox.Show("Se ha guardado el proveedor correctamente en la Base de Datos");
-                
+
         }
         public void Guardar()
         {
@@ -91,9 +94,9 @@ namespace Logica
             {
                 GuardarenBD();
                 LimpiarCampos();
-                       
+
             }
-           
+
         }
         //Metodo para mostrar en DGV
         public List<Proveedores> Mostrardgv()
@@ -102,11 +105,10 @@ namespace Logica
         }
         private void LimpiarCampos()
         {
-            Lista[0].Clear();
-            Lista[1].Clear();
-            Lista[2].Clear();
-            Lista[3].Clear();
-            Lista[4].Clear();
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                Lista[i].Clear();
+            }
             RestablecerLabels();
         }
         private void RestablecerLabels()
@@ -117,8 +119,115 @@ namespace Logica
             listaLabel[3].ForeColor = Color.Black;
             listaLabel[4].ForeColor = Color.Black;
         }
+        public void Seleccionar()
+        {
+            //accion = "Update";
+            IDProveedor = Convert.ToInt32(gridView.CurrentRow.Cells[0].Value);
+            //Asignar los datos que tenemos en la fila a las cajas
+            Lista[0].Text = Convert.ToString(gridView.CurrentRow.Cells[0].Value);
+            Lista[1].Text = Convert.ToString(gridView.CurrentRow.Cells[1].Value);
+            Lista[2].Text = Convert.ToString(gridView.CurrentRow.Cells[2].Value);
+            Lista[3].Text = Convert.ToString(gridView.CurrentRow.Cells[3].Value);
+            Lista[4].Text = Convert.ToString(gridView.CurrentRow.Cells[4].Value);
 
+        }
+        public void Eliminar()
+        {
+
+            ConexionBD conexion = new ConexionBD();
+
+            var registroExistente = conexion.GetTable<Proveedores>()
+                  .FirstOrDefault(e => e.IdProveedor == IDProveedor);
+
+            if (registroExistente != null)
+            {
+                if (MessageBox.Show("Este Proveedor sera eliminado.     Estas seguro de querer eliminarlo?",
+                    "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Proveedores EstudianteEliminado = new Proveedores
+                    {
+                        IdProveedor = int.Parse(Lista[0].Text),
+                        NombreProveedor = Lista[1].Text,
+                        TelefonoProveedor = Lista[2].Text,
+                        CorreoProveedor = Lista[3].Text,
+                        DireccionProveedor = Lista[4].Text,
+
+                    };
+                    conexion.Delete(EstudianteEliminado);
+                    MessageBox.Show("Proveedor Eliminado");
+
+                }
+            }
+        }
+        public void Editar()
+        {
+            ConexionBD conexion = new ConexionBD();
+            var registroExistente = conexion.GetTable<Proveedores>()
+                  .FirstOrDefault(e => e.IdProveedor == IDProveedor);
+            if (registroExistente != null)
+            {
+                if (MessageBox.Show("Estas seguro de querer editar este proveedor?",
+                    "Editar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Proveedores ProveedorEditado = new Proveedores
+                    {
+                        IdProveedor = int.Parse(Lista[0].Text),
+                        NombreProveedor = Lista[1].Text,
+                        TelefonoProveedor = Lista[2].Text,
+                        CorreoProveedor = Lista[3].Text,
+                        DireccionProveedor = Lista[4].Text,
+                    };
+                    conexion.Update(ProveedorEditado);
+                    MessageBox.Show("Proveedor Editado");
+                }
+            }
+
+        }
+        #region Buscar
+        public void BuscarID(int Proveedor)
+        {
+            ConexionBD conexion = new ConexionBD();
+            //Variable que recibe el int
+            var proveedor = conexion.GetTable<Proveedores>().FirstOrDefault(e => e.IdProveedor == Proveedor);
+            if (proveedor != null)
+            {
+
+                IDProveedor = Proveedor;
+                Lista[0].Text = proveedor.IdProveedor.ToString();
+                Lista[1].Text = proveedor.NombreProveedor;
+                Lista[2].Text = proveedor.TelefonoProveedor;
+                Lista[3].Text = proveedor.CorreoProveedor;
+                Lista[4].Text = proveedor.DireccionProveedor;
+                MessageBox.Show("Aqui esta el proveedor");
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el Proveedor");
+            }
+        }
+        public void BuscarString(string BuscarNombre)
+        {
+            ConexionBD conexion = new ConexionBD();
+            var proveedor = conexion.GetTable<Proveedores>()
+                .Where(e => e.NombreProveedor.Contains(BuscarNombre))
+                .Select(e => new
+                {
+                    e.IdProveedor,
+                    e.NombreProveedor,
+                    e.TelefonoProveedor,
+                    e.CorreoProveedor,
+                    e.DireccionProveedor
+                 
+                }).ToList();
+            //Asignar DGV
+            this.gridView.DataSource = proveedor;
+            //Validacion si no se encuentra
+            if (proveedor.Count == 0)
+            {
+                MessageBox.Show("No hay proveedores con el nombre: " + BuscarNombre);
+            }
+        }
+        #endregion
     }
-
 }
 
