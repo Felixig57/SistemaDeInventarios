@@ -17,29 +17,26 @@ namespace SistemaDeInventarios
     {
        // MetodosCRUD metodos = new MetodosCRUD(); ya no sirve sorry aaron 
         VF_Almacen Validacion;
-
         public frmAlmacenes()
         {
+           
+           
             InitializeComponent();
-
-            List<TextBox> list = new List<TextBox>(); // lista de textbox
+            List<TextBox> list = new List<TextBox>(); //acá creamos el objeto list y lo rellenamos de los valores textbox
             list.Add(txtIdAlmacen);
             list.Add(txtNombreAlmacen);
             list.Add(txtResponsableAlmacen);
             list.Add(txtTelefonoAlmacen);
             list.Add(txtUbicacionAlmacen);
-
-            List<Label> listaLabel = new List<Label>(); // lista de labels
+            List<Label> listaLabel = new List<Label>(); //acá creamos el objeto listalabel y lo rellenamos de los labels
             listaLabel.Add(lbl_IdAlmacen);
             listaLabel.Add(lblNombreAlmacen);
             listaLabel.Add(lblResponsableAlmacen);
             listaLabel.Add(lblTelefonoAlmacen);
             listaLabel.Add(lblUbicacionAlmacen);
 
-            Validacion = new VF_Almacen(list, listaLabel);
+            Validacion = new VF_Almacen(list, listaLabel); //acá mandamos 
         }
-
-
         //Retroalimentar al usuario, para que sepa que dejo algun campo vacio
         #region Eventos lbl
         private void txtUbicacionAlmacen_TextChanged(object sender, EventArgs e)
@@ -159,14 +156,12 @@ namespace SistemaDeInventarios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Validacion.EditarAlmacen();
-            CargarAlmacenes();
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Validacion.EliminarAlmacen();
-            CargarAlmacenes();
+          
         }
         private void LimpiarCampos()
         {
@@ -213,33 +208,6 @@ namespace SistemaDeInventarios
         private void dgvAlmacenes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-
-        //Mandamos a llamar al metodo
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string valor = txtBuscar.Text;
-
-            if (string.IsNullOrWhiteSpace(valor))
-            {
-                MessageBox.Show("Escribe algo para buscar");
-                return;
-            }
-
-            if (int.TryParse(valor, out int id))
-            {
-                Validacion.BuscarID(id);
-            }
-            else
-            {
-                Validacion.BuscarString(valor);
-            }
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }
