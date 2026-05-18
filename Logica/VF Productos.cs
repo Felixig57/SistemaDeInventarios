@@ -137,6 +137,8 @@ namespace Logica
 
         public void ObtenerSeleccionProductos()
         {
+            //Cambiamos el status de la bandera
+            _accion = "actualizar";
             //Asignarle valor a la variable de id
             _id = Convert.ToInt32(grindView.CurrentRow.Cells[0].Value);
 
@@ -236,6 +238,7 @@ namespace Logica
             });
             MessageBox.Show("Actualización exitosa");
             ListarProductos();
+            _accion = "Insert";
         }
 
         public void Eliminar()
