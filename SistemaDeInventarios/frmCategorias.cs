@@ -10,6 +10,7 @@ namespace SistemaDeInventarios
     {
         //   MetodosCRUD metodos = new MetodosCRUD(); //Hacemos la instancia de los metodos CRUD
         VF_Categorias Validar; //Creamos un objeto de tipo VF_Categorias que es la clase donde están las funciones de verificación
+
         public frmCategorias()
         {
 
@@ -23,7 +24,9 @@ namespace SistemaDeInventarios
             listaLabel.Add(lblId_Categoria); //indice 0
             listaLabel.Add(lblNombreCategoria);//indice 1
             listaLabel.Add(lblDescripcionCategoria);//indice 2
-            Validar = new VF_Categorias(Lista, listaLabel); //acá le mandamos los argumentos que asignamos al objeto validar
+            object[] objects = { dgvCategorias };
+            Validar = new VF_Categorias(Lista, listaLabel, objects); //acá le mandamos los argumentos que asignamos al objeto validar
+            Validar.listarCategoria();
         }
 
         #region Eventos lbl
@@ -131,21 +134,6 @@ namespace SistemaDeInventarios
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -180,10 +168,10 @@ namespace SistemaDeInventarios
         //metoddo que valida, carga, y manda datos a ala BD
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
-
+            //Borramos aqui
             //Mandamos a llamar al metodo guardar en Logica Categoria
-            Validar.Guardar();
+            Validar.ValidarCampos();
+            Validar.guardarCat();
             //Llamamos al metodo Cargar categorias
             CargarCategorias();
         }
@@ -216,13 +204,7 @@ namespace SistemaDeInventarios
         //evento que carga la fila en los campos de texto 
         private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)// si el evento en el indice mayor igual a 0 hacer una seleccion
-            {
-                DataGridViewRow fila = dgvCategorias.Rows[e.RowIndex];//objeto del formulario que obtiene los indices en la variable fila
-                txtId_Categoria.Text = fila.Cells["IdCategoria"].Value.ToString();//los datos que carga en indice [0]
-                txtNombreCategoria.Text = fila.Cells["NombreCategoria"].Value.ToString();//los datos que carga en indice [1]
-                txtDescripcionCategoria.Text = fila.Cells["DescripcionCategoria"].Value.ToString();//los datos que carga en indice [2]
-            }
+            Validar.getCategoria();
         }
         private void RestablecerLabels()
         {
@@ -244,14 +226,12 @@ namespace SistemaDeInventarios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //metodos.ActualizarCategoria(int.Parse(txtIdCategoria.Text), txtNombreCategoria.Text, txtDescripcionCategoria.Text);
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+            Validar.editarCat();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //metodos.EliminarCategoria(int.Parse(txtIdCategoria.Text));
-            //borramos codigo para anadir y ajustar a los requerimientos necesarios
+            Validar.eliminarRegistroCat();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -261,6 +241,36 @@ namespace SistemaDeInventarios
 
         private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void btnBuscarClick(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dgvCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Validar.getCategoria();
+        }
+
+        private void dgvCategorias_SelectionChanged(object sender, EventArgs e)
+        {
+            Validar.getCategoria();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Validar.BuscarProductoCat(int.Parse(txtBuscarId.Text));
+        }
+
+        private void btnBuscarNombre_Click(object sender, EventArgs e)
+        {
+            Validar.BuscarCatNombre(txtBuscarNombreCat.Text);
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            Validar.listarCategoria(); 
         }
     }
 }
