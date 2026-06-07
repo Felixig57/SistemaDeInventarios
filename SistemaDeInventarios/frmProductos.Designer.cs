@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -46,7 +46,6 @@
             this.gbImagen = new System.Windows.Forms.GroupBox();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnListar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.btnBuscarID = new System.Windows.Forms.Button();
@@ -65,6 +64,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnListar = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -248,14 +248,14 @@
             this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(133)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.Location = new System.Drawing.Point(8, 42);
@@ -343,18 +343,6 @@
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             // 
-            // btnListar
-            // 
-            this.btnListar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnListar.Location = new System.Drawing.Point(218, 210);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(123, 46);
-            this.btnListar.TabIndex = 15;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -371,31 +359,34 @@
             this.txtBuscarNombre.Location = new System.Drawing.Point(76, 158);
             this.txtBuscarNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarNombre.Name = "txtBuscarNombre";
-            this.txtBuscarNombre.Size = new System.Drawing.Size(392, 22);
+            this.txtBuscarNombre.Size = new System.Drawing.Size(318, 22);
             this.txtBuscarNombre.TabIndex = 14;
+            this.txtBuscarNombre.Text = "Buscar por Nombre";
             this.txtBuscarNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // btnBuscarID
             // 
             this.btnBuscarID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscarID.Location = new System.Drawing.Point(32, 80);
+            this.btnBuscarID.BackgroundImage = global::SistemaDeInventarios.Properties.Resources.lupa;
+            this.btnBuscarID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscarID.Location = new System.Drawing.Point(400, 16);
             this.btnBuscarID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarID.Name = "btnBuscarID";
-            this.btnBuscarID.Size = new System.Drawing.Size(144, 50);
+            this.btnBuscarID.Size = new System.Drawing.Size(68, 55);
             this.btnBuscarID.TabIndex = 12;
-            this.btnBuscarID.Text = "Buscar por ID";
             this.btnBuscarID.UseVisualStyleBackColor = true;
             this.btnBuscarID.Click += new System.EventHandler(this.btnBuscarID_Click);
             // 
             // btnBuscarNombre
             // 
             this.btnBuscarNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscarNombre.Location = new System.Drawing.Point(32, 206);
+            this.btnBuscarNombre.BackgroundImage = global::SistemaDeInventarios.Properties.Resources.lupa;
+            this.btnBuscarNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarNombre.Location = new System.Drawing.Point(401, 143);
             this.btnBuscarNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarNombre.Name = "btnBuscarNombre";
-            this.btnBuscarNombre.Size = new System.Drawing.Size(144, 50);
+            this.btnBuscarNombre.Size = new System.Drawing.Size(68, 58);
             this.btnBuscarNombre.TabIndex = 11;
-            this.btnBuscarNombre.Text = "Buscar por Nombre";
             this.btnBuscarNombre.UseVisualStyleBackColor = true;
             this.btnBuscarNombre.Click += new System.EventHandler(this.btnBuscarNombre_Click);
             // 
@@ -415,8 +406,9 @@
             this.txtBuscarID.Location = new System.Drawing.Point(76, 27);
             this.txtBuscarID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarID.Name = "txtBuscarID";
-            this.txtBuscarID.Size = new System.Drawing.Size(392, 22);
+            this.txtBuscarID.Size = new System.Drawing.Size(318, 22);
             this.txtBuscarID.TabIndex = 10;
+            this.txtBuscarID.Text = "Buscar por ID";
             this.txtBuscarID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressId);
             // 
             // cmbCategoria
@@ -551,6 +543,19 @@
             this.btnRegresar.TabIndex = 6;
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnListar
+            // 
+            this.btnListar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListar.BackgroundImage = global::SistemaDeInventarios.Properties.Resources.portapapeles;
+            this.btnListar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnListar.Location = new System.Drawing.Point(381, 217);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(87, 94);
+            this.btnListar.TabIndex = 16;
+            this.btnListar.UseVisualStyleBackColor = true;
             // 
             // frmProductos
             // 

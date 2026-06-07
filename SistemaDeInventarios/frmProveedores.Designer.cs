@@ -436,15 +436,16 @@
             // 
             // btnListar
             // 
-            this.btnListar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnListar.Location = new System.Drawing.Point(325, 157);
+            this.btnListar.BackgroundImage = global::SistemaDeInventarios.Properties.Resources.portapapeles;
+            this.btnListar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnListar.Location = new System.Drawing.Point(334, 127);
             this.btnListar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(83, 64);
-            this.btnListar.TabIndex = 6;
-            this.btnListar.Text = "Listar";
+            this.btnListar.Size = new System.Drawing.Size(87, 94);
+            this.btnListar.TabIndex = 10;
             this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
             // 
             // frmProveedores
             // 

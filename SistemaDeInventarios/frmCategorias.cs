@@ -26,7 +26,7 @@ namespace SistemaDeInventarios
             listaLabel.Add(lblDescripcionCategoria);//indice 2
             object[] objects = { dgvCategorias };
             Validar = new VF_Categorias(Lista, listaLabel, objects); //acá le mandamos los argumentos que asignamos al objeto validar
-            Validar.listarCategoria();
+           // Validar.listarCategoria();
         }
 
         #region Eventos lbl
@@ -255,7 +255,7 @@ namespace SistemaDeInventarios
 
         private void dgvCategorias_SelectionChanged(object sender, EventArgs e)
         {
-            Validar.getCategoria();
+            //Validar.getCategoria();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

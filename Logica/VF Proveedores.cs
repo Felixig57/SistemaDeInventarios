@@ -103,6 +103,7 @@ namespace Logica
         {
             return PR.Lista();
         }
+
         private void LimpiarCampos()
         {
             for (int i = 0; i < Lista.Count; i++)

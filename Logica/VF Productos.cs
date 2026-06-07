@@ -103,17 +103,16 @@ namespace Logica
 
             //Declarar una variable tipo padre para almacenar la consulta
             var ListaProductos = conexion.GetTable<Productos>()
-                .Select(e => new
-                {
-                    //Tenemos que seleccionar cada una de las columnas que queremos mostrar en el DataGridView
-                    e.IdProducto,
-                    e.NombreProducto,
-                    e.DescripcionProducto,
-                    e.Categoria,
-                    e.Proveedor,
-                    e.Cantidad,
-                    e.Imagen
-                }).ToList();
+             .Select(e => new
+             {
+                 e.IdProducto,
+                 e.NombreProducto,
+                 e.DescripcionProducto,
+                 e.IdCategoria,
+                 e.IdProveedor,
+                 e.Cantidad,
+                 e.Imagen
+             }).ToList();
 
             //Asignamos la lista al DataGridView
             this.grindView.DataSource = ListaProductos;
@@ -146,8 +145,11 @@ namespace Logica
             ListaBotonesText[0].Text = grindView.CurrentRow.Cells[0].Value.ToString();
             ListaBotonesText[1].Text = grindView.CurrentRow.Cells[1].Value.ToString();
             ListaBotonesText[2].Text = grindView.CurrentRow.Cells[2].Value.ToString();
-            ListaCombos[0].SelectedItem = grindView.CurrentRow.Cells[3].Value.ToString();
-            ListaCombos[1].SelectedItem = grindView.CurrentRow.Cells[4].Value.ToString();
+            ListaCombos[0].SelectedValue =
+    Convert.ToInt32(grindView.CurrentRow.Cells[3].Value);
+
+            ListaCombos[1].SelectedValue =
+                Convert.ToInt32(grindView.CurrentRow.Cells[4].Value);
             ListaNumeros[0].Value = Convert.ToInt32(grindView.CurrentRow.Cells[5].Value);
 
             //intentar solicitar el array
@@ -202,8 +204,8 @@ namespace Logica
                    IdProducto = int.Parse(ListaBotonesText[0].Text),
                    NombreProducto = ListaBotonesText[1].Text,
                    DescripcionProducto = ListaBotonesText[2].Text,
-                   Categoria = ListaCombos[0].SelectedItem.ToString(),
-                   Proveedor = ListaCombos[1].SelectedItem.ToString(),
+                   IdCategoria = Convert.ToInt32(ListaCombos[0].SelectedValue),
+                   IdProveedor = Convert.ToInt32(ListaCombos[1].SelectedValue),
                    Cantidad = (int)ListaNumeros[0].Value,
                    Imagen = imgToByte
                    });
@@ -231,8 +233,8 @@ namespace Logica
                 IdProducto = int.Parse(ListaBotonesText[0].Text),
                 NombreProducto = ListaBotonesText[1].Text,
                 DescripcionProducto = ListaBotonesText[2].Text,
-                Categoria = ListaCombos[0].SelectedItem.ToString(),
-                Proveedor = ListaCombos[1].SelectedItem.ToString(),
+                IdCategoria = Convert.ToInt32(ListaCombos[0].SelectedValue),
+                IdProveedor = Convert.ToInt32(ListaCombos[1].SelectedValue),
                 Cantidad = (int)ListaNumeros[0].Value,
                 Imagen = imgToByte
             });
@@ -284,8 +286,8 @@ namespace Logica
                         e.IdProducto,
                         e.NombreProducto,
                         e.DescripcionProducto,
-                        e.Categoria,
-                        e.Proveedor,
+                        e.IdCategoria,
+                        e.IdProveedor,
                         e.Cantidad,
                         e.Imagen
                     }).ToList();
@@ -311,8 +313,8 @@ namespace Logica
                     e.IdProducto,
                     e.NombreProducto,
                     e.DescripcionProducto,
-                    e.Categoria,
-                    e.Proveedor,
+                    e.IdCategoria,
+                    e.IdProveedor,
                     e.Cantidad,
                     e.Imagen
                 }).ToList();

@@ -1,4 +1,5 @@
 ﻿using Datos;
+using LinqToDB;
 using Logica;
 using SistemaDeInventarios.Botones;
 using System;
@@ -172,9 +173,28 @@ namespace SistemaDeInventarios
         }
 
         #region Funciones Privadas
-        private void CargarProductos()
+        private void CargarCategorias()
         {
-          //  dgvProductos.DataSource = metodos.MostrarProductos();
+            ConexionBD conexion = new ConexionBD();
+
+            var categorias = conexion.GetTable<Datos.Entidades.Categorias.Categorias>()
+                .ToList();
+
+            cmbCategoria.DataSource = categorias;
+            cmbCategoria.DisplayMember = "NombreCategoria";
+            cmbCategoria.ValueMember = "IdCategoria";
+        }
+        private void CargarProveedores()
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            var proveedores = conexion.GetTable<Datos.Entidades.Proveedores.Proveedores>()
+                .ToList();
+
+            cmbProveedor.DataSource = proveedores;
+            cmbProveedor.DisplayMember = "NombreProveedor";
+            cmbProveedor.ValueMember = "IdProveedor";
+
         }
 
         private void LimpiarCampos()
@@ -202,7 +222,9 @@ namespace SistemaDeInventarios
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            CargarProductos();
+            CargarCategorias();
+            CargarProveedores();
+            LogicaProductos.ListarProductos();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

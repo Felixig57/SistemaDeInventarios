@@ -8,16 +8,29 @@ using System.Threading.Tasks;
 
 namespace Datos.Entidades.Productos
 {
+
+    [Table("Productos")]
     public class Productos
     {
-        //Aqui van las propiedades autoimplementadas de la clase 
-        [PrimaryKey]
+        [PrimaryKey, Column("IdProducto")]
         public int IdProducto { get; set; }
+
+        [Column("NombreProducto")]
         public string NombreProducto { get; set; }
+
+        [Column("DescripcionProducto")]
         public string DescripcionProducto { get; set; }
-        public string Categoria { get; set; }
-        public string Proveedor { get; set; }
+
+        [Column("IdCategoria")]
+        public int IdCategoria { get; set; }
+
+        [Column("IdProveedor")]
+        public int IdProveedor { get; set; }
+
+        [Column("Cantidad")]
         public int Cantidad { get; set; }
+
+        [Column("Imagen")]
         public byte[] Imagen { get; set; }
     }
 }

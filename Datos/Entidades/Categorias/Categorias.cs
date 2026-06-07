@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 namespace Datos.Entidades.Categorias
 
 {
+    [Table("Categorias")]  // <- faltaba esto
     public class Categorias
     {
-        //Propiedades AutoImplementadas con sus metodos de acceso (get y set)
-        [PrimaryKey]
+        [PrimaryKey, Column("IdCategoria")]
         public int IdCategoria { get; set; }
-        public string NombreCategoria { get; set; }
-        public string DescripcionCategoria { get; set; } 
 
+        [Column("NombreCategoria")]
+        public string NombreCategoria { get; set; }
+
+        [Column("DescripcionCategoria")]
+        public string DescripcionCategoria { get; set; }
     }
 }

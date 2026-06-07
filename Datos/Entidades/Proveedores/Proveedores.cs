@@ -7,13 +7,22 @@ using System.Threading.Tasks;
 
 namespace Datos.Entidades.Proveedores
 {
+    [Table("Proveedores")]
     public class Proveedores
     {
-        [PrimaryKey]
+        [PrimaryKey, Column("IdProveedor")]
         public int IdProveedor { get; set; }
-        public string NombreProveedor {  get; set; }
-        public string TelefonoProveedor {  get; set; }
+
+        [Column("NombreProveedor")]
+        public string NombreProveedor { get; set; }
+
+        [Column("TelefonoProveedor")]
+        public string TelefonoProveedor { get; set; }
+
+        [Column("CorreoProveedor")]
         public string CorreoProveedor { get; set; }
+
+        [Column("DireccionProveedor")]
         public string DireccionProveedor { get; set; }
     }
 }
