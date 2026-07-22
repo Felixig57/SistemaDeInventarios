@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Datos.Entidades.Categorias
 
 {
-    [Table("Categorias")]  // <- faltaba esto
+    [Table("Categorias")] 
     public class Categorias
     {
         [PrimaryKey, Column("IdCategoria")]
